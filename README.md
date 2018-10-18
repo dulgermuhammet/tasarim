@@ -1,1 +1,4 @@
-OSMANLI YÜZÜKLERİ TASARIM AŞAMASI
+osmanliyuzukleri.com
+
+link : localhost/websiteler/osm
+
