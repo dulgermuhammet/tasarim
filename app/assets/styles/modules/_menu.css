@@ -1,0 +1,465 @@
+/*
+*
+*
+*
+*MENU CODES
+*
+*
+*
+*/
+
+/*
+Using this method because browsers can transition opacity very cheaply as opposed to using background: rgba
+https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
+*/
+
+
+.hero {
+
+  /* 
+  Making sure everything in .hero sits above our :after elements 
+  */
+  
+  * {
+  position: relative;
+  z-index: 1;
+  }
+
+  /*
+  Blueish tint overlay
+  */
+
+  &:after {
+    content: '';
+    background: #1b246b;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 732px;
+  }
+
+}
+
+
+
+#masthead {
+  padding: 0 0 0 0;
+  position: relative;
+
+  &.is-active {
+    box-shadow: 0 4px 4px rgb(27, 36, 107);
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1b246b;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &.is-active:after {
+    opacity: 1;
+  }
+
+  &.is-active {
+    .hamburger {
+      &-inner, 
+      &-inner::before, 
+      &-inner::after {
+      background-color: bisque;
+      }
+    }  
+  }
+
+  &.is-active .hamburger-label {
+    color: bisque;
+  }
+
+  &-cart {
+    margin: 0.8125em 0 0;
+    border: 1px solid bisque;
+    padding: 9px 0px 6px 0px;
+    float: right;
+    position: relative;
+  }
+
+  &-cart span  {
+    color: #fff;
+    font: inherit;
+    font-size: 0.8em;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    padding: 0px 8px 0px 8px;
+    transition: opacity 0.5s ease;
+    
+  }
+
+  &-cart span:hover  {
+    opacity: 0.7;
+     
+  }
+
+  &-cart span a  {
+    color: #fff;
+    font: inherit;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  &-cart span i  {
+    padding: 0px 5px 0px 5px;
+    color: bisque;
+  }
+
+  &-search {
+    display: inline-block;
+    margin-top: 0.825em;
+    width: 100%;
+    max-width: 50%;
+    position: relative;
+  }
+  
+  &-search input {
+    background: #ffe4c429;
+    border: none;
+    border-color: bisque;
+    border-style: solid;
+    border-width: 1px;
+    outline: none;
+    width: 100%;
+    padding: 0.89em 1.425em;
+    transition: box-shadow 0.5s ease;
+  }
+
+  &-search input:hover {
+    box-shadow: 0px 0px 13px -2px rgba(253, 253, 253, 0.75);
+  }
+
+
+  &-search button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1em;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    right: 0.75em;
+    transform: translateY(-50%);
+  }
+
+  &.is-active #masthead-search button {
+    color: #b4b9ba;
+  }
+
+  &.is-active #masthead-search input {
+    border-color: #b4b9ba;
+  }
+
+  &::placeholder {
+    color:    #fff;
+    opacity:  1;
+  }
+
+  &.is-active #masthead-search ::placeholder {
+    color:    #fff;
+    opacity:  1;
+  }
+
+  .col {
+    opacity: 0;
+  }
+
+  &.is-active .col {
+    transform: translateY(40px);
+    transition: opacity 0.3s ease;
+    animation: fade-in-stagger 0.8s ease forwards;
+    text-align: left;
+  }
+
+  &.s-active .col:nth-child(1) {
+    animation-delay: 0;
+  }
+
+  &.is-active .col:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+  
+  &.is-active .col:nth-child(3) {
+      animation-delay: 0.2s;
+  }
+  
+  &.is-active .col:nth-child(4) {
+      animation-delay: 0.3s;
+  }
+  
+  &.is-active .col:nth-child(5) {
+      animation-delay: 0.4s;
+  }
+
+}
+
+
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+
+
+.hamburger {
+  background-color: transparent;
+  border: 1px solid bisque;
+  color: inherit;
+  cursor: pointer;
+  float: left;
+  font: inherit;
+  margin: 0.8125em 0 0;
+  overflow: visible; 
+  outline: none;
+  padding: 9px 6px 6px 7px;
+  text-transform: none;
+  transition: opacity 0.5s ease;
+  font-weight: bold;
+  
+  &:hover {
+    opacity: 0.7;
+  }
+  
+  &-box {
+    width: 30px;
+    display: inline-block;
+    position: relative; 
+  }
+  
+  &-inner {
+    display: block;
+    top: 50%;
+    margin-top: -2px; 
+  }
+  
+  &-inner, 
+  &-inner::before, 
+  &-inner::after {
+    width: 30px;
+    height: 2px;
+    background-color: bisque;
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease; 
+  }
+
+  &-inner::before, 
+  &-inner::after {
+    content: "";
+    display: block; 
+  }
+  
+  &-inner::before {
+    top: -6px; 
+  }
+  
+  &-inner::after {
+    bottom: -6px; 
+  }
+  
+  &-label {
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    margin-left: 0.3125em;
+    text-transform: uppercase;
+  }
+
+  &-box,
+  &-label {
+     vertical-align: middle;
+  }
+
+  
+
+  /*
+  * Boring
+  */
+
+  &--boring {
+    .hamburger {
+      &-inner,
+      &-inner::before, 
+      &-inner::after {
+        transition-property: none; 
+      }  
+    }
+   
+    &.is-active .hamburger-inner {
+      transform: rotate(45deg); 
+    }
+    
+    &.is-active .hamburger-inner::before {
+      top: 0;
+      opacity: 0; 
+    }
+    
+    &.is-active .hamburger-inner::after {
+      bottom: 0;
+      transform: rotate(-90deg); 
+    }
+
+  }
+
+}
+
+  
+
+
+
+
+
+
+#site-nav {
+  clear: both;
+  display: flex;
+  flex-direction: column; 
+  height: 0;
+  overflow: hidden;
+  padding-top: 0.5em;
+
+  &.is-active {
+    height: auto;
+    overflow: visible;
+  }
+
+  .col { 
+    padding-bottom: 0.1em;
+  }
+
+  h4 {
+    text-transform: uppercase;
+    color: bisque;
+    margin-top: 1.2em;
+    letter-spacing: 0.2em;
+    font-size: 0.9em;
+  }
+
+  ul {
+    list-style-type: none;
+    margin-top: 1em;
+  }
+
+  li {
+    margin-bottom: 0.3125em;
+  }
+  
+  li a {
+    color: #ffffff;;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 80%;
+    line-height: 1em;
+    font-weight: 400;
+      font-family: 'Lato', sans-serif;
+  }
+  
+  li a:hover,
+  li a:focus {
+    color: bisque;;;
+  }
+  
+  .social {
+    margin: 0;
+    overflow: hidden;
+    margin-top: 1.2em;
+  }
+  
+  .social li {
+    float: left;
+    margin: 0 0.3125em;
+    width: 32px;
+    height: 32px;
+  }
+  
+  .social li svg {
+    display: block;
+    fill: bisque;
+    width: 100%;
+    height: 100%;
+    transition: fill 0.3s ease;
+  }
+  
+  .social li:hover svg {
+    fill: #686d6e;
+  }
+
+}
+
+
+
+
+
+@media screen and (min-width: 550px) {
+  #site-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  #site-nav .col {
+    flex: 0 0 50%;
+  } 
+}
+
+@media screen and (min-width: 768px) {
+  #site-nav .col {
+    flex: 0 0 33.333333333%;
+  } 
+}
+
+@media screen and (min-width: 960px) {
+  #site-nav {
+    flex-wrap: nowrap;
+  }
+  
+  #site-nav .col {
+    flex: 0 0 16.7%;
+  } 
+  
+  #site-nav .col:last-child {
+    display: flex;
+    justify-content: flex-end;
+  }  
+}
+
+
+
+
+@keyframes fade-in-stagger {
+    to {
+      opacity: 1;
+      transform: translateY(0); 
+    }
+}
+
+@keyframes  box-shadow {
+  to {
+    opacity: 0;
+    opacity: 1; 
+  }
+}
+
+
+@keyframes  opacity {
+  to {
+  opacity:0;
+  opacity:0.7;
+  }
+}

@@ -1,0 +1,154 @@
+/*
+*
+*
+* Slideshow
+*
+*
+*/
+
+
+/* Slideshow container */
+
+
+#slideshow-container {
+  box-shadow: inset 0px 26px 11px -15px rgba(0,0,0,0.75);
+  background-color: rgb(224, 199, 130);
+  background-image: url(../../assets/images/pattern.svg);
+  background-blend-mode: soft-light;
+  width: 100%;
+  height: 600px;
+  position: relative;
+  background-size: 800px;
+}
+
+/* Hide the images by default */
+
+.slider-element {
+    display: none;
+}
+
+.slider-image {
+  position: absolute;
+  height: 588px;
+  width: auto;
+  right: 355px;
+}
+
+.slider-image:hover {
+  transform: scale(1.01);
+}
+
+.slider-inside-info {
+  left: 11%;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  font-weight: bold;
+  transform: translate3d(0, -50%, 0);
+}
+
+.slider-inside-info p {
+  position: relative;
+  padding: 5px 5px 5px 5px;
+  text-align: left;
+  color: #1b246b;
+  font-weight: 300;
+  font-family: 'Lato', sans-serif;
+}
+
+.slider-inside-info span {
+  position: relative;
+}
+
+.slider-inside-info button {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  float: unset;
+}
+
+.slider-inside-info button span {
+  color: #1b246b;
+}
+
+.slider-inside-info .button--antiman::after {
+  background: unset;
+  border: 2px solid #1b246b;
+}
+
+.slider-inside-info .slider-caption-text {
+  font-size: 5.8em;
+  text-align: center;
+  font-weight: lighter;
+  line-height: 1em;
+  letter-spacing: 0.3em;
+  position: relative;
+  color: #1b246b;
+}
+
+
+
+
+/* Next & previous buttons */
+
+#prev, #next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: #1b246b;
+  font-weight: bold;
+  font-size: 22px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  transform: translate3d(0, -50%, 0);
+}
+
+/* Position the "next button" to the right */
+
+#next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+
+#prev:hover, #next:hover {
+  background-color: rgba(0, 0, 0, 0.281);
+}
+
+.image-indicator-section {
+  text-align: center;
+  display: inline-block;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  top: 547px;
+  
+}
+
+.indicator-element {
+  background-color: #1b246b;
+  border: 2px solid rgb(40, 70, 167);
+  padding: 22px;
+  display: inline-block;
+}
+
+.indicator-element:hover {
+  background-color:rgb(214, 195, 146);
+}
+.indicator-element img {
+  width: auto;
+  height: 100px;
+  opacity: 0.4;
+}
+
+.indicator-element .opacity-off{
+  opacity: 1;
+}
+
+
