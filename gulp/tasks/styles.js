@@ -5,11 +5,27 @@ const gulp = require('gulp'),
       nested = require('postcss-nested'),
       cssImport = require('postcss-import'),
       mixins = require('postcss-mixins'),
-      hexrgba = require('postcss-hexrgba');
+      hexrgba = require('postcss-hexrgba'),
+      pxtorem = require('postcss-pxtorem');
 
 gulp.task('styles', function() {
+   
+  var processors = [
+    mixins,
+    cssImport,
+    cssvars,
+    nested,
+    hexrgba,
+    autoprefixer({
+      browsers: 'last 1 version'
+    }),
+    pxtorem({
+      replace: true
+    })
+  ];
   return gulp.src('./app/assets/styles/style.css')
-    .pipe(postcss([mixins,cssImport, cssvars, nested, hexrgba, autoprefixer]))
+    .pipe(postcss(processors))
+    //.pipe(postcss([mixins,cssImport, cssvars, nested, hexrgba, autoprefixer]))
     .on('error', function(errorInfo) {
       console.log(errorInfo.toString());
       this.emit('end');

@@ -1,12 +1,19 @@
 * {
   box-sizing: border-box;
+  padding:0;
+  margin:0;
+}
+
+html {
+  font-size: 100%;
 }
 
 body {
   font-family: 'Montserrat', sans-serif;
-  font-size: 100%;
-  line-height: 1.5;
+  font-size: 16px;
+  line-height: 28px;
   text-rendering: optimizeLegibility;
+  overflow-x:hidden;
 }
 
 a {
@@ -22,13 +29,16 @@ a {
 }
 
 .container:after {
-  content: "";
-  display: table;
-  clear: both;
+  @clearfix;
 }
 
 /* Custom Animate Css Codes */
 
 .animated.delay-05s {
   animation-delay: 0.5s;
+}
+
+
+.disable-selection {
+  user-select: none;
 }

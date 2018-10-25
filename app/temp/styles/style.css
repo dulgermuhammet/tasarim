@@ -369,13 +369,20 @@ template {
 
 * {
   box-sizing: border-box;
+  padding:0;
+  margin:0;
+}
+
+html {
+  font-size: 100%;
 }
 
 body {
   font-family: 'Montserrat', sans-serif;
-  font-size: 100%;
-  line-height: 1.5;
+  font-size: 1rem;
+  line-height: 1.75rem;
   text-rendering: optimizeLegibility;
+  overflow-x:hidden;
 }
 
 a {
@@ -391,9 +398,7 @@ a {
 }
 
 .container:after {
-  content: "";
-  display: table;
-  clear: both;
+  @clearfix;
 }
 
 /* Custom Animate Css Codes */
@@ -401,6 +406,13 @@ a {
 .animated.delay-05s {
   -webkit-animation-delay: 0.5s;
           animation-delay: 0.5s;
+}
+
+.disable-selection {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 /*
@@ -474,21 +486,21 @@ a {
 /* Sizes */
 
 .button--size-s {
-	font-size: 14px;
+	font-size: 0.875rem;
 }
 
 .button--size-m {
-	font-size: 16px;
+	font-size: 1rem;
 }
 
 .button--size-l {
-	font-size: 18px;
+	font-size: 1.125rem;
 }
 
 /* Typography and Roundedness */
 
 .button--text-upper {
-	letter-spacing: 2px;
+	letter-spacing: 0.125rem;
 	text-transform: uppercase;
 }
 
@@ -758,68 +770,96 @@ a {
 */
 
 /*
+*
+*
+*
 Using this method because browsers can transition opacity very cheaply as opposed to using background: rgba
 https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
+*
+*
+*
+*
 */
 
-/* 
-  Making sure everything in .hero sits above our :after elements 
+/*
+  *
+  *
+  *
+  * 
+  Making sure everything in .navbar__container sits above our :after elements 
+  *
+  *
+  *
+  *
+
   */
 
-.hero * {
+.navbar__container * {
   position: relative;
   z-index: 1;
   }
 
 /*
+  *
+  *
+  *
   Blueish tint overlay
+  *
+  *
+  *
+  *
   */
 
-.hero:after {
+.navbar__container:after {
     content: '';
-    background: #1b246b;
+    background: #1b246c;
     position: absolute;
     top: 0;
     width: 100%;
     height: 732px;
   }
 
-#masthead {
+.navbar {
   padding: 0 0 0 0;
   position: relative;
-
 }
 
-#masthead.is-active {
-    box-shadow: 0 4px 4px rgb(27, 36, 107);
+.navbar::-webkit-input-placeholder {
+    color:    #fff;
+    opacity:  1;
   }
 
-#masthead:after {
+.navbar:-ms-input-placeholder {
+    color:    #fff;
+    opacity:  1;
+  }
+
+.navbar::-ms-input-placeholder {
+    color:    #fff;
+    opacity:  1;
+  }
+
+.navbar::placeholder {
+    color:    #fff;
+    opacity:  1;
+  }
+
+.navbar .col {
+    opacity: 0;
+  }
+
+.navbar:after {
     content: '';
     position: absolute;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: #1b246b;
+    background-color: #1b246c;
     opacity: 0;
     transition: opacity 0.3s ease;
   }
 
-#masthead.is-active:after {
-    opacity: 1;
-  }
-
-#masthead.is-active .hamburger-inner, 
-      #masthead.is-active .hamburger-inner::before, 
-      #masthead.is-active .hamburger-inner::after {
-      background-color: bisque;
-      }
-
-#masthead.is-active .hamburger-label {
-    color: bisque;
-  }
-
-#masthead-cart {
+.navbar__cart {
     margin: 0.8125em 0 0;
     border: 1px solid bisque;
     padding: 9px 0px 6px 0px;
@@ -827,158 +867,225 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
     position: relative;
   }
 
-#masthead-cart span  {
-    color: #fff;
-    font: inherit;
-    font-size: 0.8em;
-    font-weight: bold;
-    position: relative;
-    display: inline-block;
-    padding: 0px 8px 0px 8px;
-    transition: opacity 0.5s ease;
-    
-  }
+.navbar__cart span {
+        color: #fff;
+        font: inherit;
+        font-weight: bold;
+        position: relative;
+        display: inline-block;
+        padding: 0px 8px 0px 8px;
+        transition: opacity 0.5s ease;
+    }
 
-#masthead-cart span:hover  {
-    opacity: 0.7;
-     
-  }
+.navbar__cart span a {
+        color: #fff;
+        font: inherit;
+        display: inline-block;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 0.875rem;
+      }
 
-#masthead-cart span a  {
-    color: #fff;
-    font: inherit;
-    display: inline-block;
-    text-decoration: none;
-    font-weight: bold;
-  }
+.navbar__cart span i {
+        padding: 0px 5px 0px 5px;
+        color: bisque;
+      }
 
-#masthead-cart span i  {
-    padding: 0px 5px 0px 5px;
-    color: bisque;
-  }
+.navbar__cart span:hover {
+        opacity: 0.7;
+      }
 
-#masthead-search {
+.navbar__search {
     display: inline-block;
     margin-top: 0.825em;
     width: 100%;
     max-width: 50%;
     position: relative;
+    }
+
+.navbar__search input {
+        background: #ffe4c429;
+        border: none;
+        border-color: bisque;
+        border-style: solid;
+        border-width: 1px;
+        outline: none;
+        width: 100%;
+        padding: 0.64em 1.425em;
+        transition: box-shadow 0.5s ease;
+      }
+
+.navbar__search :hover {
+        box-shadow: 0px 0px 13px -2px rgba(253, 253, 253, 0.75);
+      }
+
+.navbar__search button {
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 1em;
+        padding: 0;
+        position: absolute;
+        top: 50%;
+        right: 0.75em;
+        -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+      }
+
+.navbar_menu-container {
+    clear: both;
+    display: flex;
+    flex-direction: column; 
+    height: 0;
+    overflow: hidden;
+    padding-top: 0.5em;
   }
 
-#masthead-search input {
-    background: #ffe4c429;
-    border: none;
-    border-color: bisque;
-    border-style: solid;
-    border-width: 1px;
-    outline: none;
-    width: 100%;
-    padding: 0.89em 1.425em;
-    transition: box-shadow 0.5s ease;
+.navbar_menu-container.is-active {
+      height: auto;
+      overflow: visible;
+    }
+
+.navbar_menu-container .col { 
+      padding-bottom: 0.1em;
+    }
+
+.navbar_menu-container h4 {
+      text-transform: uppercase;
+      color: bisque;
+      margin-top: 1.2em;
+      letter-spacing: 0.2em;
+      font-size: 0.9em;
+    }
+
+.navbar_menu-container ul {
+      list-style-type: none;
+      margin-top: 1em;
+    }
+
+.navbar_menu-container li {
+      margin-bottom: 0.3125em;
+    }
+
+.navbar_menu-container li a {
+      color: #ffffff;;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-size: 80%;
+      line-height: 1em;
+      font-weight: 400;
+      font-family: 'Lato', sans-serif;
+      }
+
+.navbar_menu-container li a:hover,
+        .navbar_menu-container li a:focus {
+        color: bisque;
+        }
+
+.navbar_menu-container .social {
+      margin: 0;
+      overflow: hidden;
+      margin-top: 1.2em;
+    }
+
+.navbar_menu-container .social li {
+          float: left;
+          margin: 0 0.3125em;
+          width: 32px;
+          height: 32px;
+        }
+
+.navbar_menu-container .social li svg {
+            display: block;
+            fill: bisque;
+            width: 100%;
+            height: 100%;
+            transition: fill 0.3s ease;
+          }
+
+.navbar_menu-container .social li:hover svg {
+        fill: #686d6e;
+      }
+
+.navbar.is-active {
+    box-shadow: 0 4px 4px rgb(27, 36, 107);      
   }
 
-#masthead-search input:hover {
-    box-shadow: 0px 0px 13px -2px rgba(253, 253, 253, 0.75);
-  }
+.navbar.is-active:after {
+        opacity: 1;
+      }
 
-#masthead-search button {
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 1em;
-    padding: 0;
-    position: absolute;
-    top: 50%;
-    right: 0.75em;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
-  }
+.navbar.is-active .hamburger__inner, 
+        .navbar.is-active .hamburger__inner::before, 
+        .navbar.is-active .hamburger__inner::after {
+          background-color: bisque;
+        }
 
-#masthead.is-active #masthead-search button {
-    color: #b4b9ba;
-  }
+.navbar.is-active .hamburger__label {
+          color: bisque;
+        }
 
-#masthead.is-active #masthead-search input {
-    border-color: #b4b9ba;
-  }
+.navbar.is-active .col {
+        -webkit-transform: translateY(40px);
+                transform: translateY(40px);
+        transition: opacity 0.3s ease;
+        -webkit-animation: fade-in-stagger 0.8s ease forwards;
+                animation: fade-in-stagger 0.8s ease forwards;
+        text-align: left;
+      }
 
-#masthead::-webkit-input-placeholder {
-    color:    #fff;
-    opacity:  1;
-  }
+.navbar.is-active .col:nth-child(1) {
+          -webkit-animation-delay: 0;
+                  animation-delay: 0;
+        }
 
-#masthead:-ms-input-placeholder {
-    color:    #fff;
-    opacity:  1;
-  }
+.navbar.is-active .col:nth-child(2) {
+          -webkit-animation-delay: 0.1s;
+                  animation-delay: 0.1s;
+        }
 
-#masthead::-ms-input-placeholder {
-    color:    #fff;
-    opacity:  1;
-  }
+.navbar.is-active .col:nth-child(3) {
+          -webkit-animation-delay: 0.2s;
+                  animation-delay: 0.2s;
+        }
 
-#masthead::placeholder {
-    color:    #fff;
-    opacity:  1;
-  }
+.navbar.is-active .col:nth-child(4) {
+        -webkit-animation-delay: 0.3s;
+                animation-delay: 0.3s;
+        }
 
-#masthead.is-active #masthead-search ::-webkit-input-placeholder {
-    color:    #fff;
-    opacity:  1;
-  }
+.navbar.is-active .col:nth-child(5) {
+        -webkit-animation-delay: 0.4s;
+                animation-delay: 0.4s;
+        }
 
-#masthead.is-active #masthead-search :-ms-input-placeholder {
-    color:    #fff;
-    opacity:  1;
-  }
+.navbar.is-active #navbar-search button {
+       color: #b4b9ba;
+      }
 
-#masthead.is-active #masthead-search ::-ms-input-placeholder {
-    color:    #fff;
-    opacity:  1;
-  }
+.navbar.is-active #navbar-search input {
+        border-color: #b4b9ba;
+      }
 
-#masthead.is-active #masthead-search ::placeholder {
-    color:    #fff;
-    opacity:  1;
-  }
+.navbar.is-active #navbar-search ::-webkit-input-placeholder {
+        color:    #fff;
+        opacity:  1;
+      }
 
-#masthead .col {
-    opacity: 0;
-  }
+.navbar.is-active #navbar-search :-ms-input-placeholder {
+        color:    #fff;
+        opacity:  1;
+      }
 
-#masthead.is-active .col {
-    -webkit-transform: translateY(40px);
-            transform: translateY(40px);
-    transition: opacity 0.3s ease;
-    -webkit-animation: fade-in-stagger 0.8s ease forwards;
-            animation: fade-in-stagger 0.8s ease forwards;
-    text-align: left;
-  }
+.navbar.is-active #navbar-search ::-ms-input-placeholder {
+        color:    #fff;
+        opacity:  1;
+      }
 
-#masthead.s-active .col:nth-child(1) {
-    -webkit-animation-delay: 0;
-            animation-delay: 0;
-  }
-
-#masthead.is-active .col:nth-child(2) {
-    -webkit-animation-delay: 0.1s;
-            animation-delay: 0.1s;
-  }
-
-#masthead.is-active .col:nth-child(3) {
-      -webkit-animation-delay: 0.2s;
-              animation-delay: 0.2s;
-  }
-
-#masthead.is-active .col:nth-child(4) {
-      -webkit-animation-delay: 0.3s;
-              animation-delay: 0.3s;
-  }
-
-#masthead.is-active .col:nth-child(5) {
-      -webkit-animation-delay: 0.4s;
-              animation-delay: 0.4s;
-  }
+.navbar.is-active #navbar-search ::placeholder {
+        color:    #fff;
+        opacity:  1;
+      }
 
 /*!
  * Hamburgers
@@ -1002,28 +1109,27 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
   text-transform: none;
   transition: opacity 0.5s ease;
   font-weight: bold;
-
 }
 
 .hamburger:hover {
     opacity: 0.7;
   }
 
-.hamburger-box {
+.hamburger__outer {
     width: 30px;
     display: inline-block;
     position: relative; 
   }
 
-.hamburger-inner {
+.hamburger__inner {
     display: block;
     top: 50%;
     margin-top: -2px; 
   }
 
-.hamburger-inner, 
-  .hamburger-inner::before, 
-  .hamburger-inner::after {
+.hamburger__inner, 
+  .hamburger__inner::before, 
+  .hamburger__inner::after {
     width: 30px;
     height: 2px;
     background-color: bisque;
@@ -1036,21 +1142,21 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
     transition-timing-function: ease; 
   }
 
-.hamburger-inner::before, 
-  .hamburger-inner::after {
+.hamburger__inner::before, 
+  .hamburger__inner::after {
     content: "";
     display: block; 
   }
 
-.hamburger-inner::before {
+.hamburger__inner::before {
     top: -6px; 
   }
 
-.hamburger-inner::after {
+.hamburger__inner::after {
     bottom: -6px; 
   }
 
-.hamburger-label {
+.hamburger__label {
     color: #fff;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -1059,144 +1165,90 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
     text-transform: uppercase;
   }
 
-.hamburger-box,
-  .hamburger-label {
+.hamburger__outer,
+  .hamburger__label {
      vertical-align: middle;
   }
 
 /*
+  *
+  *
   * Boring
+  *
+  *
+  *
   */
 
-.hamburger--boring .hamburger-inner,
-      .hamburger--boring .hamburger-inner::before,
-      .hamburger--boring .hamburger-inner::after {
+.hamburger--boring .hamburger__inner,
+      .hamburger--boring .hamburger__inner::before,
+      .hamburger--boring .hamburger__inner::after {
         transition-property: none; 
       }
 
-.hamburger--boring.is-active .hamburger-inner {
-      -webkit-transform: rotate(45deg);
-              transform: rotate(45deg); 
-    }
+.hamburger--boring.is-active .hamburger__inner {
+        -webkit-transform: rotate(45deg);
+                transform: rotate(45deg); 
+      }
 
-.hamburger--boring.is-active .hamburger-inner::before {
+.hamburger--boring.is-active .hamburger__inner::before {
       top: 0;
       opacity: 0; 
-    }
+      }
 
-.hamburger--boring.is-active .hamburger-inner::after {
+.hamburger--boring.is-active .hamburger__inner::after {
       bottom: 0;
       -webkit-transform: rotate(-90deg);
               transform: rotate(-90deg); 
-    }
+      }
 
-#site-nav {
-  clear: both;
-  display: flex;
-  flex-direction: column; 
-  height: 0;
-  overflow: hidden;
-  padding-top: 0.5em;
-
-}
-
-#site-nav.is-active {
-    height: auto;
-    overflow: visible;
-  }
-
-#site-nav .col { 
-    padding-bottom: 0.1em;
-  }
-
-#site-nav h4 {
-    text-transform: uppercase;
-    color: bisque;
-    margin-top: 1.2em;
-    letter-spacing: 0.2em;
-    font-size: 0.9em;
-  }
-
-#site-nav ul {
-    list-style-type: none;
-    margin-top: 1em;
-  }
-
-#site-nav li {
-    margin-bottom: 0.3125em;
-  }
-
-#site-nav li a {
-    color: #ffffff;;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    font-size: 80%;
-    line-height: 1em;
-    font-weight: 400;
-      font-family: 'Lato', sans-serif;
-  }
-
-#site-nav li a:hover,
-  #site-nav li a:focus {
-    color: bisque;;;
-  }
-
-#site-nav .social {
-    margin: 0;
-    overflow: hidden;
-    margin-top: 1.2em;
-  }
-
-#site-nav .social li {
-    float: left;
-    margin: 0 0.3125em;
-    width: 32px;
-    height: 32px;
-  }
-
-#site-nav .social li svg {
-    display: block;
-    fill: bisque;
-    width: 100%;
-    height: 100%;
-    transition: fill 0.3s ease;
-  }
-
-#site-nav .social li:hover svg {
-    fill: #686d6e;
-  }
+/*
+*
+*
+*
+*Media Screeen
+*
+*
+*
+*/
 
 @media screen and (min-width: 550px) {
-  #site-nav {
+  .navbar_menu-container {
     flex-direction: row;
-    flex-wrap: wrap;
-  }
-  
-  #site-nav .col {
-    flex: 0 0 50%;
+    flex-wrap: wrap; 
   } 
+    .navbar_menu-container .col {
+    flex: 0 0 50%;
+    }
 }
 
 @media screen and (min-width: 768px) {
-  #site-nav .col {
+  .navbar_menu-container .col {
     flex: 0 0 33.333333333%;
   } 
 }
 
 @media screen and (min-width: 960px) {
-  #site-nav {
-    flex-wrap: nowrap;
+  .navbar_menu-container {
+    flex-wrap: nowrap;  
   }
-  
-  #site-nav .col {
+    .navbar_menu-container .col {
     flex: 0 0 16.7%;
-  } 
-  
-  #site-nav .col:last-child {
+    }
+    .navbar_menu-container .col:last-child {
     display: flex;
     justify-content: flex-end;
-  }  
+    }
 }
+
+/*
+*
+*
+*
+*Animations
+*
+*
+*
+*/
 
 @-webkit-keyframes fade-in-stagger {
     to {
@@ -1252,83 +1304,83 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 
 /* Slideshow container */
 
-#slideshow-container {
-  box-shadow: inset 0px 26px 11px -15px rgba(0,0,0,0.75);
-  background-color: rgb(224, 199, 130);
-  background-image: url(../../assets/images/pattern.svg);
-  background-blend-mode: soft-light;
-  width: 100%;
-  height: 600px;
-  position: relative;
-  background-size: 800px;
-}
+.slider__container {
+    box-shadow: inset 0px 26px 11px -15px rgba(0,0,0,0.75);
+    background-color: rgb(224, 199, 130);
+    background-image: url(../../assets/images/pattern.svg);
+    background-blend-mode: soft-light;
+    width: 100%;
+    height: 600px;
+    position: relative;
+    background-size: 800px;
+  }
 
 /* Hide the images by default */
 
-.slider-element {
+.slider__element {
     display: none;
-}
+  }
 
-.slider-image {
-  position: absolute;
-  height: 588px;
-  width: auto;
-  right: 355px;
-}
+.slider__image {
+    position: absolute;
+    height: 588px;
+    width: auto;
+    right: 355px;
+  }
 
-.slider-image:hover {
-  -webkit-transform: scale(1.01);
-          transform: scale(1.01);
-}
+.slider__image:hover {
+      -webkit-transform: scale(1.01);
+              transform: scale(1.01);
+    }
 
-.slider-inside-info {
-  left: 11%;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  font-weight: bold;
-  -webkit-transform: translate3d(0, -50%, 0);
-          transform: translate3d(0, -50%, 0);
-}
+.slider__text-container {
+    left: 11%;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    font-weight: bold;
+    -webkit-transform: translate3d(0, -50%, 0);
+            transform: translate3d(0, -50%, 0);
+  }
 
-.slider-inside-info p {
-  position: relative;
-  padding: 5px 5px 5px 5px;
-  text-align: left;
-  color: #1b246b;
-  font-weight: 300;
-  font-family: 'Lato', sans-serif;
-}
+.slider__text-container p {
+        position: relative;
+        padding: 5px 5px 5px 5px;
+        text-align: left;
+        color: #1b246b;
+        font-weight: 300;
+        font-family: 'Lato', sans-serif;
+      }
 
-.slider-inside-info span {
-  position: relative;
-}
+.slider__text-container span {
+        position: relative;
+      }
 
-.slider-inside-info button {
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  float: unset;
-}
+.slider__text-container button {
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        float: unset;
+      }
 
-.slider-inside-info button span {
-  color: #1b246b;
-}
+.slider__text-container button span {
+          color: #1b246b;
+        }
 
-.slider-inside-info .button--antiman::after {
-  background: unset;
-  border: 2px solid #1b246b;
-}
+.slider__text-container .button--antiman::after {
+        background: unset;
+        border: 2px solid #1b246b;
+      }
 
-.slider-inside-info .slider-caption-text {
-  font-size: 5.8em;
-  text-align: center;
-  font-weight: lighter;
-  line-height: 1em;
-  letter-spacing: 0.3em;
-  position: relative;
-  color: #1b246b;
-}
+.slider__text {
+    font-size: 6rem;
+    text-align: center;
+    font-weight: lighter;
+    line-height: 6rem;
+    letter-spacing: 3.125rem;
+    position: relative;
+    color: #1b246b;
+  }
 
 /* Next & previous buttons */
 
@@ -1341,7 +1393,7 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
   padding: 16px;
   color: #1b246b;
   font-weight: bold;
-  font-size: 22px;
+  font-size: 1.375rem;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   -webkit-transform: translate3d(0, -50%, 0);
@@ -1359,9 +1411,9 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 
 #prev:hover, #next:hover {
   background-color: rgba(0, 0, 0, 0.281);
-}
+  }
 
-.image-indicator-section {
+.indicator__container {
   text-align: center;
   display: inline-block;
   left: 0;
@@ -1369,30 +1421,29 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
   margin-left: auto;
   margin-right: auto;
   position: absolute;
-  top: 547px;
-  
-}
+  top: 547px; 
+  }
 
-.indicator-element {
-  background-color: #1b246b;
-  border: 2px solid rgb(40, 70, 167);
-  padding: 22px;
-  display: inline-block;
-}
+.indicator__element {
+    background-color: #1b246b;
+    border: 2px solid rgb(40, 70, 167);
+    padding: 22px;
+    display: inline-block;
+  }
 
-.indicator-element:hover {
-  background-color:rgb(214, 195, 146);
-}
+.indicator__element:hover {
+        background-color:rgb(214, 195, 146);
+      }
 
-.indicator-element img {
-  width: auto;
-  height: 100px;
-  opacity: 0.4;
-}
+.indicator__element img {
+        width: auto;
+        height: 100px;
+        opacity: 0.4;
+      }
 
-.indicator-element .opacity-off{
-  opacity: 1;
-}
+.indicator__element .opacity-off{
+        opacity: 1;
+      }
 
 /* Do not edit modules/_sprite directly as it is generated automatically by Gulp.
 Instead edit gulp/templates/sprite */

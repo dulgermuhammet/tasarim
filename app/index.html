@@ -12,9 +12,7 @@
   <link rel="stylesheet" type="text/css" media="screen" href="./temp/styles/style.css" />
 
 
-  
 <body class="disable-selection"> 
-
   <svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
     <defs>
         <symbol viewBox="0 0 60 60" id="icon-facebook">
@@ -28,25 +26,24 @@
         </symbol>
     </defs>
 </svg>
-
-<div class="hero">
-    <header id="masthead" role="banner">
+<div class="navbar__container">
+    <header class="navbar" role="banner">
       <div class="container">
         <button class="hamburger hamburger--boring" type="button">
-          <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
+          <span class="hamburger__outer">
+            <span class="hamburger__inner"></span>
           </span>
-          <span class="hamburger-label">Menü</span>
+          <span class="hamburger__label">Menü</span>
         </button>
-      <form id="masthead-search">
+      <form class="navbar__search">
       <input type="search" name="s" aria-labelledby="search-label" placeholder="Ara&hellip;" class="draw">
         <button type="submit"><i class="fas fa-search"></i></button>
       </form>
-      <div id="masthead-cart">
+      <div class="navbar__cart">
       <span><a href="https://www.w3schools.com"><i class="fas fa-user-circle"></i>HESABIM</a></span>
       <span><a href="https://www.w3schools.com">SEPETİM<i class="fas fa-shopping-cart"></i></a></span>
       </div>           
-        <nav id="site-nav" role="navigation">
+        <nav class="navbar_menu-container" role="navigation">
           <div class="col">
             <h4>GÜMÜŞ YÜZÜK</h4>
             <ul>
@@ -101,70 +98,59 @@
     </div>
   </header>
 </div>
-
  <!-- Slideshow container -->
-<div id="slideshow-container">
- 
+<div class="slider__container">
   <!-- Full-width images with number and caption text -->
-  <div class="slider-element">
-    <div class="slider-inside-info">
-        <div class="slider-caption-text">YÜZÜK</div>
+  <div class="slider__element">
+    <div class="slider__text-container">
+        <div class="slider__text">YÜZÜK</div>
         <p>Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir.  </p>
         <button class="button button--antiman button--round-l button--text-medium"><i class="button__icon icon icon-plus"></i><span>İNCELE</span></button>   
     </div>
-    <img class="slider-image" src="./assets/images/image1.png" >
+    <img class="slider__image" src="./assets/images/image1.png" >
   </div>
-
-  <div class="slider-element">
-      <div class="slider-inside-info">
-          <div class="slider-caption-text">KOLYE</div>
+  <div class="slider__element">
+      <div class="slider__text-container">
+          <div class="slider__text">KOLYE</div>
           <p>Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir.  </p>
           <button class="button button--antiman button--round-l button--text-medium"><i class="button__icon icon icon-plus"></i><span>İNCELE</span></button>  
       </div>
-      <img class="slider-image" src="./assets/images/image2.png" >
+      <img class="slider__image" src="./assets/images/image2.png" >
   </div>
-
-  <div class="slider-element">
-      <div class="slider-inside-info">
-          <div class="slider-caption-text">TESBİH</div>
+  <div class="slider__element">
+      <div class="slider__text-container">
+          <div class="slider__text">TESBİH</div>
           <p>Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir.  </p>
           <button class="button button--antiman button--round-l button--text-medium"><i class="button__icon icon icon-plus"></i><span>İNCELE</span></button>   
       </div>
-      <img class="slider-image" src="./assets/images/image3.png" >
+      <img class="slider__image" src="./assets/images/image3.png" >
   </div>
-
-  <div class="slider-element">
-      <div class="slider-inside-info">
-          <div class="slider-caption-text">BİLEKLİK</div>
+  <div class="slider__element">
+      <div class="slider__text-container">
+          <div class="slider__text">BİLEKLİK</div>
           <p>Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir.  </p>
           <button class="button button--antiman button--round-l button--text-medium"><i class="button__icon icon icon-plus"></i><span>İNCELE</span></button>   
       </div>
-      <img class="slider-image" src="./assets/images/image4.png" >
+      <img class="slider__image" src="./assets/images/image4.png" >
   </div>
-
-  
-
   <!-- Next and previous buttons -->
   <a id="prev">&#10094;</a>
   <a id="next">&#10095;</a>
-
-
-  <div class="image-indicator-section">
-    <div class="indicator-element">
-    <img class="indicator-img opacity-off" src="./assets/images/image1.png">
+  <!-- İndicators -->
+  <div class="indicator__container">
+    <div class="indicator__element">
+    <img class="indicator__img opacity-off" src="./assets/images/image1.png">
     </div>
-    <div class="indicator-element">
-      <img class="indicator-img " src="./assets/images/image2.png">
+    <div class="indicator__element">
+      <img class="indicator__img " src="./assets/images/image2.png">
     </div>
-    <div class="indicator-element">
-      <img class="indicator-img opacity-off" src="./assets/images/image3.png">
+    <div class="indicator__element">
+      <img class="indicator__img opacity-off" src="./assets/images/image3.png">
     </div>
-    <div class="indicator-element">
-      <img class="indicator-img opacity-off" src="./assets/images/image4.png">
+    <div class="indicator__element">
+      <img class="indicator__img opacity-off" src="./assets/images/image4.png">
     </div>
   </div>
-
-
 </div>
 <br>
 <script src="./temp/scripts/App.js"></script>
