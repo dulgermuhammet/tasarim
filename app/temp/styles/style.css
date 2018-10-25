@@ -9,8 +9,8 @@
  */
 
 html {
-  line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
+  line-height: 1.15; /* 1 */
 }
 
 /* Sections
@@ -30,8 +30,8 @@ body {
  */
 
 h1 {
-  font-size: 2em;
   margin: 0.67em 0;
+  font-size: 2em;
 }
 
 /* Grouping content
@@ -75,9 +75,9 @@ a {
  */
 
 abbr[title] {
+  -webkit-text-decoration: underline dotted;
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  -webkit-text-decoration: underline dotted;
           text-decoration: underline dotted; /* 2 */
 }
 
@@ -117,9 +117,9 @@ small {
 
 sub,
 sup {
+  position: relative;
   font-size: 75%;
   line-height: 0;
-  position: relative;
   vertical-align: baseline;
 }
 
@@ -155,10 +155,10 @@ input,
 optgroup,
 select,
 textarea {
+  margin: 0; /* 2 */
   font-family: inherit; /* 1 */
   font-size: 100%; /* 1 */
   line-height: 1.15; /* 1 */
-  margin: 0; /* 2 */
 }
 
 /**
@@ -167,8 +167,8 @@ textarea {
  */
 
 button,
-input { /* 1 */
-  overflow: visible;
+input {
+  overflow: visible; /* 1 */
 }
 
 /**
@@ -177,8 +177,8 @@ input { /* 1 */
  */
 
 button,
-select { /* 1 */
-  text-transform: none;
+select {
+  text-transform: none; /* 1 */
 }
 
 /**
@@ -200,8 +200,8 @@ button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
 [type="submit"]::-moz-focus-inner {
-  border-style: none;
   padding: 0;
+  border-style: none;
 }
 
 /**
@@ -212,6 +212,7 @@ button:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
 [type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
   outline: 0.0625rem dotted ButtonText;
 }
 
@@ -232,10 +233,10 @@ fieldset {
 
 legend {
   box-sizing: border-box; /* 1 */
-  color: inherit; /* 2 */
   display: table; /* 1 */
   max-width: 100%; /* 1 */
   padding: 0; /* 3 */
+  color: inherit; /* 2 */
   white-space: normal; /* 1 */
 }
 
@@ -282,6 +283,7 @@ textarea {
 
 [type="search"] {
   -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px;
   outline-offset: -0.125rem; /* 2 */
 }
 
@@ -361,16 +363,16 @@ template {
 
 @define-mixin clearfix {
   &::after {
-    content: "";
-    clear: both;
     display: table;
+    clear: both;
+    content: "";
   }
 }
 
 * {
   box-sizing: border-box;
-  padding:0;
   margin:0;
+  padding:0;
 }
 
 html {
@@ -378,11 +380,13 @@ html {
 }
 
 body {
+  overflow-x:hidden;
   font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
   font-size: 1rem;
+  line-height: 28px;
   line-height: 1.75rem;
   text-rendering: optimizeLegibility;
-  overflow-x:hidden;
 }
 
 a {
@@ -390,11 +394,12 @@ a {
 }
 
 .container {
-  text-align: center;
   width: 90%;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 1200px;
   max-width: 75rem;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
 }
 
 .container:after {
@@ -444,18 +449,20 @@ a {
 /* Common button styles */
 
 .button {
-	float: left;
-	min-width: 9.375rem;
-	max-width: 15.625rem;
 	display: block;
+	z-index: 1;
+	/*vertical-align: middle;*/
+	position: relative;
+	min-width: 150px;
+	min-width: 9.375rem;
+	max-width: 250px;
+	max-width: 15.625rem;
 	margin: 1em;
 	padding: 1em 2em;
+	float: left;
 	border: none;
 	background: none;
 	color: inherit;
-	/*vertical-align: middle;*/
-	position: relative;
-	z-index: 1;
 }
 
 .button:focus {
@@ -469,37 +476,41 @@ a {
 /* Text color adjustments (we could stick to the "inherit" but that does not work well in Safari) */
 
 .bg-1 .button {
-	color: #37474f;
 	border-color: #37474f;
+	color: #37474f;
 }
 
 .bg-2 .button {
-	color: #ECEFF1;
 	border-color: #ECEFF1;
+	color: #ECEFF1;
 }
 
 .bg-3 .button {
-	color: #fff;
 	border-color: #fff;
+	color: #fff;
 }
 
 /* Sizes */
 
 .button--size-s {
+	font-size: 14px;
 	font-size: 0.875rem;
 }
 
 .button--size-m {
+	font-size: 16px;
 	font-size: 1rem;
 }
 
 .button--size-l {
+	font-size: 18px;
 	font-size: 1.125rem;
 }
 
 /* Typography and Roundedness */
 
 .button--text-upper {
+	letter-spacing: 2px;
 	letter-spacing: 0.125rem;
 	text-transform: uppercase;
 }
@@ -517,36 +528,43 @@ a {
 }
 
 .button--round-s {
+	border-radius: 5px;
 	border-radius: 0.3125rem;
 }
 
 .button--round-m {
+	border-radius: 15px;
 	border-radius: 0.9375rem;
 }
 
 .button--round-l {
+	border-radius: 40px;
 	border-radius: 2.5rem;
 }
 
 /* Borders */
 
 .button--border-thin {
+	border: 1px solid;
 	border: 0.0625rem solid;
 }
 
 .button--border-medium {
+	border: 2px solid;
 	border: 0.125rem solid;
 }
 
 .button--border-thick {
+	border: 3px solid;
 	border: 0.1875rem solid;
 }
 
 * Antiman */
 .button--antiman {
-	background: none;
-	border: none;
+	height: 60px;
 	height: 3.75rem;
+	border: none;
+	background: none;
 }
 
 .button--antiman.button--inverted,
@@ -561,15 +579,15 @@ a {
 
 .button--antiman::before,
 .button--antiman::after {
-	content: '';
 	z-index: -1;
-	border-radius: inherit;
-	pointer-events: none;
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
+	border-radius: inherit;
+	content: '';
+	pointer-events: none;
 	transition: opacity 0.3s, -webkit-transform 0.3s;
 	transition: transform 0.3s, opacity 0.3s;
 	transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
@@ -577,21 +595,25 @@ a {
 }
 
 .button--antiman::before {
-	border: 0.125rem solid #37474f;
-	opacity: 0;
 	-webkit-transform: scale3d(1.2, 1.2, 1);
 	        transform: scale3d(1.2, 1.2, 1);
+	border: 2px solid #37474f;
+	border: 0.125rem solid #37474f;
+	opacity: 0;
 }
 
 .button--antiman.button--border-thin::before {
+	border-width: 1px;
 	border-width: 0.0625rem;
 }
 
 .button--antiman.button--border-medium::before {
+	border-width: 2px;
 	border-width: 0.125rem;
 }
 
 .button--antiman.button--border-thick::before {
+	border-width: 3px;
 	border-width: 0.1875rem;
 }
 
@@ -624,48 +646,55 @@ a {
 }
 
 .button--antiman:hover::before {
-	opacity: 1;
 	-webkit-transform: scale3d(1, 1, 1);
 	        transform: scale3d(1, 1, 1);
+	opacity: 1;
 }
 
 .button--antiman:hover::after {
-	opacity: 0;
 	-webkit-transform: scale3d(0.8, 0.8, 1);
 	        transform: scale3d(0.8, 0.8, 1);
+	opacity: 0;
 }
 
 .row::after {
-    content: "";
-    clear: both;
     display: table;
+    clear: both;
+    content: "";
   }
 
 .row--t-padding {
+    padding-top: 80px;
     padding-top: 5rem;
   }
 
 .row--gutters {
+    margin-right: -65px;
     margin-right: -4.0625rem;
   }
 
 .row--gutters-large {
+    margin-right: -100px;
     margin-right: -6.25rem;
   }
 
 .row--gutters-small {
+    margin-right: -45px;
     margin-right: -2.8125rem;
   }
 
 .row--gutters > div {
+    padding-right: 65px;
     padding-right: 4.0625rem;
   }
 
 .row--gutters-large > div {
+    padding-right: 100px;
     padding-right: 6.25rem;
   }
 
 .row--gutters-small > div {
+    padding-right: 45px;
     padding-right: 2.8125rem;
   }
 
@@ -680,8 +709,8 @@ a {
     }
 
     .row__medium-4 {
-      float: left;
       width: 33.33%;
+      float: left;
     }
 
     .row__medium-4--larger {
@@ -689,13 +718,13 @@ a {
     }
 
     .row__medium-6 {
-      float: left;
       width: 50%;
+      float: left;
     }
 
     .row__medium-8{
-        float: left;
         width: 66.66%;
+        float: left;
     }
 
     .row__medium-8--smaller {
@@ -710,8 +739,8 @@ a {
     }
 
     .row__large-4 {
-      float: left;
       width: 33.33%;
+      float: left;
     }
 
     .row__large-4--larger {
@@ -719,13 +748,13 @@ a {
     }
 
     .row__large-6 {
-      float: left;
       width: 50%;
+      float: left;
     }
 
     .row__large-8{
-        float: left;
         width: 66.66%;
+        float: left;
     }
 
     .row__large-8--smaller {
@@ -743,8 +772,8 @@ a {
     }
 
 .flexbox .row--equal-height-at-medium > div {
-      float: none;
       display: flex;
+      float: none;
     }
 
 @media (min-width: 1010px) {
@@ -755,8 +784,8 @@ a {
     }
 
 .flexbox .row--equal-height-at-large > div {
-      float: none;
       display: flex;
+      float: none;
     }
 
 /*
@@ -795,8 +824,8 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
   */
 
 .navbar__container * {
-  position: relative;
   z-index: 1;
+  position: relative;
   }
 
 /*
@@ -811,17 +840,18 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
   */
 
 .navbar__container:after {
-    content: '';
-    background: #1b246c;
     position: absolute;
     top: 0;
     width: 100%;
+    height: 732px;
     height: 45.75rem;
+    background: #1b246c;
+    content: '';
   }
 
 .navbar {
-  padding: 0 0 0 0;
   position: relative;
+  padding: 0 0 0 0;
 }
 
 .navbar::-webkit-input-placeholder {
@@ -849,44 +879,49 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
   }
 
 .navbar:after {
-    content: '';
     position: absolute;
     top: 0;
     width: 100%;
     height: 100%;
     background-color: #1b246c;
+    content: '';
     opacity: 0;
     transition: opacity 0.3s ease;
   }
 
 .navbar__cart {
+    position: relative;
     margin: 0.8125em 0 0;
-    border: 0.0625rem solid bisque;
+    padding: 9px 0px 6px 0px;
     padding: 0.5625rem 0 0.375rem 0;
     float: right;
-    position: relative;
+    border: 1px solid bisque;
+    border: 0.0625rem solid bisque;
   }
 
 .navbar__cart span {
+        display: inline-block;
+        position: relative;
+        padding: 0px 8px 0px 8px;
+        padding: 0 0.5rem 0 0.5rem;
         color: #fff;
         font: inherit;
         font-weight: bold;
-        position: relative;
-        display: inline-block;
-        padding: 0 0.5rem 0 0.5rem;
         transition: opacity 0.5s ease;
     }
 
 .navbar__cart span a {
+        display: inline-block;
         color: #fff;
         font: inherit;
-        display: inline-block;
-        text-decoration: none;
-        font-weight: bold;
+        font-size: 14px;
         font-size: 0.875rem;
+        font-weight: bold;
+        text-decoration: none;
       }
 
 .navbar__cart span i {
+        padding: 0px 5px 0px 5px;
         padding: 0 0.3125rem 0 0.3125rem;
         color: bisque;
       }
@@ -897,48 +932,50 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 
 .navbar__search {
     display: inline-block;
-    margin-top: 0.825em;
+    position: relative;
     width: 100%;
     max-width: 50%;
-    position: relative;
+    margin-top: 0.825em;
     }
 
 .navbar__search input {
-        background: #ffe4c429;
-        border: none;
-        border-color: bisque;
-        border-style: solid;
-        border-width: 0.0625rem;
-        outline: none;
         width: 100%;
         padding: 0.64em 1.425em;
+        border: none;
+        border-width: 1px;
+        border-width: 0.0625rem;
+        border-style: solid;
+        border-color: bisque;
+        outline: none;
+        background: #ffe4c429;
         transition: box-shadow 0.5s ease;
       }
 
 .navbar__search :hover {
+        box-shadow: 0px 0px 13px -2px rgba(253, 253, 253, 0.75);
         box-shadow: 0 0 0.8125rem -0.125rem rgba(253, 253, 253, 0.75);
       }
 
 .navbar__search button {
-        background: none;
-        border: none;
-        color: #fff;
-        font-size: 1em;
-        padding: 0;
+        -webkit-transform: translateY(-50%);
         position: absolute;
         top: 50%;
         right: 0.75em;
-        -webkit-transform: translateY(-50%);
+        padding: 0;
                 transform: translateY(-50%);
+        border: none;
+        background: none;
+        color: #fff;
+        font-size: 1em;
       }
 
 .navbar_menu-container {
-    clear: both;
     display: flex;
     flex-direction: column; 
     height: 0;
-    overflow: hidden;
     padding-top: 0.5em;
+    clear: both;
+    overflow: hidden;
   }
 
 .navbar_menu-container.is-active {
@@ -951,16 +988,16 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
     }
 
 .navbar_menu-container h4 {
-      text-transform: uppercase;
-      color: bisque;
       margin-top: 1.2em;
-      letter-spacing: 0.2em;
+      color: bisque;
       font-size: 0.9em;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
     }
 
 .navbar_menu-container ul {
-      list-style-type: none;
       margin-top: 1em;
+      list-style-type: none;
     }
 
 .navbar_menu-container li {
@@ -968,13 +1005,13 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
     }
 
 .navbar_menu-container li a {
-      color: #ffffff;;
+      color: #ffffff;
+      font-family: 'Lato', sans-serif;
+      font-size: 80%;
+      font-weight: 400;
+      line-height: 1em;;
       text-decoration: none;
       transition: color 0.3s ease;
-      font-size: 80%;
-      line-height: 1em;
-      font-weight: 400;
-      font-family: 'Lato', sans-serif;
       }
 
 .navbar_menu-container li a:hover,
@@ -984,20 +1021,22 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 
 .navbar_menu-container .social {
       margin: 0;
-      overflow: hidden;
       margin-top: 1.2em;
+      overflow: hidden;
     }
 
 .navbar_menu-container .social li {
-          float: left;
-          margin: 0 0.3125em;
+          width: 32px;
           width: 2rem;
+          height: 32px;
           height: 2rem;
+          margin: 0 0.3125em;
+          float: left;
         }
 
 .navbar_menu-container .social li svg {
-            display: block;
             fill: bisque;
+            display: block;
             width: 100%;
             height: 100%;
             transition: fill 0.3s ease;
@@ -1008,6 +1047,7 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
       }
 
 .navbar.is-active {
+    box-shadow: 0 4px 4px rgb(27, 36, 107);
     box-shadow: 0 0.25rem 0.25rem rgb(27, 36, 107);      
   }
 
@@ -1026,12 +1066,14 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
         }
 
 .navbar.is-active .col {
+        -webkit-transform: translateY(40px);
         -webkit-transform: translateY(2.5rem);
-                transform: translateY(2.5rem);
-        transition: opacity 0.3s ease;
         -webkit-animation: fade-in-stagger 0.8s ease forwards;
-                animation: fade-in-stagger 0.8s ease forwards;
+                transform: translateY(40px);
+                transform: translateY(2.5rem);
         text-align: left;
+                animation: fade-in-stagger 0.8s ease forwards;
+        transition: opacity 0.3s ease;
       }
 
 .navbar.is-active .col:nth-child(1) {
@@ -1096,19 +1138,21 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
  */
 
 .hamburger {
-  background-color: transparent;
-  border: 0.0625rem solid bisque;
-  color: inherit;
-  cursor: pointer;
-  float: left;
-  font: inherit;
   margin: 0.8125em 0 0;
-  overflow: visible; 
-  outline: none;
+  padding: 9px 6px 6px 7px;
   padding: 0.5625rem 0.375rem 0.375rem 0.4375rem;
-  text-transform: none;
-  transition: opacity 0.5s ease;
+  float: left;
+  overflow: visible;
+  border: 1px solid bisque;
+  border: 0.0625rem solid bisque; 
+  outline: none;
+  background-color: transparent;
+  color: inherit;
+  font: inherit;
   font-weight: bold;
+  text-transform: none;
+  cursor: pointer;
+  transition: opacity 0.5s ease;
 }
 
 .hamburger:hover {
@@ -1116,52 +1160,59 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
   }
 
 .hamburger__outer {
-    width: 1.875rem;
     display: inline-block;
-    position: relative; 
+    position: relative;
+    width: 30px;
+    width: 1.875rem; 
   }
 
 .hamburger__inner {
     display: block;
     top: 50%;
+    margin-top: -2px;
     margin-top: -0.125rem; 
   }
 
 .hamburger__inner, 
   .hamburger__inner::before, 
   .hamburger__inner::after {
-    width: 1.875rem;
-    height: 0.125rem;
-    background-color: bisque;
-    border-radius: 0.25rem;
     position: absolute;
+    width: 30px;
+    width: 1.875rem;
+    height: 2px;
+    height: 0.125rem;
+    border-radius: 4px;
+    border-radius: 0.25rem;
+    background-color: bisque;
+    transition-duration: 0.15s;
     transition-property: -webkit-transform;
     transition-property: transform;
     transition-property: transform, -webkit-transform;
-    transition-duration: 0.15s;
     transition-timing-function: ease; 
   }
 
 .hamburger__inner::before, 
   .hamburger__inner::after {
-    content: "";
-    display: block; 
+    display: block;
+    content: ""; 
   }
 
 .hamburger__inner::before {
+    top: -6px;
     top: -0.375rem; 
   }
 
 .hamburger__inner::after {
+    bottom: -6px;
     bottom: -0.375rem; 
   }
 
 .hamburger__label {
+    margin-left: 0.3125em;
     color: #fff;
     font-weight: 700;
     letter-spacing: 0.08em;
     line-height: 1;
-    margin-left: 0.3125em;
     text-transform: uppercase;
   }
 
@@ -1196,8 +1247,8 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
       }
 
 .hamburger--boring.is-active .hamburger__inner::after {
-      bottom: 0;
       -webkit-transform: rotate(-90deg);
+      bottom: 0;
               transform: rotate(-90deg); 
       }
 
@@ -1252,17 +1303,17 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 
 @-webkit-keyframes fade-in-stagger {
     to {
-      opacity: 1;
       -webkit-transform: translateY(0);
-              transform: translateY(0); 
+              transform: translateY(0);
+      opacity: 1; 
     }
 }
 
 @keyframes fade-in-stagger {
     to {
-      opacity: 1;
       -webkit-transform: translateY(0);
-              transform: translateY(0); 
+              transform: translateY(0);
+      opacity: 1; 
     }
 }
 
@@ -1305,14 +1356,17 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 /* Slideshow container */
 
 .slider__container {
-    box-shadow: inset 0 1.625rem 0.6875rem -0.9375rem rgba(0,0,0,0.75);
+    position: relative;
+    width: 100%;
+    height: 600px;
+    height: 37.5rem;
+    background-blend-mode: soft-light;
     background-color: rgb(224, 199, 130);
     background-image: url(../../assets/images/pattern.svg);
-    background-blend-mode: soft-light;
-    width: 100%;
-    height: 37.5rem;
-    position: relative;
+    background-size: 800px;
     background-size: 50rem;
+    box-shadow: inset 0px 26px 11px -15px rgba(0,0,0,0.75);
+    box-shadow: inset 0 1.625rem 0.6875rem -0.9375rem rgba(0,0,0,0.75);
   }
 
 /* Hide the images by default */
@@ -1323,9 +1377,11 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 
 .slider__image {
     position: absolute;
-    height: 36.75rem;
-    width: auto;
+    right: 355px;
     right: 22.1875rem;
+    width: auto;
+    height: 588px;
+    height: 36.75rem;
   }
 
 .slider__image:hover {
@@ -1334,22 +1390,23 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
     }
 
 .slider__text-container {
-    left: 11%;
+    -webkit-transform: translate3d(0, -50%, 0);
     position: absolute;
     top: 50%;
+    left: 11%;
     width: auto;
-    font-weight: bold;
-    -webkit-transform: translate3d(0, -50%, 0);
             transform: translate3d(0, -50%, 0);
+    font-weight: bold;
   }
 
 .slider__text-container p {
         position: relative;
+        padding: 5px 5px 5px 5px;
         padding: 0.3125rem 0.3125rem 0.3125rem 0.3125rem;
-        text-align: center;
         color: #1b246b;
-        font-weight: 300;
         font-family: 'Lato', sans-serif;
+        font-weight: 300;
+        text-align: center;
       }
 
 .slider__text-container span {
@@ -1357,9 +1414,9 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
       }
 
 .slider__text-container button {
-        margin-left: auto;
-        margin-right: auto;
         position: relative;
+        margin-right: auto;
+        margin-left: auto;
         float: unset;
       }
 
@@ -1368,42 +1425,51 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
         }
 
 .slider__text-container .button--antiman::after {
-        background: unset;
+        border: 2px solid #1b246b;
         border: 0.125rem solid #1b246b;
+        background: unset;
       }
 
 .slider__text {
-    font-size: 6rem;
-    text-align: center;
-    font-weight: lighter;
-    line-height: 6rem;
-    letter-spacing: 3.125rem;
     position: relative;
     color: #1b246b;
+    font-size: 96px;
+    font-size: 6rem;
+    font-weight: lighter;
+    letter-spacing: 50px;
+    letter-spacing: 3.125rem;
+    line-height: 96px;
+    line-height: 6rem;
+    text-align: center;
   }
 
 /* Next & previous buttons */
 
 #prev, #next {
-  cursor: pointer;
+  -webkit-transform: translate3d(0, -50%, 0);
   position: absolute;
   top: 50%;
   width: auto;
+  margin-top: -22px;
   margin-top: -1.375rem;
+  padding: 16px;
   padding: 1rem;
-  color: #1b246b;
-  font-weight: bold;
-  font-size: 1.375rem;
-  transition: 0.6s ease;
-  border-radius: 0 0.1875rem 0.1875rem 0;
-  -webkit-transform: translate3d(0, -50%, 0);
           transform: translate3d(0, -50%, 0);
+  border-radius: 0 3px 3px 0;
+  border-radius: 0 0.1875rem 0.1875rem 0;
+  color: #1b246b;
+  font-size: 22px;
+  font-size: 1.375rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.6s ease;
 }
 
 /* Position the "next button" to the right */
 
 #next {
   right: 0;
+  border-radius: 3px 0 0 3px;
   border-radius: 0.1875rem 0 0 0.1875rem;
 }
 
@@ -1414,21 +1480,24 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
   }
 
 .indicator__container {
-  text-align: center;
   display: inline-block;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
   position: absolute;
-  top: 34.1875rem; 
+  top: 547px;
+  top: 34.1875rem;
+  right: 0;
+  left: 0;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center; 
   }
 
 .indicator__element {
-    background-color: #1b246b;
-    border: 0.125rem solid rgb(40, 70, 167);
-    padding: 1.375rem;
     display: inline-block;
+    padding: 22px;
+    padding: 1.375rem;
+    border: 2px solid rgb(40, 70, 167);
+    border: 0.125rem solid rgb(40, 70, 167);
+    background-color: #1b246b;
   }
 
 .indicator__element:hover {
@@ -1437,6 +1506,7 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 
 .indicator__element img {
         width: auto;
+        height: 100px;
         height: 6.25rem;
         opacity: 0.4;
       }
@@ -1457,73 +1527,97 @@ Instead edit gulp/templates/sprite */
     }
 
 .icon--clear-view-escapes {
+    width: 144.4px;
     width: 9.025rem;
+    height: 61.53px;
     height: 3.84563rem;
     background-position: 0 0;
   }
 
 .icon--comment {
+    width: 66px;
     width: 4.125rem;
+    height: 66px;
     height: 4.125rem;
     background-position: 99.71014492753623% 0;
   }
 
 .icon--facebook {
+    width: 23.23px;
     width: 1.45188rem;
+    height: 44.01px;
     height: 2.75063rem;
     background-position: 26.424310365536293% 45.92133741323979%;
   }
 
 .icon--fire {
+    width: 58px;
     width: 3.625rem;
+    height: 66px;
     height: 4.125rem;
     background-position: 0 99.58035714285714%;
   }
 
 .icon--globe {
+    width: 66px;
     width: 4.125rem;
+    height: 66px;
     height: 4.125rem;
     background-position: 28.019323671497585% 99.58035714285714%;
   }
 
 .icon--instagram {
+    width: 44.01px;
     width: 2.75063rem;
+    height: 44.01px;
     height: 2.75063rem;
     background-position: 63.059522249879905% 49.25740726919919%;
   }
 
 .icon--mail {
+    width: 66px;
     width: 4.125rem;
+    height: 50px;
     height: 3.125rem;
     background-position: 0 48.0703125%;
   }
 
 .icon--rain {
+    width: 66px;
     width: 4.125rem;
+    height: 66px;
     height: 4.125rem;
     background-position: 99.71014492753623% 58.92857142857143%;
   }
 
 .icon--star {
+    width: 66px;
     width: 4.125rem;
+    height: 66px;
     height: 4.125rem;
     background-position: 59.90338164251208% 99.58035714285714%;
   }
 
 .icon--twitter {
+    width: 53.78px;
     width: 3.36125rem;
+    height: 44.06px;
     height: 2.75375rem;
     background-position: 94.15199343125627% 98.55159026429745%;
   }
 
 .icon--wifi {
+    width: 62px;
     width: 3.875rem;
+    height: 66px;
     height: 4.125rem;
     background-position: 68.43601895734596% 0;
   }
 
 .icon--youtube {
+    width: 36.75px;
     width: 2.29688rem;
+    height: 44px;
     height: 2.75rem;
     background-position: 37.76931216931217% 45.917910447761194%;
   }
