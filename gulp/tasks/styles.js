@@ -20,7 +20,8 @@ gulp.task('styles', function() {
       browsers: 'last 1 version'
     }),
     pxtorem({
-      replace: true
+      replace: true,
+      propList: ['*']
     })
   ];
   return gulp.src('./app/assets/styles/style.css')
