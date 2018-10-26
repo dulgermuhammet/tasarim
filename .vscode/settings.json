@@ -1,0 +1,12 @@
+{
+    "files.exclude": {
+        "node_modules/": true,
+        "gulp/": true,
+        "*/temp": true,
+        "**/.*": true,
+        "*.md": true,
+        "*.json": true,
+        "gulpfile.js": true,
+        "webpack.config.js": true,
+    }
+}
