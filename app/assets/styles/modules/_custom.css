@@ -1,0 +1,10 @@
+/* Custom Animate Css Codes */
+
+.animated.delay-05s {
+  animation-delay: 0.5s;
+}
+
+
+.disable-selection {
+  user-select: none;
+}

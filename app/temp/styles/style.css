@@ -343,31 +343,18 @@ template {
   display: none;
 }
 
-@define-mixin atSmall {
-  @media (min-width: 530px) {
-    @mixin-content;
-  }
-}
+/* Media Queries
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-@define-mixin atMedium {
-  @media (min-width: 800px) {
-    @mixin-content;
-  }
-}
+/*
+Note: The best way to structure the use of media queries is to create the queries
+near the relevant code. For example, if you wanted to change the styles for buttons
+on small devices, paste the mobile query code up in the buttons section and style it
+there.
+*/
 
-@define-mixin atLarge {
-  @media (min-width: 1010px) {
-    @mixin-content;
-  }
-}
-
-@define-mixin clearfix {
-  &::after {
-    display: table;
-    clear: both;
-    content: "";
-  }
-}
+/* Clearing
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 * {
   box-sizing: border-box;
@@ -375,50 +362,370 @@ template {
   padding:0;
 }
 
+/* Base Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* NOTE
+html is set to 62.5% so that all the REM measurements throughout Skeleton
+are based on 10px sizing. So basically 1.5rem = 15px :) */
+
 html {
   font-size: 100%;
 }
 
 body {
   overflow-x:hidden;
-  font-family: 'Montserrat', sans-serif;
+  background-color:#f2f2f2;
+  color:#222;
+  font-family: "Montserrat","HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-size: 1rem;
-  line-height: 28px;
-  line-height: 1.75rem;
+  line-height: 18px;
+  line-height: 1.125rem;
   text-rendering: optimizeLegibility;
 }
 
-a {
-  color: #d59541;
+/* Typography
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  margin-bottom: 0.9375rem;
+  font-weight: 300; }
+
+h1 { font-size: 64px; font-size: 4rem;  letter-spacing: -.1rem; line-height: 1.2;}
+
+h2 { font-size: 57px; font-size: 3.5625rem; letter-spacing: -.1rem; line-height: 1.25; }
+
+h3 { font-size: 48px; font-size: 3rem;  letter-spacing: -.1rem; line-height: 1.3; }
+
+h4 { font-size: 38px; font-size: 2.375rem; letter-spacing: -.08rem; line-height: 1.35; }
+
+h5 { font-size: 28px; font-size: 1.75rem;  letter-spacing: -.05rem; line-height: 1.5; }
+
+h6 { font-size: 24px; font-size: 1.5rem;  letter-spacing: 0; line-height: 1.6; }
+
+/* Larger than phablet */
+
+@media (min-width: 550px) {
+  h1 { font-size: 5.0rem; }
+  h2 { font-size: 4.2rem; }
+  h3 { font-size: 3.6rem; }
+  h4 { font-size: 3.0rem; }
+  h5 { font-size: 2.4rem; }
+  h6 { font-size: 1.5rem; }
 }
+
+p {
+  margin-top: 0; }
+
+/* Links
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+a {
+  color: #1EAEDB; }
+
+a:hover {
+  color: #0FA0CE; }
+
+/* Forms
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea,
+select {
+  box-sizing: border-box;
+  height: 38px;
+  height: 2.375rem;
+  padding: 6px 10px;
+  padding: 0.375rem 0.625rem; /* The 6px vertically centers text on FF, ignored by Webkit */
+  border: 1px solid #D1D1D1;
+  border: 0.0625rem solid #D1D1D1;
+  border-radius: 4px;
+  border-radius: 0.25rem;
+  background-color: #fff;
+  box-shadow: none; }
+
+/* Removes awkward default styles on some inputs for iOS */
+
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea {
+          -webkit-appearance: none;
+             -moz-appearance: none;
+                  appearance: none; }
+
+textarea {
+  min-height: 65px;
+  min-height: 4.0625rem;
+  padding-top: 6px;
+  padding-top: 0.375rem;
+  padding-bottom: 6px;
+  padding-bottom: 0.375rem; }
+
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  border: 1px solid #33C3F0;
+  border: 0.0625rem solid #33C3F0;
+  outline: 0; }
+
+label,
+legend {
+  display: block;
+  margin-bottom: .5rem;
+  font-weight: 600; }
+
+fieldset {
+  padding: 0;
+  border-width: 0; }
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline; }
+
+label > .label-body {
+  display: inline-block;
+  margin-left: .5rem;
+  font-weight: normal; }
+
+/* Lists
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+ul {
+  list-style: circle inside; }
+
+ol {
+  list-style: decimal inside; }
+
+ol, ul {
+  margin-top: 0;
+  padding-left: 0; }
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin: 1.5rem 0 1.5rem 3rem;
+  font-size: 90%; }
+
+li {
+  margin-bottom: 1rem; }
+
+/* Code
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+code {
+  margin: 0 .2rem;
+  padding: .2rem .5rem;
+  border: 1px solid #E1E1E1;
+  border: 0.0625rem solid #E1E1E1;
+  border-radius: 4px;
+  border-radius: 0.25rem;
+  background: #F1F1F1;
+  font-size: 90%;
+  white-space: nowrap; }
+
+pre > code {
+  display: block;
+  padding: 1rem 1.5rem;
+  white-space: pre; }
+
+/* Tables
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+th,
+td {
+  padding: 12px 15px;
+  padding: 0.75rem 0.9375rem;
+  border-bottom: 1px solid #E1E1E1;
+  border-bottom: 0.0625rem solid #E1E1E1;
+  text-align: left; }
+
+th:first-child,
+td:first-child {
+  padding-left: 0; }
+
+th:last-child,
+td:last-child {
+  padding-right: 0; }
+
+/* Spacing
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+button,
+.button {
+  margin-bottom: 15px;
+  margin-bottom: 0.9375rem; }
+
+input,
+textarea,
+select,
+fieldset {
+  margin-bottom: 15px;
+  margin-bottom: 0.9375rem; }
+
+pre,
+blockquote,
+dl,
+figure,
+table,
+p,
+ul,
+ol,
+form {
+  margin-bottom: 15px;
+  margin-bottom: 0.9375rem; }
+
+/* Utilities
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.u-full-width {
+  box-sizing: border-box;
+  width: 100%; }
+
+.u-max-full-width {
+  box-sizing: border-box;
+  max-width: 100%; }
+
+.u-pull-right {
+  float: right; }
+
+.u-pull-left {
+  float: left; }
+
+/* Misc
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+hr {
+  margin-top: 3rem;
+  margin-bottom: 3.5rem;
+  border-top: 1px solid #E1E1E1;
+  border-top: 0.0625rem solid #E1E1E1;
+  border-width: 0; }
+
+/* Grid
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 .container {
-  width: 90%;
+  position: relative;
+  width: 100%;
   max-width: 1200px;
   max-width: 75rem;
-  margin-right: auto;
-  margin-left: auto;
-  text-align: center;
+  margin: 0 auto;
+  padding: 0 20px;
+  padding: 0 1.25rem;}
+
+.container.full {
+  width: 100%;
+  max-width: unset;}
+
+.column,
+.columns {
+  width: 100%;
+  float: left;}
+
+/* For devices larger than 400px */
+
+@media (min-width: 400px) {
+  .container {
+    width: 85%;
+    padding: 0; }
 }
 
-.container:after {
-  @clearfix;
+/* For devices larger than 550px */
+
+@media (min-width: 550px) {
+  .container {
+    width: 80%; }
+  .column,
+  .columns {
+    margin-left: 4%; }
+  .column:first-child,
+  .columns:first-child {
+    margin-left: 0; }
+
+  .one.column,
+  .one.columns                    { width: 4.66666666667%; }
+  .two.columns                    { width: 13.3333333333%; }
+  .three.columns                  { width: 22%;            }
+  .four.columns                   { width: 30.6666666667%; }
+  .five.columns                   { width: 39.3333333333%; }
+  .six.columns                    { width: 48%;            }
+  .seven.columns                  { width: 56.6666666667%; }
+  .eight.columns                  { width: 65.3333333333%; }
+  .nine.columns                   { width: 74.0%;          }
+  .ten.columns                    { width: 82.6666666667%; }
+  .eleven.columns                 { width: 91.3333333333%; }
+  .twelve.columns                 { width: 100%; margin-left: 0; }
+
+  .one-third.column               { width: 30.6666666667%; }
+  .two-thirds.column              { width: 65.3333333333%; }
+
+  .one-half.column                { width: 48%; }
+
+  /* Offsets */
+  .offset-by-one.column,
+  .offset-by-one.columns          { margin-left: 8.66666666667%; }
+  .offset-by-two.column,
+  .offset-by-two.columns          { margin-left: 17.3333333333%; }
+  .offset-by-three.column,
+  .offset-by-three.columns        { margin-left: 26%;            }
+  .offset-by-four.column,
+  .offset-by-four.columns         { margin-left: 34.6666666667%; }
+  .offset-by-five.column,
+  .offset-by-five.columns         { margin-left: 43.3333333333%; }
+  .offset-by-six.column,
+  .offset-by-six.columns          { margin-left: 52%;            }
+  .offset-by-seven.column,
+  .offset-by-seven.columns        { margin-left: 60.6666666667%; }
+  .offset-by-eight.column,
+  .offset-by-eight.columns        { margin-left: 69.3333333333%; }
+  .offset-by-nine.column,
+  .offset-by-nine.columns         { margin-left: 78.0%;          }
+  .offset-by-ten.column,
+  .offset-by-ten.columns          { margin-left: 86.6666666667%; }
+  .offset-by-eleven.column,
+  .offset-by-eleven.columns       { margin-left: 95.3333333333%; }
+
+  .offset-by-one-third.column,
+  .offset-by-one-third.columns    { margin-left: 34.6666666667%; }
+  .offset-by-two-thirds.column,
+  .offset-by-two-thirds.columns   { margin-left: 69.3333333333%; }
+
+  .offset-by-one-half.column,
+  .offset-by-one-half.columns     { margin-left: 52%; }
+
 }
 
-/* Custom Animate Css Codes */
+/* Clearing
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-.animated.delay-05s {
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
-}
+/* Self Clearing Goodness */
 
-.disable-selection {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
+.container:after, .row:after, .u-cf:after {
+    display: table;
+    clear: both;
+    content: "";
+  }
 
 /*
 *
@@ -657,137 +964,6 @@ a {
 	opacity: 0;
 }
 
-.row::after {
-    display: table;
-    clear: both;
-    content: "";
-  }
-
-.row--t-padding {
-    padding-top: 80px;
-    padding-top: 5rem;
-  }
-
-.row--gutters {
-    margin-right: -65px;
-    margin-right: -4.0625rem;
-  }
-
-.row--gutters-large {
-    margin-right: -100px;
-    margin-right: -6.25rem;
-  }
-
-.row--gutters-small {
-    margin-right: -45px;
-    margin-right: -2.8125rem;
-  }
-
-.row--gutters > div {
-    padding-right: 65px;
-    padding-right: 4.0625rem;
-  }
-
-.row--gutters-large > div {
-    padding-right: 100px;
-    padding-right: 6.25rem;
-  }
-
-.row--gutters-small > div {
-    padding-right: 45px;
-    padding-right: 2.8125rem;
-  }
-
-.row__b-margin-until-medium {
-    margin-bottom: 1rem;
-  }
-
-@media (min-width: 800px) {
-
-    .row__b-margin-until-medium {
-      margin-bottom: 0;
-    }
-
-    .row__medium-4 {
-      width: 33.33%;
-      float: left;
-    }
-
-    .row__medium-4--larger {
-      width: 37%;
-    }
-
-    .row__medium-6 {
-      width: 50%;
-      float: left;
-    }
-
-    .row__medium-8{
-        width: 66.66%;
-        float: left;
-    }
-
-    .row__medium-8--smaller {
-      width: 63%;
-    }
-  }
-
-@media (min-width: 1010px) {
-
-    .row__b-margin-until-large {
-      margin-bottom: 0;
-    }
-
-    .row__large-4 {
-      width: 33.33%;
-      float: left;
-    }
-
-    .row__large-4--larger {
-      width: 37%;
-    }
-
-    .row__large-6 {
-      width: 50%;
-      float: left;
-    }
-
-    .row__large-8{
-        width: 66.66%;
-        float: left;
-    }
-
-    .row__large-8--smaller {
-      width: 63%;
-    }
-  }
-
-/* Begin Equal Height Rules */
-
-@media (min-width: 800px) {
-
-.flexbox .row--equal-height-at-medium {
-      display: flex
-  }
-    }
-
-.flexbox .row--equal-height-at-medium > div {
-      display: flex;
-      float: none;
-    }
-
-@media (min-width: 1010px) {
-
-.flexbox .row--equal-height-at-large {
-      display: flex
-  }
-    }
-
-.flexbox .row--equal-height-at-large > div {
-      display: flex;
-      float: none;
-    }
-
 /*
 *
 *
@@ -810,6 +986,30 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 *
 */
 
+.navbar__container {
+  /*
+  *
+  *
+  *
+  Blueish tint overlay
+  *
+  *
+  *
+  *
+  */
+
+  /*
+  &:after {
+    content: '';
+    background: $primaryColor;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 732px;
+  }
+  */
+}
+
 /*
   *
   *
@@ -828,30 +1028,12 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
   position: relative;
   }
 
-/*
-  *
-  *
-  *
-  Blueish tint overlay
-  *
-  *
-  *
-  *
-  */
-
-.navbar__container:after {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 732px;
-    height: 45.75rem;
-    background: #1b246c;
-    content: '';
-  }
-
 .navbar {
   position: relative;
   padding: 0 0 0 0;
+  background-color: rgba(14, 19, 58, 0.7098039215686275);
+  box-shadow: 0 0.25rem 0.25rem rgb(27, 36, 107);
+  text-align: center;
 }
 
 .navbar::-webkit-input-placeholder {
@@ -879,11 +1061,12 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
   }
 
 .navbar:after {
+    display: block;
     position: absolute;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: #1b246c;
+    background-color: rgba(0, 0, 0, 0.42);
     content: '';
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -895,8 +1078,8 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
     padding: 9px 0px 6px 0px;
     padding: 0.5625rem 0 0.375rem 0;
     float: right;
-    border: 1px solid bisque;
-    border: 0.0625rem solid bisque;
+    border: 1px solid #ffe4c4;
+    border: 0.0625rem solid #ffe4c4;
   }
 
 .navbar__cart span {
@@ -905,7 +1088,6 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
         padding: 0px 8px 0px 8px;
         padding: 0 0.5rem 0 0.5rem;
         color: #fff;
-        font: inherit;
         font-weight: bold;
         transition: opacity 0.5s ease;
     }
@@ -913,7 +1095,6 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 .navbar__cart span a {
         display: inline-block;
         color: #fff;
-        font: inherit;
         font-size: 14px;
         font-size: 0.875rem;
         font-weight: bold;
@@ -923,7 +1104,7 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 .navbar__cart span i {
         padding: 0px 5px 0px 5px;
         padding: 0 0.3125rem 0 0.3125rem;
-        color: bisque;
+        color: #ffe4c4;
       }
 
 .navbar__cart span:hover {
@@ -935,17 +1116,22 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
     position: relative;
     width: 100%;
     max-width: 50%;
+    height: 35px;
+    height: 2.1875rem;
     margin-top: 0.825em;
+    margin-bottom: unset;
     }
 
 .navbar__search input {
         width: 100%;
+        height: 100%;
+        margin-bottom: unset;
         padding: 0.64em 1.425em;
         border: none;
         border-width: 1px;
         border-width: 0.0625rem;
         border-style: solid;
-        border-color: bisque;
+        border-color: #ffe4c4;
         outline: none;
         background: #ffe4c429;
         transition: box-shadow 0.5s ease;
@@ -989,7 +1175,7 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 
 .navbar_menu-container h4 {
       margin-top: 1.2em;
-      color: bisque;
+      color: #ffe4c4;
       font-size: 0.9em;
       letter-spacing: 0.2em;
       text-transform: uppercase;
@@ -1016,7 +1202,7 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 
 .navbar_menu-container li a:hover,
         .navbar_menu-container li a:focus {
-        color: bisque;
+        color: #ffe4c4;
         }
 
 .navbar_menu-container .social {
@@ -1035,7 +1221,7 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
         }
 
 .navbar_menu-container .social li svg {
-            fill: bisque;
+            fill: #ffe4c4;
             display: block;
             width: 100%;
             height: 100%;
@@ -1058,11 +1244,11 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 .navbar.is-active .hamburger__inner, 
         .navbar.is-active .hamburger__inner::before, 
         .navbar.is-active .hamburger__inner::after {
-          background-color: bisque;
+          background-color: #ffe4c4;
         }
 
 .navbar.is-active .hamburger__label {
-          color: bisque;
+          color: #ffe4c4;
         }
 
 .navbar.is-active .col {
@@ -1143,8 +1329,8 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
   padding: 0.5625rem 0.375rem 0.375rem 0.4375rem;
   float: left;
   overflow: visible;
-  border: 1px solid bisque;
-  border: 0.0625rem solid bisque; 
+  border: 1px solid #ffe4c4;
+  border: 0.0625rem solid #ffe4c4; 
   outline: none;
   background-color: transparent;
   color: inherit;
@@ -1183,7 +1369,7 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
     height: 0.125rem;
     border-radius: 4px;
     border-radius: 0.25rem;
-    background-color: bisque;
+    background-color: #ffe4c4;
     transition-duration: 0.15s;
     transition-property: -webkit-transform;
     transition-property: transform;
@@ -1356,18 +1542,31 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 /* Slideshow container */
 
 .slider__container {
-    position: relative;
-    width: 100%;
-    height: 600px;
-    height: 37.5rem;
+    position: absolute;
+    top:0px;
+    top:0;
+    width:100%;
+    height: 700px;
+    height: 43.75rem;
     background-blend-mode: soft-light;
     background-color: rgb(224, 199, 130);
     background-image: url(../../assets/images/pattern.svg);
     background-size: 800px;
     background-size: 50rem;
-    box-shadow: inset 0px 26px 11px -15px rgba(0,0,0,0.75);
-    box-shadow: inset 0 1.625rem 0.6875rem -0.9375rem rgba(0,0,0,0.75);
   }
+
+.slider__container:after {
+        display: block;
+        z-index: -999;
+        position: absolute;
+        top: 700px;
+        top: 43.75rem;
+        width: 100%;
+        height: 56px;
+        height: 3.5rem;
+        background: #4f4a4f;
+        content: '';
+      }
 
 /* Hide the images by default */
 
@@ -1380,8 +1579,12 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
     right: 355px;
     right: 22.1875rem;
     width: auto;
-    height: 588px;
-    height: 36.75rem;
+    height: 700px;
+    height: 43.75rem;
+    padding-top: 61px;
+    padding-top: 3.8125rem;
+    padding-bottom:90px;
+    padding-bottom:5.625rem;
   }
 
 .slider__image:hover {
@@ -1393,7 +1596,8 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
     -webkit-transform: translate3d(0, -50%, 0);
     position: absolute;
     top: 50%;
-    left: 11%;
+    left: 120px;
+    left: 7.5rem;
     width: auto;
             transform: translate3d(0, -50%, 0);
     font-weight: bold;
@@ -1403,7 +1607,7 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
         position: relative;
         padding: 5px 5px 5px 5px;
         padding: 0.3125rem 0.3125rem 0.3125rem 0.3125rem;
-        color: #1b246b;
+        color: #000000;
         font-family: 'Lato', sans-serif;
         font-weight: 300;
         text-align: center;
@@ -1432,14 +1636,14 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 
 .slider__text {
     position: relative;
-    color: #1b246b;
-    font-size: 96px;
-    font-size: 6rem;
+    color: #4f4a4f;
+    font-size: 120px;
+    font-size: 7.5rem;
     font-weight: lighter;
     letter-spacing: 50px;
     letter-spacing: 3.125rem;
-    line-height: 96px;
-    line-height: 6rem;
+    line-height: 120px;
+    line-height: 7.5rem;
     text-align: center;
   }
 
@@ -1457,7 +1661,7 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
           transform: translate3d(0, -50%, 0);
   border-radius: 0 3px 3px 0;
   border-radius: 0 0.1875rem 0.1875rem 0;
-  color: #1b246b;
+  color: #4f4a4f;
   font-size: 22px;
   font-size: 1.375rem;
   font-weight: bold;
@@ -1480,28 +1684,31 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
   }
 
 .indicator__container {
-  display: inline-block;
+  display: block;
   position: absolute;
-  top: 547px;
-  top: 34.1875rem;
+  top: 580px;
+  top: 36.25rem;
   right: 0;
   left: 0;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
   margin-right: auto;
-  margin-left: auto;
-  text-align: center; 
+  margin-left: auto; 
   }
 
 .indicator__element {
     display: inline-block;
     padding: 22px;
     padding: 1.375rem;
-    border: 2px solid rgb(40, 70, 167);
-    border: 0.125rem solid rgb(40, 70, 167);
-    background-color: #1b246b;
+    border: 1.4px solid #4f4a4f;
+    border: 0.0875rem solid #4f4a4f;
+    background-color: rgb(224, 198, 130);
+    box-shadow: 0 0.05rem 0.05rem rgb(27, 36, 107);
   }
 
 .indicator__element:hover {
-        background-color:rgb(214, 195, 146);
+        background-color:#e0e0e0;
       }
 
 .indicator__element img {
@@ -1621,3 +1828,17 @@ Instead edit gulp/templates/sprite */
     height: 2.75rem;
     background-position: 37.76931216931217% 45.917910447761194%;
   }
+
+/* Custom Animate Css Codes */
+
+.animated.delay-05s {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+.disable-selection {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}

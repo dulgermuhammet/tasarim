@@ -45,20 +45,26 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
   *
   *
   */
+
+  /*
   &:after {
     content: '';
-    background: $mainColor;
+    background: $primaryColor;
     position: absolute;
     top: 0;
     width: 100%;
     height: 732px;
   }
+  */
 }
 
 
 .navbar {
+  text-align: center;
+  box-shadow: 0 0.25rem 0.25rem rgb(27, 36, 107);
   padding: 0 0 0 0;
   position: relative;
+  background-color:rgba(14, 19, 58, 0.7098039215686275);
   &::placeholder {
     color:    #fff;
     opacity:  1;
@@ -69,22 +75,22 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
   &:after {
     content: '';
     position: absolute;
+    display: block;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: $mainColor;
+    background-color: rgba(0, 0, 0, 0.42);
     opacity: 0;
     transition: opacity 0.3s ease;
   }
   &__cart {
     margin: 0.8125em 0 0;
-    border: 1px solid bisque;
+    border: 1px solid $secondaryColor;
     padding: 9px 0px 6px 0px;
     float: right;
     position: relative;
       span {
         color: #fff;
-        font: inherit;
         font-weight: bold;
         position: relative;
         display: inline-block;
@@ -92,7 +98,6 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
         transition: opacity 0.5s ease;
       a {
         color: #fff;
-        font: inherit;
         display: inline-block;
         text-decoration: none;
         font-weight: bold;
@@ -100,7 +105,7 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
       }
       i {
         padding: 0px 5px 0px 5px;
-        color: bisque;
+        color: $secondaryColor;
       }
       &:hover {
         opacity: 0.7;
@@ -108,21 +113,25 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
     }
   }
   &__search {
+    height: 35px;
     display: inline-block;
     margin-top: 0.825em;
     width: 100%;
     max-width: 50%;
-    position: relative;   
+    position: relative;
+    margin-bottom: unset;   
       input {
+        height: 100%;
         background: #ffe4c429;
         border: none;
-        border-color: bisque;
+        border-color: $secondaryColor;
         border-style: solid;
         border-width: 1px;
         outline: none;
         width: 100%;
         padding: 0.64em 1.425em;
         transition: box-shadow 0.5s ease;
+        margin-bottom: unset;
       }
       :hover {
         box-shadow: 0px 0px 13px -2px rgba(253, 253, 253, 0.75);
@@ -155,7 +164,7 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
     }
     h4 {
       text-transform: uppercase;
-      color: bisque;
+      color: $secondaryColor;
       margin-top: 1.2em;
       letter-spacing: 0.2em;
       font-size: 0.9em;
@@ -176,7 +185,7 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
       font-family: 'Lato', sans-serif;
         &:hover,
         &:focus {
-        color: bisque;
+        color: $secondaryColor;
         }
       }
     }
@@ -191,7 +200,7 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
           height: 32px;
           svg {
             display: block;
-            fill: bisque;
+            fill: $secondaryColor;
             width: 100%;
             height: 100%;
             transition: fill 0.3s ease;
@@ -211,10 +220,10 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
         &__inner, 
         &__inner::before, 
         &__inner::after {
-          background-color: bisque;
+          background-color: $secondaryColor;
         }
         &__label {
-          color: bisque;
+          color: $secondaryColor;
         }
       } 
       .col {
@@ -263,7 +272,7 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 
 .hamburger {
   background-color: transparent;
-  border: 1px solid bisque;
+  border: 1px solid $secondaryColor;
   color: inherit;
   cursor: pointer;
   float: left;
@@ -293,7 +302,7 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
   &__inner::after {
     width: 30px;
     height: 2px;
-    background-color: bisque;
+    background-color: $secondaryColor;
     border-radius: 4px;
     position: absolute;
     transition-property: transform;

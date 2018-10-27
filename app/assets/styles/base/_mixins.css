@@ -1,23 +1,51 @@
-@define-mixin atSmall {
-  @media (min-width: 530px) {
+
+
+/* Media Queries
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/*
+Note: The best way to structure the use of media queries is to create the queries
+near the relevant code. For example, if you wanted to change the styles for buttons
+on small devices, paste the mobile query code up in the buttons section and style it
+there.
+*/
+
+
+@define-mixin mobile {
+  @media (min-width: 400px) {
     @mixin-content;
   }
 }
 
-@define-mixin atMedium {
-  @media (min-width: 800px) {
+@define-mixin phablet {
+  @media (min-width: 550px) {
     @mixin-content;
   }
 }
 
-@define-mixin atLarge {
-  @media (min-width: 1010px) {
+@define-mixin tablet {
+  @media (min-width: 750px) {
     @mixin-content;
   }
 }
+
+@define-mixin desktop {
+  @media (min-width: 1000px) {
+    @mixin-content;
+  }
+}
+
+@define-mixin ldesktop {
+  @media (min-width: 1200px) {
+    @mixin-content;
+  }
+}
+
+
+/* Clearing
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 @define-mixin clearfix {
-  &::after {
+  &:after {
     content: "";
     clear: both;
     display: table;

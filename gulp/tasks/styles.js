@@ -12,8 +12,8 @@ const gulp = require('gulp'),
 gulp.task('styles', function() {
    
   var processors = [
-    mixins,
     cssImport,
+    mixins,
     cssvars,
     nested,
     hexrgba,
