@@ -18,52 +18,14 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 *
 *
 */
-.navbar__container {
-  /*
-  *
-  *
-  *
-  * 
-  Making sure everything in .navbar__container sits above our :after elements 
-  *
-  *
-  *
-  *
-
-  */  
-  * {
-  position: relative;
-  z-index: 1;
-  }
-  /*
-  *
-  *
-  *
-  Blueish tint overlay
-  *
-  *
-  *
-  *
-  */
-
-  /*
-  &:after {
-    content: '';
-    background: $primaryColor;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 732px;
-  }
-  */
-}
-
 
 .navbar {
+  z-index: 1;
+  position: absolute;
+  width: 100%;
   text-align: center;
   box-shadow: 0 0.25rem 0.25rem rgb(27, 36, 107);
   padding: 0 0 0 0;
-  position: relative;
   background-color:rgba(14, 19, 58, 0.7098039215686275);
   &::placeholder {
     color:    #fff;
@@ -71,17 +33,6 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
   }
   .col {
     opacity: 0;
-  }
-  &:after {
-    content: '';
-    position: absolute;
-    display: block;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.42);
-    opacity: 0;
-    transition: opacity 0.3s ease;
   }
   &__cart {
     margin: 0.8125em 0 0;
@@ -375,7 +326,7 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 *
 *
 */
-@media screen and (min-width: 550px) {
+@mixin mobile {
   .navbar_menu-container {
     flex-direction: row;
     flex-wrap: wrap; 
@@ -385,13 +336,13 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
   }
 }
 
-@media screen and (min-width: 768px) {
+@mixin tablet {
   .navbar_menu-container .col {
     flex: 0 0 33.333333333%;
   } 
 }
 
-@media screen and (min-width: 960px) {
+@mixin desktop {
   .navbar_menu-container {
     flex-wrap: nowrap;
     .col {

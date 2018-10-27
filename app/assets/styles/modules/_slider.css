@@ -17,20 +17,19 @@
     background-blend-mode: soft-light;
     width:100%;
     height: 700px;
-    top:0px;
-    position: absolute;
+    position: relative;
     background-size: 800px;
-      &:after {
-        display: block;
-        z-index: -999;
-        position: absolute;
-        top: 700px;
-        width: 100%;
-        height: 56px;
-        background: $primaryColor;
-        content: '';
-      }
-  }    
+    }
+    &:after {
+      display: block;
+      z-index: -999;
+      position: relative;
+      width: 100%;
+      height: 56px;
+      background: $primaryColor;
+      content: '';
+    }
+    
   /* Hide the images by default */   
   &__element {
     display: none;
@@ -92,13 +91,12 @@
 
 /* Next & previous buttons */
 
-#prev, #next {
+.slider__prev, .slider__next {
   cursor: pointer;
   position: absolute;
   top: 50%;
   width: auto;
-  margin-top: -22px;
-  padding: 16px;
+  padding: 12px;
   color: $primaryColor;
   font-weight: bold;
   font-size: 22px;
@@ -109,15 +107,20 @@
 
 /* Position the "next button" to the right */
 
-#next {
+.slider__next {
   right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.slider__prev {
+  left: 0;
   border-radius: 3px 0 0 3px;
 }
 
 /* On hover, add a black background color with a little bit see-through */
 
-#prev, 
-#next {
+.slider__prev, 
+.slider__next {
   &:hover {
   background-color: rgba(0, 0, 0, 0.281);
   }

@@ -15,19 +15,19 @@
   float: left;}
 
 /* For devices larger than 400px */
-@media (min-width: 400px) {
+@mixin mobile {
   .container {
     width: 85%;
     padding: 0; }
 }
 
 /* For devices larger than 550px */
-@media (min-width: 550px) {
+@mixin phablet {
   .container {
     width: 80%; }
   .column,
   .columns {
-    margin-left: 4%; }
+    margin-left: 1%; }
   .column:first-child,
   .columns:first-child {
     margin-left: 0; }
@@ -47,9 +47,10 @@
   .twelve.columns                 { width: 100%; margin-left: 0; }
 
   .one-third.column               { width: 30.6666666667%; }
-  .two-thirds.column              { width: 65.3333333333%; }
-
+  .two-third.column               { width: 65.3333333333%; }
   .one-half.column                { width: 48%; }
+  .one-four.column                { width: 24%;}
+  .one-eight.column               { width: 12%;}
 
   /* Offsets */
   .offset-by-one.column,

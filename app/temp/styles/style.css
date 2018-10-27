@@ -365,10 +365,6 @@ there.
 /* Base Styles
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-/* NOTE
-html is set to 62.5% so that all the REM measurements throughout Skeleton
-are based on 10px sizing. So basically 1.5rem = 15px :) */
-
 html {
   font-size: 100%;
 }
@@ -394,28 +390,28 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.9375rem;
   font-weight: 300; }
 
-h1 { font-size: 64px; font-size: 4rem;  letter-spacing: -.1rem; line-height: 1.2;}
+h1 { font-size: 64px; font-size: 4rem;  letter-spacing: -1.6px;  letter-spacing: -0.1rem; line-height: 19px; line-height: 1.1875rem;}
 
-h2 { font-size: 57px; font-size: 3.5625rem; letter-spacing: -.1rem; line-height: 1.25; }
+h2 { font-size: 57px; font-size: 3.5625rem; letter-spacing: -1.6px; letter-spacing: -0.1rem; line-height: 20px; line-height: 1.25rem; }
 
-h3 { font-size: 48px; font-size: 3rem;  letter-spacing: -.1rem; line-height: 1.3; }
+h3 { font-size: 48px; font-size: 3rem;  letter-spacing: -1.6px;  letter-spacing: -0.1rem; line-height: 21px; line-height: 1.3125rem; }
 
-h4 { font-size: 38px; font-size: 2.375rem; letter-spacing: -.08rem; line-height: 1.35; }
+h4 { font-size: 38px; font-size: 2.375rem; letter-spacing: -1.28px; letter-spacing: -0.08rem; line-height: 22px; line-height: 1.375rem; }
 
-h5 { font-size: 28px; font-size: 1.75rem;  letter-spacing: -.05rem; line-height: 1.5; }
+h5 { font-size: 28px; font-size: 1.75rem;  letter-spacing: -0.8px;  letter-spacing: -0.05rem; line-height: 24px; line-height: 1.5rem; }
 
-h6 { font-size: 24px; font-size: 1.5rem;  letter-spacing: 0; line-height: 1.6; }
+h6 { font-size: 24px; font-size: 1.5rem;  letter-spacing: 0px;  letter-spacing: 0; line-height: 25px; line-height: 1.5625rem; }
 
 /* Larger than phablet */
 
 @media (min-width: 550px) {
-  h1 { font-size: 5.0rem; }
-  h2 { font-size: 4.2rem; }
-  h3 { font-size: 3.6rem; }
-  h4 { font-size: 3.0rem; }
-  h5 { font-size: 2.4rem; }
-  h6 { font-size: 1.5rem; }
-}
+  h1 { font-size: 80px; font-size: 5rem; }
+  h2 { font-size: 67px; font-size: 4.1875rem; }
+  h3 { font-size: 57px; font-size: 3.5625rem; }
+  h4 { font-size: 48px; font-size: 3rem; }
+  h5 { font-size: 38px; font-size: 2.375rem; }
+  h6 { font-size: 24px; font-size: 1.5rem; }
+  }
 
 p {
   margin-top: 0; }
@@ -424,10 +420,10 @@ p {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 a {
-  color: #1EAEDB; }
+  color: #4f4a4f; }
 
 a:hover {
-  color: #0FA0CE; }
+  color: #ffe4c4; }
 
 /* Forms
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -491,7 +487,8 @@ select:focus {
 label,
 legend {
   display: block;
-  margin-bottom: .5rem;
+  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
   font-weight: 600; }
 
 fieldset {
@@ -504,7 +501,8 @@ input[type="radio"] {
 
 label > .label-body {
   display: inline-block;
-  margin-left: .5rem;
+  margin-left: 8px;
+  margin-left: 0.5rem;
   font-weight: normal; }
 
 /* Lists
@@ -524,18 +522,22 @@ ul ul,
 ul ol,
 ol ol,
 ol ul {
-  margin: 1.5rem 0 1.5rem 3rem;
+  margin: 24px 0 24px 49px;
+  margin: 1.5rem 0 1.5rem 3.0625rem;
   font-size: 90%; }
 
 li {
+  margin-bottom: 16px;
   margin-bottom: 1rem; }
 
 /* Code
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 code {
-  margin: 0 .2rem;
-  padding: .2rem .5rem;
+  margin: 0 3px;
+  margin: 0 0.1875rem;
+  padding: 3px 8px;
+  padding: 0.1875rem 0.5rem;
   border: 1px solid #E1E1E1;
   border: 0.0625rem solid #E1E1E1;
   border-radius: 4px;
@@ -546,6 +548,7 @@ code {
 
 pre > code {
   display: block;
+  padding: 16px 24px;
   padding: 1rem 1.5rem;
   white-space: pre; }
 
@@ -616,7 +619,9 @@ form {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 hr {
+  margin-top: 48px;
   margin-top: 3rem;
+  margin-bottom: 56px;
   margin-bottom: 3.5rem;
   border-top: 1px solid #E1E1E1;
   border-top: 0.0625rem solid #E1E1E1;
@@ -649,7 +654,7 @@ hr {
   .container {
     width: 85%;
     padding: 0; }
-}
+  }
 
 /* For devices larger than 550px */
 
@@ -658,7 +663,7 @@ hr {
     width: 80%; }
   .column,
   .columns {
-    margin-left: 4%; }
+    margin-left: 1%; }
   .column:first-child,
   .columns:first-child {
     margin-left: 0; }
@@ -678,9 +683,10 @@ hr {
   .twelve.columns                 { width: 100%; margin-left: 0; }
 
   .one-third.column               { width: 30.6666666667%; }
-  .two-thirds.column              { width: 65.3333333333%; }
-
+  .two-third.column               { width: 65.3333333333%; }
   .one-half.column                { width: 48%; }
+  .one-four.column                { width: 24%;}
+  .one-eight.column               { width: 12%;}
 
   /* Offsets */
   .offset-by-one.column,
@@ -713,8 +719,7 @@ hr {
 
   .offset-by-one-half.column,
   .offset-by-one-half.columns     { margin-left: 52%; }
-
-}
+  }
 
 /* Clearing
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -986,50 +991,10 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 *
 */
 
-.navbar__container {
-  /*
-  *
-  *
-  *
-  Blueish tint overlay
-  *
-  *
-  *
-  *
-  */
-
-  /*
-  &:after {
-    content: '';
-    background: $primaryColor;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 732px;
-  }
-  */
-}
-
-/*
-  *
-  *
-  *
-  * 
-  Making sure everything in .navbar__container sits above our :after elements 
-  *
-  *
-  *
-  *
-
-  */
-
-.navbar__container * {
-  z-index: 1;
-  position: relative;
-  }
-
 .navbar {
-  position: relative;
+  z-index: 1;
+  position: absolute;
+  width: 100%;
   padding: 0 0 0 0;
   background-color: rgba(14, 19, 58, 0.7098039215686275);
   box-shadow: 0 0.25rem 0.25rem rgb(27, 36, 107);
@@ -1058,18 +1023,6 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 
 .navbar .col {
     opacity: 0;
-  }
-
-.navbar:after {
-    display: block;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.42);
-    content: '';
-    opacity: 0;
-    transition: opacity 0.3s ease;
   }
 
 .navbar__cart {
@@ -1448,7 +1401,7 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 *
 */
 
-@media screen and (min-width: 550px) {
+@media (min-width: 400px) {
   .navbar_menu-container {
     flex-direction: row;
     flex-wrap: wrap; 
@@ -1456,15 +1409,15 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
     .navbar_menu-container .col {
     flex: 0 0 50%;
     }
-}
+  }
 
-@media screen and (min-width: 768px) {
+@media (min-width: 750px) {
   .navbar_menu-container .col {
     flex: 0 0 33.333333333%;
-  } 
-}
+  }
+  }
 
-@media screen and (min-width: 960px) {
+@media (min-width: 1000px) {
   .navbar_menu-container {
     flex-wrap: nowrap;  
   }
@@ -1475,7 +1428,7 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
     display: flex;
     justify-content: flex-end;
     }
-}
+  }
 
 /*
 *
@@ -1542,9 +1495,7 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 /* Slideshow container */
 
 .slider__container {
-    position: absolute;
-    top:0px;
-    top:0;
+    position: relative;
     width:100%;
     height: 700px;
     height: 43.75rem;
@@ -1553,20 +1504,18 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
     background-image: url(../../assets/images/pattern.svg);
     background-size: 800px;
     background-size: 50rem;
-  }
+    }
 
-.slider__container:after {
-        display: block;
-        z-index: -999;
-        position: absolute;
-        top: 700px;
-        top: 43.75rem;
-        width: 100%;
-        height: 56px;
-        height: 3.5rem;
-        background: #4f4a4f;
-        content: '';
-      }
+.slider:after {
+      display: block;
+      z-index: -999;
+      position: relative;
+      width: 100%;
+      height: 56px;
+      height: 3.5rem;
+      background: #4f4a4f;
+      content: '';
+    }
 
 /* Hide the images by default */
 
@@ -1649,15 +1598,13 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 
 /* Next & previous buttons */
 
-#prev, #next {
+.slider__prev, .slider__next {
   -webkit-transform: translate3d(0, -50%, 0);
   position: absolute;
   top: 50%;
   width: auto;
-  margin-top: -22px;
-  margin-top: -1.375rem;
-  padding: 16px;
-  padding: 1rem;
+  padding: 12px;
+  padding: 0.75rem;
           transform: translate3d(0, -50%, 0);
   border-radius: 0 3px 3px 0;
   border-radius: 0 0.1875rem 0.1875rem 0;
@@ -1671,15 +1618,21 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 
 /* Position the "next button" to the right */
 
-#next {
+.slider__next {
   right: 0;
+  border-radius: 3px 0 0 3px;
+  border-radius: 0.1875rem 0 0 0.1875rem;
+}
+
+.slider__prev {
+  left: 0;
   border-radius: 3px 0 0 3px;
   border-radius: 0.1875rem 0 0 0.1875rem;
 }
 
 /* On hover, add a black background color with a little bit see-through */
 
-#prev:hover, #next:hover {
+.slider__prev:hover, .slider__next:hover {
   background-color: rgba(0, 0, 0, 0.281);
   }
 
@@ -1721,6 +1674,66 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 .indicator__element .opacity-off{
         opacity: 1;
       }
+
+.one-four.column.color {
+    height: 200px;
+    height: 12.5rem;
+    padding-top:75px;
+    padding-top:4.6875rem;
+    background: red;
+    font-size: 80px;
+    font-size: 5rem;
+    font-weight: 600;
+    text-align: center;
+
+}
+
+.corousel {
+  margin-top:50px;
+  margin-top:3.125rem;
+  margin-bottom:100px;
+  margin-bottom:6.25rem;
+}
+
+/* Next & previous buttons */
+
+.corousel__prev, .corousel__next {
+  -webkit-transform: translate3d(0, -50%, 0);
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 12px;
+  padding: 0.75rem;
+          transform: translate3d(0, -50%, 0);
+  border-radius: 0 3px 3px 0;
+  border-radius: 0 0.1875rem 0.1875rem 0;
+  color: #4f4a4f;
+  font-size: 22px;
+  font-size: 1.375rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.6s ease;
+}
+
+/* Position the "next button" to the right */
+
+.corousel__next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+  border-radius: 0.1875rem 0 0 0.1875rem;
+}
+
+.corousel__prev {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+  border-radius: 0.1875rem 0 0 0.1875rem;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+
+.corousel__prev:hover, .corousel__next:hover {
+  background-color: rgba(0, 0, 0, 0.281);
+ }
 
 /* Do not edit modules/_sprite directly as it is generated automatically by Gulp.
 Instead edit gulp/templates/sprite */

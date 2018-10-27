@@ -10,9 +10,9 @@
 
 class Slider {
   constructor() {
-     this.prev = document.getElementById("prev");
-     this.next = document.getElementById("next");
-     this.dots = document.getElementsByClassName('indicator__img');
+     this.prev = document.getElementsByClassName("slider__prev")[0];
+     this.next = document.getElementsByClassName("slider__next")[0];
+     this.dots = document.getElementsByClassName("indicator__img");
      this.indicatorElement = document.getElementsByClassName("indicator__element");
      this.slides = document.getElementsByClassName("slider__element");
      this.slidercontainer = document.getElementsByClassName("slider__container")[0];
@@ -21,7 +21,7 @@ class Slider {
      this.slideIndex = 1;
      this.init();    
   } 
-  init () {  
+  init () { 
   this.showSlides(this.slideIndex);  
   //
   //
