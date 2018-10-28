@@ -24,7 +24,8 @@ gulp.task('styles', function() {
       replace: false,
       propList: ['*']
     }),
-    cssDeclarationSorter({order: 'smacss'})
+    cssDeclarationSorter({order: 'smacss'
+    })
   ];
   return gulp.src('./app/assets/styles/style.css')
     .pipe(postcss(processors))

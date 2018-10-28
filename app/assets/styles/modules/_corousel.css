@@ -1,16 +1,40 @@
-.one-four.column.color {
-    background: red;
-    text-align: center;
-    font-size: 80px;
-    padding-top:75px;
-    height: 200px;
-    font-weight: 600;
 
-}
 
 .corousel {
-  margin-top:50px;
-  margin-bottom:100px;
+  margin:100px 0px;
+  &__inner{
+    
+    display:block;
+    position: relative;
+    height: 300px;
+    width:1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    box-shadow: 0 1px 8px #888888;
+    
+    
+  }
+  &__container{
+    width:150vw;
+    height: inherit;
+  }
+  &__element {
+    margin-left:4px!important;
+    position: relative;
+    border: 1.4px $primaryColor solid;
+    height: inherit;
+    font-size: 80px;
+    text-align: center;
+    padding:5px;
+    width: 250px!important;
+    &-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    } 
+   }
+
 }
 
 
