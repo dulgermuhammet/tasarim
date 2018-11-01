@@ -8,5 +8,7 @@
         "*.json": true,
         "gulpfile.js": true,
         "webpack.config.js": true,
+        ".editorconfig" :true,
+        ".jsbeautifyrc":true,
     }
 }

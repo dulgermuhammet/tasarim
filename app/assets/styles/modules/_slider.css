@@ -15,68 +15,78 @@
     background-color: rgb(224, 199, 130);
     background-image: url(../../assets/images/pattern.svg);
     background-blend-mode: soft-light;
-    width:100%;
+    width: 100%;
     height: 700px;
     position: relative;
     background-size: 800px;
-    }
-    &:after {
-      display: block;
-      z-index: -999;
-      position: relative;
-      width: 100%;
-      height: 56px;
-      background: $primaryColor;
-      content: '';
-    }
-    
-  /* Hide the images by default */   
+  }
+
+  &:after {
+    display: block;
+    z-index: -999;
+    position: relative;
+    width: 100%;
+    height: 56px;
+    background: $primaryColor;
+    content: '';
+  }
+
+  /* Hide the images by default */
   &__element {
     display: none;
   }
+
   &__image {
     position: absolute;
     padding-top: 61px;
-    padding-bottom:90px;
+    padding-bottom: 90px;
     height: 700px;
     width: auto;
     right: 355px;
+
     &:hover {
       transform: scale(1.01);
     }
   }
+
   &__text-container {
     left: 120px;
     position: absolute;
     top: 50%;
     width: auto;
     font-weight: bold;
-    transform: translate3d(0, -50%, 0);  
-      p {
-        position: relative;
-        padding: 5px 5px 5px 5px;
-        text-align: center;
-        color: $black;
-        font-weight: 300;
-        font-family: 'Lato', sans-serif;
-      }
+    transform: translate3d(0, -50%, 0);
+
+    p {
+      position: relative;
+      padding: 5px 5px 5px 5px;
+      text-align: center;
+      color: $black;
+      font-weight: 300;
+      font-family: 'Lato', sans-serif;
+    }
+
+    span {
+      position: relative;
+    }
+
+    button {
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      float: unset;
+
       span {
-        position: relative;
-      }   
-      button {
-        margin-left: auto;
-        margin-right: auto;
-        position: relative;
-        float: unset;      
-        span {
-          color: #1b246b;
-        }
-      } 
-      .button--antiman::after {
-        background: unset;
-        border: 2px solid #1b246b;
+        color: #1b246b;
       }
+    }
+
+    .button--antiman::after {
+      background: unset;
+      border: 2px solid #1b246b;
+    }
   }
+
   &__text {
     font-size: 120px;
     text-align: center;
@@ -91,7 +101,8 @@
 
 /* Next & previous buttons */
 
-.slider__prev, .slider__next {
+.slider__prev,
+.slider__next {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -119,42 +130,44 @@
 
 /* On hover, add a black background color with a little bit see-through */
 
-.slider__prev, 
+.slider__prev,
 .slider__next {
   &:hover {
-  background-color: rgba(0, 0, 0, 0.281);
+    background-color: rgba(0, 0, 0, 0.281);
   }
 }
 
 .indicator {
   &__container {
-  max-width: max-content;
-  display: block;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  position: absolute;
-  top: 580px; 
+    max-width: max-content;
+    display: block;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    top: 580px;
   }
+
   &__element {
     display: inline-block;
     padding: 22px;
     border: 1.4px solid $primaryColor;
     background-color: rgb(224, 198, 130);
     box-shadow: 0 0.05rem 0.05rem rgb(27, 36, 107);
-      &:hover {
-        background-color:#e0e0e0;
-      }      
-      img {
-        width: auto;
-        height: 100px;
-        opacity: 0.4;
-      } 
-      .opacity-off{
-        opacity: 1;
-      }
+
+    &:hover {
+      background-color: #e0e0e0;
+    }
+
+    img {
+      width: auto;
+      height: 100px;
+      opacity: 0.4;
+    }
+
+    .opacity-off {
+      opacity: 1;
+    }
   }
 }
-
-

@@ -1,46 +1,46 @@
-
-
 .corousel {
-  margin:100px 0px;
-  &__inner{
-    
-    display:block;
+  margin: 100px 0px;
+
+  &__inner {
+
+    display: block;
     position: relative;
     height: 300px;
-    width:1200px;
+    width: 1200px;
     margin: 0 auto;
     overflow: hidden;
     box-shadow: 0 1px 8px #888888;
-    
-    
   }
-  &__container{
-    width:150vw;
+
+  &__container {
+    width: 150vw;
     height: inherit;
   }
+
   &__element {
-    margin-left:4px!important;
+    margin-left: 4px !important;
     position: relative;
     border: 1.4px $primaryColor solid;
     height: inherit;
     font-size: 80px;
     text-align: center;
-    padding:5px;
-    width: 250px!important;
-    &-inner {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate3d(-50%, -50%, 0);
-    } 
-   }
+    padding: 5px;
+    width: 250px !important;
 
+    &-inner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+    }
+  }
 }
 
 
 /* Next & previous buttons */
 
-.corousel__prev, .corousel__next {
+.corousel__prev,
+.corousel__next {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -68,9 +68,9 @@
 
 /* On hover, add a black background color with a little bit see-through */
 
-.corousel__prev, 
+.corousel__prev,
 .corousel__next {
   &:hover {
-  background-color: rgba(0, 0, 0, 0.281);
- }
+    background-color: rgba(0, 0, 0, 0.281);
+  }
 }

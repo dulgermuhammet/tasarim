@@ -26,31 +26,37 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
   text-align: center;
   box-shadow: 0 0.25rem 0.25rem rgb(27, 36, 107);
   padding: 0 0 0 0;
-  background-color:rgba(14, 19, 58, 0.7098039215686275);
-  &:after{
-    content:"";
+  background-color: rgba(14, 19, 58, 0.7098039215686275);
+
+  &:after {
+    content: "";
 
   }
+
   &::placeholder {
-    color:    #fff;
-    opacity:  1;
+    color: #fff;
+    opacity: 1;
   }
+
   .col {
     opacity: 0;
   }
+
   &__cart {
     margin: 0.8125em 0 0;
     border: 1px solid $secondaryColor;
     padding: 9px 0px 6px 0px;
     float: right;
     position: relative;
-      span {
-        color: #fff;
-        font-weight: bold;
-        position: relative;
-        display: inline-block;
-        padding: 0px 8px 0px 8px;
-        transition: opacity 0.5s ease;
+
+    span {
+      color: #fff;
+      font-weight: bold;
+      position: relative;
+      display: inline-block;
+      padding: 0px 8px 0px 8px;
+      transition: opacity 0.5s ease;
+
       a {
         color: #fff;
         display: inline-block;
@@ -58,15 +64,18 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
         font-weight: bold;
         font-size: 14px;
       }
+
       i {
         padding: 0px 5px 0px 5px;
         color: $secondaryColor;
       }
+
       &:hover {
         opacity: 0.7;
       }
     }
   }
+
   &__search {
     height: 35px;
     display: inline-block;
@@ -74,49 +83,56 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
     width: 100%;
     max-width: 50%;
     position: relative;
-    margin-bottom: unset;   
-      input {
-        height: 100%;
-        background: #ffe4c429;
-        border: none;
-        border-color: $secondaryColor;
-        border-style: solid;
-        border-width: 1px;
-        outline: none;
-        width: 100%;
-        padding: 0.64em 1.425em;
-        transition: box-shadow 0.5s ease;
-        margin-bottom: unset;
-      }
-      :hover {
-        box-shadow: 0px 0px 13px -2px rgba(253, 253, 253, 0.75);
-      }
-      button {
-        background: none;
-        border: none;
-        color: #fff;
-        font-size: 1em;
-        padding: 0;
-        position: absolute;
-        top: 50%;
-        right: 0.75em;
-        transform: translateY(-50%);
-      }
+    margin-bottom: unset;
+
+    input {
+      height: 100%;
+      background: #ffe4c429;
+      border: none;
+      border-color: $secondaryColor;
+      border-style: solid;
+      border-width: 1px;
+      outline: none;
+      width: 100%;
+      padding: 0.64em 1.425em;
+      transition: box-shadow 0.5s ease;
+      margin-bottom: unset;
     }
+
+    :hover {
+      box-shadow: 0px 0px 13px -2px rgba(253, 253, 253, 0.75);
+    }
+
+    button {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1em;
+      padding: 0;
+      position: absolute;
+      top: 50%;
+      right: 0.75em;
+      transform: translateY(-50%);
+    }
+  }
+
   &_menu-container {
     clear: both;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     height: 0;
     overflow: hidden;
     padding-top: 0.5em;
+
     &.is-active {
       height: auto;
       overflow: visible;
     }
-    .col { 
+
+    .col {
       padding-bottom: 0.1em;
     }
+
     h4 {
       text-transform: uppercase;
       color: $secondaryColor;
@@ -124,96 +140,119 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
       letter-spacing: 0.2em;
       font-size: 0.9em;
     }
+
     ul {
       list-style-type: none;
       margin-top: 1em;
     }
+
     li {
       margin-bottom: 0.3125em;
+
       a {
-      color: #ffffff;;
-      text-decoration: none;
-      transition: color 0.3s ease;
-      font-size: 80%;
-      line-height: 1em;
-      font-weight: 400;
-      font-family: 'Lato', sans-serif;
+        color: #ffffff;
+        ;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        font-size: 80%;
+        line-height: 1em;
+        font-weight: 400;
+        font-family: 'Lato', sans-serif;
+
         &:hover,
         &:focus {
-        color: $secondaryColor;
+          color: $secondaryColor;
         }
       }
     }
+
     .social {
       margin: 0;
       overflow: hidden;
       margin-top: 1.2em;
-        li {
-          float: left;
-          margin: 0 0.3125em;
-          width: 32px;
-          height: 32px;
-          svg {
-            display: block;
-            fill: $secondaryColor;
-            width: 100%;
-            height: 100%;
-            transition: fill 0.3s ease;
-          }
+
+      li {
+        float: left;
+        margin: 0 0.3125em;
+        width: 32px;
+        height: 32px;
+
+        svg {
+          display: block;
+          fill: $secondaryColor;
+          width: 100%;
+          height: 100%;
+          transition: fill 0.3s ease;
         }
+      }
+
       li:hover svg {
         fill: #686d6e;
       }
     }
   }
+
   &.is-active {
     box-shadow: 0 4px 4px rgb(27, 36, 107);
-      &:after {
-        opacity: 1;
-      }  
-      .hamburger {
-        &__inner, 
-        &__inner::before, 
-        &__inner::after {
-          background-color: $secondaryColor;
-        }
-        &__label {
-          color: $secondaryColor;
-        }
-      } 
-      .col {
-        transform: translateY(40px);
-        transition: opacity 0.3s ease;
-        animation: fade-in-stagger 0.8s ease forwards;
-        text-align: left;
-        &:nth-child(1) {
-          animation-delay: 0;
-        }
-        &:nth-child(2) {
-          animation-delay: 0.1s;
-        }
-        &:nth-child(3) {
-          animation-delay: 0.2s;
-        }
-        &:nth-child(4) {
+
+    &:after {
+      opacity: 1;
+    }
+
+    .hamburger {
+
+      &__inner,
+      &__inner::before,
+      &__inner::after {
+        background-color: $secondaryColor;
+      }
+
+      &__label {
+        color: $secondaryColor;
+      }
+    }
+
+    .col {
+      transform: translateY(40px);
+      transition: opacity 0.3s ease;
+      animation: fade-in-stagger 0.8s ease forwards;
+      text-align: left;
+
+      &:nth-child(1) {
+        animation-delay: 0;
+      }
+
+      &:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+
+      &:nth-child(3) {
+        animation-delay: 0.2s;
+      }
+
+      &:nth-child(4) {
         animation-delay: 0.3s;
-        }
-        &:nth-child(5) {
+      }
+
+      &:nth-child(5) {
         animation-delay: 0.4s;
-        }
-      } 
-    #navbar-search {       
+      }
+    }
+
+    #navbar-search {
       button {
-       color: #b4b9ba;
-      } 
+        color: #b4b9ba;
+      }
+
       input {
         border-color: #b4b9ba;
       }
+
       ::placeholder {
-        color:    #fff;
-        opacity:  1;
+        color: #fff;
+        opacity: 1;
       }
-    }      
+    }
   }
 }
 
@@ -233,27 +272,31 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
   float: left;
   font: inherit;
   margin: 0.8125em 0 0;
-  overflow: visible; 
+  overflow: visible;
   outline: none;
   padding: 9px 6px 6px 7px;
   text-transform: none;
   transition: opacity 0.5s ease;
-  font-weight: bold;  
+  font-weight: bold;
+
   &:hover {
     opacity: 0.7;
-  } 
+  }
+
   &__outer {
     width: 30px;
     display: inline-block;
-    position: relative; 
-  } 
+    position: relative;
+  }
+
   &__inner {
     display: block;
     top: 50%;
-    margin-top: -2px; 
+    margin-top: -2px;
   }
-  &__inner, 
-  &__inner::before, 
+
+  &__inner,
+  &__inner::before,
   &__inner::after {
     width: 30px;
     height: 2px;
@@ -262,19 +305,23 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
     position: absolute;
     transition-property: transform;
     transition-duration: 0.15s;
-    transition-timing-function: ease; 
+    transition-timing-function: ease;
   }
-  &__inner::before, 
+
+  &__inner::before,
   &__inner::after {
     content: "";
-    display: block; 
-  }  
-  &__inner::before {
-    top: -6px; 
-  } 
-  &__inner::after {
-    bottom: -6px; 
+    display: block;
   }
+
+  &__inner::before {
+    top: -6px;
+  }
+
+  &__inner::after {
+    bottom: -6px;
+  }
+
   &__label {
     color: #fff;
     font-weight: 700;
@@ -283,10 +330,12 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
     margin-left: 0.3125em;
     text-transform: uppercase;
   }
+
   &__outer,
   &__label {
-     vertical-align: middle;
+    vertical-align: middle;
   }
+
   /*
   *
   *
@@ -297,23 +346,27 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
   */
   &--boring {
     .hamburger {
+
       &__inner,
-      &__inner::before, 
+      &__inner::before,
       &__inner::after {
-        transition-property: none; 
-      }  
-    }  
+        transition-property: none;
+      }
+    }
+
     &.is-active {
       .hamburger__inner {
-        transform: rotate(45deg); 
+        transform: rotate(45deg);
       }
+
       .hamburger__inner::before {
-      top: 0;
-      opacity: 0; 
+        top: 0;
+        opacity: 0;
       }
+
       .hamburger__inner::after {
-      bottom: 0;
-      transform: rotate(-90deg); 
+        bottom: 0;
+        transform: rotate(-90deg);
       }
     }
   }
@@ -333,29 +386,32 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 @mixin mobile {
   .navbar_menu-container {
     flex-direction: row;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
+
     .col {
-    flex: 0 0 50%;
-    } 
+      flex: 0 0 50%;
+    }
   }
 }
 
 @mixin tablet {
   .navbar_menu-container .col {
     flex: 0 0 33.333333333%;
-  } 
+  }
 }
 
 @mixin desktop {
   .navbar_menu-container {
     flex-wrap: nowrap;
+
     .col {
-    flex: 0 0 16.7%;
+      flex: 0 0 16.7%;
     }
+
     .col:last-child {
-    display: flex;
-    justify-content: flex-end;
-    }  
+      display: flex;
+      justify-content: flex-end;
+    }
   }
 }
 
@@ -370,22 +426,22 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 */
 
 @keyframes fade-in-stagger {
-    to {
-      opacity: 1;
-      transform: translateY(0); 
-    }
-}
-
-@keyframes  box-shadow {
   to {
-    opacity: 0;
-    opacity: 1; 
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@keyframes  opacity {
+@keyframes box-shadow {
   to {
-  opacity:0;
-  opacity:0.7;
+    opacity: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes opacity {
+  to {
+    opacity: 0;
+    opacity: 0.7;
   }
 }

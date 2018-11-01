@@ -1,9 +1,7 @@
-
-
 * {
   box-sizing: border-box;
-  padding:0;
-  margin:0;
+  padding: 0;
+  margin: 0;
 }
 
 
@@ -15,48 +13,105 @@ html {
 }
 
 body {
-  font-family: "Montserrat","HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 18px;
   line-height: 18px;
   text-rendering: optimizeLegibility;
-  overflow-x:hidden;
-  color:$bodyColor;
-  background-color:$bodybackgroundColor;
+  overflow-x: hidden;
+  color: $bodyColor;
+  background-color: $bodybackgroundColor;
 }
 
 /* Typography
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-top: 0;
   margin-bottom: 15px;
-  font-weight: 300; }
-h1 { font-size: 64px; line-height: 19px;  letter-spacing: -1.6px;}
-h2 { font-size: 57px; line-height: 20px; letter-spacing: -1.6px; }
-h3 { font-size: 48px; line-height: 21px;  letter-spacing: -1.6px; }
-h4 { font-size: 38px; line-height: 22px; letter-spacing: -1.28px; }
-h5 { font-size: 28px; line-height: 24px;  letter-spacing: -0.8px; }
-h6 { font-size: 24px; line-height: 25px;  letter-spacing: 0px; }
+  font-weight: 300;
+}
+
+h1 {
+  font-size: 64px;
+  line-height: 19px;
+  letter-spacing: -1.6px;
+}
+
+h2 {
+  font-size: 57px;
+  line-height: 20px;
+  letter-spacing: -1.6px;
+}
+
+h3 {
+  font-size: 48px;
+  line-height: 21px;
+  letter-spacing: -1.6px;
+}
+
+h4 {
+  font-size: 38px;
+  line-height: 22px;
+  letter-spacing: -1.28px;
+}
+
+h5 {
+  font-size: 28px;
+  line-height: 24px;
+  letter-spacing: -0.8px;
+}
+
+h6 {
+  font-size: 24px;
+  line-height: 25px;
+  letter-spacing: 0px;
+}
 
 /* Larger than phablet */
 @mixin phablet {
-  h1 { font-size: 80px; }
-  h2 { font-size: 67px; }
-  h3 { font-size: 57px; }
-  h4 { font-size: 48px; }
-  h5 { font-size: 38px; }
-  h6 { font-size: 24px; }
+  h1 {
+    font-size: 80px;
+  }
+
+  h2 {
+    font-size: 67px;
+  }
+
+  h3 {
+    font-size: 57px;
+  }
+
+  h4 {
+    font-size: 48px;
+  }
+
+  h5 {
+    font-size: 38px;
+  }
+
+  h6 {
+    font-size: 24px;
+  }
 }
 
 p {
-  margin-top: 0; }
+  margin-top: 0;
+}
 
 
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
-  color: $primaryColor; }
+  color: $primaryColor;
+}
+
 a:hover {
-  color: $secondaryColor; }
+  color: $secondaryColor;
+}
 
 
 /* Forms
@@ -71,12 +126,15 @@ input[type="password"],
 textarea,
 select {
   height: 38px;
-  padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+  padding: 6px 10px;
+  /* The 6px vertically centers text on FF, ignored by Webkit */
   background-color: #fff;
   border: 1px solid #D1D1D1;
   border-radius: 4px;
   box-shadow: none;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
+
 /* Removes awkward default styles on some inputs for iOS */
 input[type="email"],
 input[type="number"],
@@ -86,11 +144,15 @@ input[type="tel"],
 input[type="url"],
 input[type="password"],
 textarea {
-          appearance: none; }
+  appearance: none;
+}
+
 textarea {
   min-height: 65px;
   padding-top: 6px;
-  padding-bottom: 6px; }
+  padding-bottom: 6px;
+}
+
 input[type="email"]:focus,
 input[type="number"]:focus,
 input[type="search"]:focus,
@@ -101,42 +163,61 @@ input[type="password"]:focus,
 textarea:focus,
 select:focus {
   border: 1px solid #33C3F0;
-  outline: 0; }
+  outline: 0;
+}
+
 label,
 legend {
   display: block;
   margin-bottom: 8px;
-  font-weight: 600; }
+  font-weight: 600;
+}
+
 fieldset {
   padding: 0;
-  border-width: 0; }
+  border-width: 0;
+}
+
 input[type="checkbox"],
 input[type="radio"] {
-  display: inline; }
-label > .label-body {
+  display: inline;
+}
+
+label>.label-body {
   display: inline-block;
   margin-left: 8px;
-  font-weight: normal; }
+  font-weight: normal;
+}
 
 
 
 /* Lists
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 ul {
-  list-style: circle inside; }
+  list-style: circle inside;
+}
+
 ol {
-  list-style: decimal inside; }
-ol, ul {
+  list-style: decimal inside;
+}
+
+ol,
+ul {
   padding-left: 0;
-  margin-top: 0; }
+  margin-top: 0;
+}
+
 ul ul,
 ul ol,
 ol ol,
 ol ul {
   margin: 24px 0 24px 49px;
-  font-size: 90%; }
+  font-size: 90%;
+}
+
 li {
-  margin-bottom: 16px; }
+  margin-bottom: 16px;
+}
 
 
 /* Code
@@ -148,11 +229,14 @@ code {
   white-space: nowrap;
   background: #F1F1F1;
   border: 1px solid #E1E1E1;
-  border-radius: 4px; }
-pre > code {
+  border-radius: 4px;
+}
+
+pre>code {
   display: block;
   padding: 16px 24px;
-  white-space: pre; }
+  white-space: pre;
+}
 
 
 /* Tables
@@ -161,25 +245,34 @@ th,
 td {
   padding: 12px 15px;
   text-align: left;
-  border-bottom: 1px solid #E1E1E1; }
+  border-bottom: 1px solid #E1E1E1;
+}
+
 th:first-child,
 td:first-child {
-  padding-left: 0; }
+  padding-left: 0;
+}
+
 th:last-child,
 td:last-child {
-  padding-right: 0; }
+  padding-right: 0;
+}
 
 
 /* Spacing
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 button,
 .button {
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+}
+
 input,
 textarea,
 select,
 fieldset {
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+}
+
 pre,
 blockquote,
 dl,
@@ -189,21 +282,29 @@ p,
 ul,
 ol,
 form {
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+}
 
 
 /* Utilities
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .u-full-width {
   width: 100%;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
+
 .u-max-full-width {
   max-width: 100%;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
+
 .u-pull-right {
-  float: right; }
+  float: right;
+}
+
 .u-pull-left {
-  float: left; }
+  float: left;
+}
 
 
 /* Misc
@@ -212,5 +313,5 @@ hr {
   margin-top: 48px;
   margin-bottom: 56px;
   border-width: 0;
-  border-top: 1px solid #E1E1E1; }
-
+  border-top: 1px solid #E1E1E1;
+}
