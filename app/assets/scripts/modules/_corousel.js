@@ -18,6 +18,11 @@ class Corousel {
             pages = Math.ceil(items.length / visible);
 
 
+        console.log(`currentpage:${currentPage}`);
+        console.log(`wrapper.scrollLeft:${wrapper.scrollLeft}`);
+        console.log(`pages:${pages}`);
+
+
         wrapper.insertAdjacentHTML('afterend', '<a class="arrow back">&lt;</a><a class="arrow forward">&gt;</a>');
 
         function repeat(str, num) {
@@ -38,7 +43,7 @@ class Corousel {
 
         for (var i = 0; i < z.length; i++) {
             var zz = `<li>${z[i].innerHTML}</li>`;
-            console.log(z);
+            //console.log(z);
             items[0].insertAdjacentHTML('beforebegin', zz);
 
         }
@@ -60,28 +65,37 @@ class Corousel {
 
 
 
-        //function gotoPage(page) {
-        //    var dir = page < currentPage ? -1 : 1,
-        //        n = Math.abs(currentPage - page),
-        //        left = singleWidth * dir * visible * n;
-        //
-        //    wrapper.animate({
-        //        scrollLeft: += left;
-        //    }, 500, function() {
-        //        if (page == 0) {
-        //            wrapper.scrollLeft += singleWidth * visible * pages;
-        //            page = pages;
-        //        } else if (page > pages) {
-        //            wrapper.scrollLeft += singleWidth * visible;
-        //            // reset back to start position
-        //            page = 1;
-        //        }
-        //
-        //        currentPage = page;
-        //    });
-        //
-        //    return false;
-        //}
+        function gotoPage(page) {
+
+            var direction = page < currentPage ? -1 : 1,
+                n = Math.abs(currentPage - page),
+                left = singleWidth * direction * visible * n;
+
+                console.log(`direction:${direction}`); //1 or -1
+                console.log(`n:${n}`);
+                console.log(`left:${left}`);
+                console.log(`currentpage:${currentPage}`);
+
+
+            function move(elem, callback) {
+
+                wrapper.scrollLeft += left;
+                callback();
+            }
+            move(wrapper, function() {
+                if (page == 0) {
+                    wrapper.scrollLeft = singleWidth * visible * pages;
+                    page = pages;
+                } else if (page > pages) {
+                    wrapper.scrollLeft = singleWidth * visible;
+                    // reset back to start position
+                    page = 1;
+                }
+                currentPage = page;
+            });
+
+            return false;
+        }
 
 
 
@@ -91,12 +105,16 @@ class Corousel {
         //console.log(back);
         back.addEventListener("click", function() {
             gotoPage(currentPage - 1);
+            console.log(`wrapper.scrollLeft:${wrapper.scrollLeft}`);
+            //console.log(currentPage);
         });
 
         var forward = document.querySelectorAll('a.forward')[0];
         //console.log(forward);
         forward.addEventListener("click", function() {
             gotoPage(currentPage + 1);
+            console.log(`wrapper.scrollLeft:${wrapper.scrollLeft}`);
+            //console.log(currentPage);
         });
 
 
