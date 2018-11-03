@@ -1,6 +1,6 @@
 /*!
  * modernizr v3.6.0
- * Build https://modernizr.com/download?-flexbox-svg-setclasses-dontmin
+ * Build https://modernizr.com/download?-arrow-flexbox-svg-setclasses-dontmin
  *
  * Copyright (c)
  *  Faruk Ates
@@ -231,6 +231,28 @@
   }
 
   ;
+/*!
+{
+  "name": "ES6 Arrow Functions",
+  "property": "arrow",
+  "authors": ["Vincent Riemer"],
+  "tags": ["es6"]
+}
+!*/
+/* DOC
+Check if browser implements ECMAScript 6 Arrow Functions per specification.
+*/
+
+  Modernizr.addTest('arrow', function() {
+    try {
+      // eslint-disable-next-line
+      eval('()=>{}');
+    } catch (e) {
+      return false;
+    }
+    return true;
+  });
+
 
   /**
    * If the browsers follow the spec, then they would expose vendor-specific styles as:

@@ -1,57 +1,107 @@
 class Corousel {
 
-  //constructor() {
-//
-  //  this.prev = document.getElementsByClassName("corousel__prev")[0];
-  //  this.next = document.getElementsByClassName("corousel__next")[0];
-  //  this.corousels = document.getElementsByClassName("corousel__element");
-  //  this.corouselcontainer = document.getElementsByClassName("corousel__container")[0];
-  //  this.corouselIndex = 1;
-  //  this.corouselsNo=4;
-  //  this.init();    
-  //}
-//
-  //init () {
-//
-  //  console.log(this.corouselcontainer);
-//
-  //  console.log(this.corousels);
-//
-  //  this.showCorousel(this.corouselIndex);  
-//
-//
-//
-  //  this.next.addEventListener("click", function() {
-  //      this.plusCorousel(1);
-  //    }.bind(this)); 
-  //    this.prev.addEventListener("click", function() {
-  //      this.plusCorousel(-1);
-  //    }.bind(this));
-  // }
-//
-  // plusCorousel(n) {
-  //  this.showCorousel(this.coruselIndex+= n);
-  // }
-  // 
-  // currentCorousel(n) {
-  //  this.showCorousel(this.coruselIndex = n);
-  // }   
-  //
-  //showCorousel(n) {
-  //  var i;
-  //  var x; 
-  //  if (n > this.corousels.length) {this.corouselIndex = 1}
-  //  if (n < 1) {this.corouselIndex = this.corousels.length}
-  //  for (i = 4; i < this.corousels.length; i++) {
-  //      this.corousels[i].style.display = "none"; 
-  //  }
-  //
-  //  this.corousels[this.corouselIndex-1].style.transform = "translate(x)";
-  //  this.corousels[this.corouselIndex-2].style.transform = "translate(x)";
-  //  this.corousels[this.corouselIndex-3].style.transform = "translate(x)";
-  //  this.corousels[this.corouselIndex-4].style.transform = "translate(x)";
-  //}
+    constructor() {
+        this.init();
+
+    }
+
+    init() {
+
+
+        var wrapper = document.getElementsByClassName("wrapper")[0],
+            slider = wrapper.querySelectorAll('ul')[0],
+            items = slider.querySelectorAll('li'),
+            single = items[0],
+            singleWidth = single.offsetWidth,
+            visible = Math.ceil(((wrapper.offsetWidth) / singleWidth)), // note: doesn't include padding or border
+            currentPage = 1,
+            pages = Math.ceil(items.length / visible);
+
+
+        wrapper.insertAdjacentHTML('afterend', '<a class="arrow back">&lt;</a><a class="arrow forward">&gt;</a>');
+
+        function repeat(str, num) {
+            return new Array(num + 1).join(str);
+        }
+
+        // 1. Pad so that 'visible' number will always be seen, otherwise create empty items
+
+        if ((items.length % visible) != 0) {
+            var x = repeat('<li class="blank"></li>', (visible - (items.length % visible)));
+            slider.insertAdjacentHTML('beforeend', x);
+            items = slider.querySelectorAll('li');
+        }
+
+        // 2. Top and tail the list with 'visible' number of items, top has the last section, and tail has the first
+
+        let z = [].slice.call(items).slice(-visible);
+
+        for (var i = 0; i < z.length; i++) {
+            var zz = `<li>${z[i].innerHTML}</li>`;
+            console.log(z);
+            items[0].insertAdjacentHTML('beforebegin', zz);
+
+        }
+
+        let z1 = [].slice.call(items).slice(0, visible).reverse();
+
+        for (var i = 0; i < z1.length; i++) {
+            var zz1 = `<li>${z1[i].innerHTML}</li>`;
+            //console.log(zz1);
+            items[items.length - 1].insertAdjacentHTML('afterend', zz1);
+        }
+
+        items = slider.querySelectorAll('li'); // reselect
+
+        // 3. Set the left position to the first 'real' item
+        wrapper.scrollLeft += singleWidth * visible;
+
+        //console.log(wrapper.scrollLeft);
+
+
+
+        //function gotoPage(page) {
+        //    var dir = page < currentPage ? -1 : 1,
+        //        n = Math.abs(currentPage - page),
+        //        left = singleWidth * dir * visible * n;
+        //
+        //    wrapper.animate({
+        //        scrollLeft: += left;
+        //    }, 500, function() {
+        //        if (page == 0) {
+        //            wrapper.scrollLeft += singleWidth * visible * pages;
+        //            page = pages;
+        //        } else if (page > pages) {
+        //            wrapper.scrollLeft += singleWidth * visible;
+        //            // reset back to start position
+        //            page = 1;
+        //        }
+        //
+        //        currentPage = page;
+        //    });
+        //
+        //    return false;
+        //}
+
+
+
+        // 5. Bind to the forward and back buttons
+
+        var back = document.querySelectorAll('a.back')[0];
+        //console.log(back);
+        back.addEventListener("click", function() {
+            gotoPage(currentPage - 1);
+        });
+
+        var forward = document.querySelectorAll('a.forward')[0];
+        //console.log(forward);
+        forward.addEventListener("click", function() {
+            gotoPage(currentPage + 1);
+        });
+
+
+    }
 
 }
-  
+
 export default Corousel;

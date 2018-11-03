@@ -358,8 +358,8 @@ there.
 
 * {
   box-sizing: border-box;
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
 }
 
 /* Base Styles
@@ -370,10 +370,10 @@ html {
 }
 
 body {
-  overflow-x:hidden;
-  background-color:#f2f2f2;
-  color:#222;
-  font-family: "Montserrat","HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+  background-color: #f2f2f2;
+  color: #222;
+  font-family: "Montserrat", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 18px;
   font-size: 1.125rem;
   line-height: 18px;
@@ -384,46 +384,120 @@ body {
 /* Typography
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-top: 0;
   margin-bottom: 15px;
   margin-bottom: 0.9375rem;
-  font-weight: 300; }
+  font-weight: 300;
+}
 
-h1 { font-size: 64px; font-size: 4rem;  letter-spacing: -1.6px;  letter-spacing: -0.1rem; line-height: 19px; line-height: 1.1875rem;}
+h1 {
+  font-size: 64px;
+  font-size: 4rem;
+  letter-spacing: -1.6px;
+  letter-spacing: -0.1rem;
+  line-height: 19px;
+  line-height: 1.1875rem;
+}
 
-h2 { font-size: 57px; font-size: 3.5625rem; letter-spacing: -1.6px; letter-spacing: -0.1rem; line-height: 20px; line-height: 1.25rem; }
+h2 {
+  font-size: 57px;
+  font-size: 3.5625rem;
+  letter-spacing: -1.6px;
+  letter-spacing: -0.1rem;
+  line-height: 20px;
+  line-height: 1.25rem;
+}
 
-h3 { font-size: 48px; font-size: 3rem;  letter-spacing: -1.6px;  letter-spacing: -0.1rem; line-height: 21px; line-height: 1.3125rem; }
+h3 {
+  font-size: 48px;
+  font-size: 3rem;
+  letter-spacing: -1.6px;
+  letter-spacing: -0.1rem;
+  line-height: 21px;
+  line-height: 1.3125rem;
+}
 
-h4 { font-size: 38px; font-size: 2.375rem; letter-spacing: -1.28px; letter-spacing: -0.08rem; line-height: 22px; line-height: 1.375rem; }
+h4 {
+  font-size: 38px;
+  font-size: 2.375rem;
+  letter-spacing: -1.28px;
+  letter-spacing: -0.08rem;
+  line-height: 22px;
+  line-height: 1.375rem;
+}
 
-h5 { font-size: 28px; font-size: 1.75rem;  letter-spacing: -0.8px;  letter-spacing: -0.05rem; line-height: 24px; line-height: 1.5rem; }
+h5 {
+  font-size: 28px;
+  font-size: 1.75rem;
+  letter-spacing: -0.8px;
+  letter-spacing: -0.05rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+}
 
-h6 { font-size: 24px; font-size: 1.5rem;  letter-spacing: 0px;  letter-spacing: 0; line-height: 25px; line-height: 1.5625rem; }
+h6 {
+  font-size: 24px;
+  font-size: 1.5rem;
+  letter-spacing: 0px;
+  letter-spacing: 0;
+  line-height: 25px;
+  line-height: 1.5625rem;
+}
 
 /* Larger than phablet */
 
 @media (min-width: 550px) {
-  h1 { font-size: 80px; font-size: 5rem; }
-  h2 { font-size: 67px; font-size: 4.1875rem; }
-  h3 { font-size: 57px; font-size: 3.5625rem; }
-  h4 { font-size: 48px; font-size: 3rem; }
-  h5 { font-size: 38px; font-size: 2.375rem; }
-  h6 { font-size: 24px; font-size: 1.5rem; }
+  h1 {
+    font-size: 80px;
+    font-size: 5rem;
+  }
+
+  h2 {
+    font-size: 67px;
+    font-size: 4.1875rem;
+  }
+
+  h3 {
+    font-size: 57px;
+    font-size: 3.5625rem;
+  }
+
+  h4 {
+    font-size: 48px;
+    font-size: 3rem;
+  }
+
+  h5 {
+    font-size: 38px;
+    font-size: 2.375rem;
+  }
+
+  h6 {
+    font-size: 24px;
+    font-size: 1.5rem;
+  }
   }
 
 p {
-  margin-top: 0; }
+  margin-top: 0;
+}
 
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 a {
-  color: #4f4a4f; }
+  color: #4f4a4f;
+}
 
 a:hover {
-  color: #ffe4c4; }
+  color: #ffe4c4;
+}
 
 /* Forms
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -441,13 +515,15 @@ select {
   height: 38px;
   height: 2.375rem;
   padding: 6px 10px;
-  padding: 0.375rem 0.625rem; /* The 6px vertically centers text on FF, ignored by Webkit */
+  padding: 0.375rem 0.625rem;
   border: 1px solid #D1D1D1;
   border: 0.0625rem solid #D1D1D1;
   border-radius: 4px;
   border-radius: 0.25rem;
+  /* The 6px vertically centers text on FF, ignored by Webkit */
   background-color: #fff;
-  box-shadow: none; }
+  box-shadow: none;
+}
 
 /* Removes awkward default styles on some inputs for iOS */
 
@@ -459,9 +535,10 @@ input[type="tel"],
 input[type="url"],
 input[type="password"],
 textarea {
-          -webkit-appearance: none;
-             -moz-appearance: none;
-                  appearance: none; }
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
 
 textarea {
   min-height: 65px;
@@ -469,7 +546,8 @@ textarea {
   padding-top: 6px;
   padding-top: 0.375rem;
   padding-bottom: 6px;
-  padding-bottom: 0.375rem; }
+  padding-bottom: 0.375rem;
+}
 
 input[type="email"]:focus,
 input[type="number"]:focus,
@@ -482,41 +560,50 @@ textarea:focus,
 select:focus {
   border: 1px solid #33C3F0;
   border: 0.0625rem solid #33C3F0;
-  outline: 0; }
+  outline: 0;
+}
 
 label,
 legend {
   display: block;
   margin-bottom: 8px;
   margin-bottom: 0.5rem;
-  font-weight: 600; }
+  font-weight: 600;
+}
 
 fieldset {
   padding: 0;
-  border-width: 0; }
+  border-width: 0;
+}
 
 input[type="checkbox"],
 input[type="radio"] {
-  display: inline; }
+  display: inline;
+}
 
-label > .label-body {
+label>.label-body {
   display: inline-block;
   margin-left: 8px;
   margin-left: 0.5rem;
-  font-weight: normal; }
+  font-weight: normal;
+}
 
 /* Lists
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 ul {
-  list-style: circle inside; }
+  list-style: circle inside;
+}
 
 ol {
-  list-style: decimal inside; }
+  list-style: decimal inside;
+}
 
-ol, ul {
+ol,
+ul {
   margin-top: 0;
-  padding-left: 0; }
+  padding-left: 0;
+}
 
 ul ul,
 ul ol,
@@ -524,11 +611,13 @@ ol ol,
 ol ul {
   margin: 24px 0 24px 49px;
   margin: 1.5rem 0 1.5rem 3.0625rem;
-  font-size: 90%; }
+  font-size: 90%;
+}
 
 li {
   margin-bottom: 16px;
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+}
 
 /* Code
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -544,13 +633,15 @@ code {
   border-radius: 0.25rem;
   background: #F1F1F1;
   font-size: 90%;
-  white-space: nowrap; }
+  white-space: nowrap;
+}
 
-pre > code {
+pre>code {
   display: block;
   padding: 16px 24px;
   padding: 1rem 1.5rem;
-  white-space: pre; }
+  white-space: pre;
+}
 
 /* Tables
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -561,15 +652,18 @@ td {
   padding: 0.75rem 0.9375rem;
   border-bottom: 1px solid #E1E1E1;
   border-bottom: 0.0625rem solid #E1E1E1;
-  text-align: left; }
+  text-align: left;
+}
 
 th:first-child,
 td:first-child {
-  padding-left: 0; }
+  padding-left: 0;
+}
 
 th:last-child,
 td:last-child {
-  padding-right: 0; }
+  padding-right: 0;
+}
 
 /* Spacing
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -577,14 +671,16 @@ td:last-child {
 button,
 .button {
   margin-bottom: 15px;
-  margin-bottom: 0.9375rem; }
+  margin-bottom: 0.9375rem;
+}
 
 input,
 textarea,
 select,
 fieldset {
   margin-bottom: 15px;
-  margin-bottom: 0.9375rem; }
+  margin-bottom: 0.9375rem;
+}
 
 pre,
 blockquote,
@@ -596,24 +692,29 @@ ul,
 ol,
 form {
   margin-bottom: 15px;
-  margin-bottom: 0.9375rem; }
+  margin-bottom: 0.9375rem;
+}
 
 /* Utilities
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 .u-full-width {
   box-sizing: border-box;
-  width: 100%; }
+  width: 100%;
+}
 
 .u-max-full-width {
   box-sizing: border-box;
-  max-width: 100%; }
+  max-width: 100%;
+}
 
 .u-pull-right {
-  float: right; }
+  float: right;
+}
 
 .u-pull-left {
-  float: left; }
+  float: left;
+}
 
 /* Misc
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -625,7 +726,8 @@ hr {
   margin-bottom: 3.5rem;
   border-top: 1px solid #E1E1E1;
   border-top: 0.0625rem solid #E1E1E1;
-  border-width: 0; }
+  border-width: 0;
+}
 
 /* Grid
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -637,88 +739,186 @@ hr {
   max-width: 75rem;
   margin: 0 auto;
   padding: 0 20px;
-  padding: 0 1.25rem;}
+  padding: 0 1.25rem;
+}
 
 .container.full {
   width: 100%;
-  max-width: unset;}
+  max-width: unset;
+}
 
 .column,
 .columns {
   width: 100%;
-  float: left;}
+  float: left;
+}
 
 /* For devices larger than 400px */
 
 @media (min-width: 400px) {
   .container {
     width: 85%;
-    padding: 0; }
+    padding: 0;
+  }
   }
 
 /* For devices larger than 550px */
 
 @media (min-width: 550px) {
   .container {
-    width: 80%; }
+    width: 80%;
+  }
+
   .column,
   .columns {
-    margin-left: 1%; }
+    margin-left: 1%;
+  }
+
   .column:first-child,
   .columns:first-child {
-    margin-left: 0; }
+    margin-left: 0;
+  }
 
   .one.column,
-  .one.columns                    { width: 4.66666666667%; }
-  .two.columns                    { width: 13.3333333333%; }
-  .three.columns                  { width: 22%;            }
-  .four.columns                   { width: 30.6666666667%; }
-  .five.columns                   { width: 39.3333333333%; }
-  .six.columns                    { width: 48%;            }
-  .seven.columns                  { width: 56.6666666667%; }
-  .eight.columns                  { width: 65.3333333333%; }
-  .nine.columns                   { width: 74.0%;          }
-  .ten.columns                    { width: 82.6666666667%; }
-  .eleven.columns                 { width: 91.3333333333%; }
-  .twelve.columns                 { width: 100%; margin-left: 0; }
+  .one.columns {
+    width: 4.66666666667%;
+  }
 
-  .one-third.column               { width: 30.6666666667%; }
-  .two-third.column               { width: 65.3333333333%; }
-  .one-half.column                { width: 48%; }
-  .one-four.column                { width: 24%;}
-  .one-eight.column               { width: 12%;}
+  .two.columns {
+    width: 13.3333333333%;
+  }
+
+  .three.columns {
+    width: 22%;
+  }
+
+  .four.columns {
+    width: 30.6666666667%;
+  }
+
+  .five.columns {
+    width: 39.3333333333%;
+  }
+
+  .six.columns {
+    width: 48%;
+  }
+
+  .seven.columns {
+    width: 56.6666666667%;
+  }
+
+  .eight.columns {
+    width: 65.3333333333%;
+  }
+
+  .nine.columns {
+    width: 74.0%;
+  }
+
+  .ten.columns {
+    width: 82.6666666667%;
+  }
+
+  .eleven.columns {
+    width: 91.3333333333%;
+  }
+
+  .twelve.columns {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .one-third.column {
+    width: 30.6666666667%;
+  }
+
+  .two-third.column {
+    width: 65.3333333333%;
+  }
+
+  .one-half.column {
+    width: 48%;
+  }
+
+  .one-four.column {
+    width: 24%;
+  }
+
+  .one-eight.column {
+    width: 12%;
+  }
 
   /* Offsets */
   .offset-by-one.column,
-  .offset-by-one.columns          { margin-left: 8.66666666667%; }
+  .offset-by-one.columns {
+    margin-left: 8.66666666667%;
+  }
+
   .offset-by-two.column,
-  .offset-by-two.columns          { margin-left: 17.3333333333%; }
+  .offset-by-two.columns {
+    margin-left: 17.3333333333%;
+  }
+
   .offset-by-three.column,
-  .offset-by-three.columns        { margin-left: 26%;            }
+  .offset-by-three.columns {
+    margin-left: 26%;
+  }
+
   .offset-by-four.column,
-  .offset-by-four.columns         { margin-left: 34.6666666667%; }
+  .offset-by-four.columns {
+    margin-left: 34.6666666667%;
+  }
+
   .offset-by-five.column,
-  .offset-by-five.columns         { margin-left: 43.3333333333%; }
+  .offset-by-five.columns {
+    margin-left: 43.3333333333%;
+  }
+
   .offset-by-six.column,
-  .offset-by-six.columns          { margin-left: 52%;            }
+  .offset-by-six.columns {
+    margin-left: 52%;
+  }
+
   .offset-by-seven.column,
-  .offset-by-seven.columns        { margin-left: 60.6666666667%; }
+  .offset-by-seven.columns {
+    margin-left: 60.6666666667%;
+  }
+
   .offset-by-eight.column,
-  .offset-by-eight.columns        { margin-left: 69.3333333333%; }
+  .offset-by-eight.columns {
+    margin-left: 69.3333333333%;
+  }
+
   .offset-by-nine.column,
-  .offset-by-nine.columns         { margin-left: 78.0%;          }
+  .offset-by-nine.columns {
+    margin-left: 78.0%;
+  }
+
   .offset-by-ten.column,
-  .offset-by-ten.columns          { margin-left: 86.6666666667%; }
+  .offset-by-ten.columns {
+    margin-left: 86.6666666667%;
+  }
+
   .offset-by-eleven.column,
-  .offset-by-eleven.columns       { margin-left: 95.3333333333%; }
+  .offset-by-eleven.columns {
+    margin-left: 95.3333333333%;
+  }
 
   .offset-by-one-third.column,
-  .offset-by-one-third.columns    { margin-left: 34.6666666667%; }
+  .offset-by-one-third.columns {
+    margin-left: 34.6666666667%;
+  }
+
   .offset-by-two-thirds.column,
-  .offset-by-two-thirds.columns   { margin-left: 69.3333333333%; }
+  .offset-by-two-thirds.columns {
+    margin-left: 69.3333333333%;
+  }
 
   .offset-by-one-half.column,
-  .offset-by-one-half.columns     { margin-left: 52%; }
+  .offset-by-one-half.columns {
+    margin-left: 52%;
+  }
   }
 
 /* Clearing
@@ -1001,29 +1201,29 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
   text-align: center;
 }
 
-.navbar:after{
-    content:"";
+.navbar:after {
+    content: "";
 
   }
 
 .navbar::-webkit-input-placeholder {
-    color:    #fff;
-    opacity:  1;
+    color: #fff;
+    opacity: 1;
   }
 
 .navbar:-ms-input-placeholder {
-    color:    #fff;
-    opacity:  1;
+    color: #fff;
+    opacity: 1;
   }
 
 .navbar::-ms-input-placeholder {
-    color:    #fff;
-    opacity:  1;
+    color: #fff;
+    opacity: 1;
   }
 
 .navbar::placeholder {
-    color:    #fff;
-    opacity:  1;
+    color: #fff;
+    opacity: 1;
   }
 
 .navbar .col {
@@ -1041,13 +1241,13 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
   }
 
 .navbar__cart span {
-        display: inline-block;
-        position: relative;
-        padding: 0px 8px 0px 8px;
-        padding: 0 0.5rem 0 0.5rem;
-        color: #fff;
-        font-weight: bold;
-        transition: opacity 0.5s ease;
+      display: inline-block;
+      position: relative;
+      padding: 0px 8px 0px 8px;
+      padding: 0 0.5rem 0 0.5rem;
+      color: #fff;
+      font-weight: bold;
+      transition: opacity 0.5s ease;
     }
 
 .navbar__cart span a {
@@ -1078,44 +1278,44 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
     height: 2.1875rem;
     margin-top: 0.825em;
     margin-bottom: unset;
-    }
+  }
 
 .navbar__search input {
-        width: 100%;
-        height: 100%;
-        margin-bottom: unset;
-        padding: 0.64em 1.425em;
-        border: none;
-        border-width: 1px;
-        border-width: 0.0625rem;
-        border-style: solid;
-        border-color: #ffe4c4;
-        outline: none;
-        background: #ffe4c429;
-        transition: box-shadow 0.5s ease;
-      }
+      width: 100%;
+      height: 100%;
+      margin-bottom: unset;
+      padding: 0.64em 1.425em;
+      border: none;
+      border-width: 1px;
+      border-width: 0.0625rem;
+      border-style: solid;
+      border-color: #ffe4c4;
+      outline: none;
+      background: #ffe4c429;
+      transition: box-shadow 0.5s ease;
+    }
 
 .navbar__search :hover {
-        box-shadow: 0px 0px 13px -2px rgba(253, 253, 253, 0.75);
-        box-shadow: 0 0 0.8125rem -0.125rem rgba(253, 253, 253, 0.75);
-      }
+      box-shadow: 0px 0px 13px -2px rgba(253, 253, 253, 0.75);
+      box-shadow: 0 0 0.8125rem -0.125rem rgba(253, 253, 253, 0.75);
+    }
 
 .navbar__search button {
-        -webkit-transform: translateY(-50%);
-        position: absolute;
-        top: 50%;
-        right: 0.75em;
-        padding: 0;
-                transform: translateY(-50%);
-        border: none;
-        background: none;
-        color: #fff;
-        font-size: 1em;
-      }
+      -webkit-transform: translateY(-50%);
+      position: absolute;
+      top: 50%;
+      right: 0.75em;
+      padding: 0;
+              transform: translateY(-50%);
+      border: none;
+      background: none;
+      color: #fff;
+      font-size: 1em;
+    }
 
 .navbar_menu-container {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     height: 0;
     padding-top: 0.5em;
     clear: both;
@@ -1127,7 +1327,7 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
       overflow: visible;
     }
 
-.navbar_menu-container .col { 
+.navbar_menu-container .col {
       padding-bottom: 0.1em;
     }
 
@@ -1149,18 +1349,19 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
     }
 
 .navbar_menu-container li a {
-      color: #ffffff;
-      font-family: 'Lato', sans-serif;
-      font-size: 80%;
-      font-weight: 400;
-      line-height: 1em;;
-      text-decoration: none;
-      transition: color 0.3s ease;
+        color: #ffffff;
+        font-family: 'Lato', sans-serif;
+        font-size: 80%;
+        font-weight: 400;
+        line-height: 1em;
+        ;
+        text-decoration: none;
+        transition: color 0.3s ease;
       }
 
 .navbar_menu-container li a:hover,
         .navbar_menu-container li a:focus {
-        color: #ffe4c4;
+          color: #ffe4c4;
         }
 
 .navbar_menu-container .social {
@@ -1170,21 +1371,21 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
     }
 
 .navbar_menu-container .social li {
-          width: 32px;
-          width: 2rem;
-          height: 32px;
-          height: 2rem;
-          margin: 0 0.3125em;
-          float: left;
-        }
+        width: 32px;
+        width: 2rem;
+        height: 32px;
+        height: 2rem;
+        margin: 0 0.3125em;
+        float: left;
+      }
 
 .navbar_menu-container .social li svg {
-            fill: #ffe4c4;
-            display: block;
-            width: 100%;
-            height: 100%;
-            transition: fill 0.3s ease;
-          }
+          fill: #ffe4c4;
+          display: block;
+          width: 100%;
+          height: 100%;
+          transition: fill 0.3s ease;
+        }
 
 .navbar_menu-container .social li:hover svg {
         fill: #686d6e;
@@ -1192,61 +1393,61 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 
 .navbar.is-active {
     box-shadow: 0 4px 4px rgb(27, 36, 107);
-    box-shadow: 0 0.25rem 0.25rem rgb(27, 36, 107);      
+    box-shadow: 0 0.25rem 0.25rem rgb(27, 36, 107);
   }
 
 .navbar.is-active:after {
-        opacity: 1;
-      }
+      opacity: 1;
+    }
 
-.navbar.is-active .hamburger__inner, 
-        .navbar.is-active .hamburger__inner::before, 
-        .navbar.is-active .hamburger__inner::after {
-          background-color: #ffe4c4;
-        }
+.navbar.is-active .hamburger__inner,
+      .navbar.is-active .hamburger__inner::before,
+      .navbar.is-active .hamburger__inner::after {
+        background-color: #ffe4c4;
+      }
 
 .navbar.is-active .hamburger__label {
-          color: #ffe4c4;
-        }
-
-.navbar.is-active .col {
-        -webkit-transform: translateY(40px);
-        -webkit-transform: translateY(2.5rem);
-        -webkit-animation: fade-in-stagger 0.8s ease forwards;
-                transform: translateY(40px);
-                transform: translateY(2.5rem);
-        text-align: left;
-                animation: fade-in-stagger 0.8s ease forwards;
-        transition: opacity 0.3s ease;
+        color: #ffe4c4;
       }
 
+.navbar.is-active .col {
+      -webkit-transform: translateY(40px);
+      -webkit-transform: translateY(2.5rem);
+      -webkit-animation: fade-in-stagger 0.8s ease forwards;
+              transform: translateY(40px);
+              transform: translateY(2.5rem);
+      text-align: left;
+              animation: fade-in-stagger 0.8s ease forwards;
+      transition: opacity 0.3s ease;
+    }
+
 .navbar.is-active .col:nth-child(1) {
-          -webkit-animation-delay: 0;
-                  animation-delay: 0;
-        }
+        -webkit-animation-delay: 0;
+                animation-delay: 0;
+      }
 
 .navbar.is-active .col:nth-child(2) {
-          -webkit-animation-delay: 0.1s;
-                  animation-delay: 0.1s;
-        }
+        -webkit-animation-delay: 0.1s;
+                animation-delay: 0.1s;
+      }
 
 .navbar.is-active .col:nth-child(3) {
-          -webkit-animation-delay: 0.2s;
-                  animation-delay: 0.2s;
-        }
+        -webkit-animation-delay: 0.2s;
+                animation-delay: 0.2s;
+      }
 
 .navbar.is-active .col:nth-child(4) {
         -webkit-animation-delay: 0.3s;
                 animation-delay: 0.3s;
-        }
+      }
 
 .navbar.is-active .col:nth-child(5) {
         -webkit-animation-delay: 0.4s;
                 animation-delay: 0.4s;
-        }
+      }
 
 .navbar.is-active #navbar-search button {
-       color: #b4b9ba;
+        color: #b4b9ba;
       }
 
 .navbar.is-active #navbar-search input {
@@ -1254,23 +1455,23 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
       }
 
 .navbar.is-active #navbar-search ::-webkit-input-placeholder {
-        color:    #fff;
-        opacity:  1;
+        color: #fff;
+        opacity: 1;
       }
 
 .navbar.is-active #navbar-search :-ms-input-placeholder {
-        color:    #fff;
-        opacity:  1;
+        color: #fff;
+        opacity: 1;
       }
 
 .navbar.is-active #navbar-search ::-ms-input-placeholder {
-        color:    #fff;
-        opacity:  1;
+        color: #fff;
+        opacity: 1;
       }
 
 .navbar.is-active #navbar-search ::placeholder {
-        color:    #fff;
-        opacity:  1;
+        color: #fff;
+        opacity: 1;
       }
 
 /*!
@@ -1288,7 +1489,7 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
   float: left;
   overflow: visible;
   border: 1px solid #ffe4c4;
-  border: 0.0625rem solid #ffe4c4; 
+  border: 0.0625rem solid #ffe4c4;
   outline: none;
   background-color: transparent;
   color: inherit;
@@ -1307,18 +1508,18 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
     display: inline-block;
     position: relative;
     width: 30px;
-    width: 1.875rem; 
+    width: 1.875rem;
   }
 
 .hamburger__inner {
     display: block;
     top: 50%;
     margin-top: -2px;
-    margin-top: -0.125rem; 
+    margin-top: -0.125rem;
   }
 
-.hamburger__inner, 
-  .hamburger__inner::before, 
+.hamburger__inner,
+  .hamburger__inner::before,
   .hamburger__inner::after {
     position: absolute;
     width: 30px;
@@ -1332,23 +1533,23 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
     transition-property: -webkit-transform;
     transition-property: transform;
     transition-property: transform, -webkit-transform;
-    transition-timing-function: ease; 
+    transition-timing-function: ease;
   }
 
-.hamburger__inner::before, 
+.hamburger__inner::before,
   .hamburger__inner::after {
     display: block;
-    content: ""; 
+    content: "";
   }
 
 .hamburger__inner::before {
     top: -6px;
-    top: -0.375rem; 
+    top: -0.375rem;
   }
 
 .hamburger__inner::after {
     bottom: -6px;
-    bottom: -0.375rem; 
+    bottom: -0.375rem;
   }
 
 .hamburger__label {
@@ -1362,7 +1563,7 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 
 .hamburger__outer,
   .hamburger__label {
-     vertical-align: middle;
+    vertical-align: middle;
   }
 
 /*
@@ -1377,23 +1578,23 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 .hamburger--boring .hamburger__inner,
       .hamburger--boring .hamburger__inner::before,
       .hamburger--boring .hamburger__inner::after {
-        transition-property: none; 
+        transition-property: none;
       }
 
 .hamburger--boring.is-active .hamburger__inner {
         -webkit-transform: rotate(45deg);
-                transform: rotate(45deg); 
+                transform: rotate(45deg);
       }
 
 .hamburger--boring.is-active .hamburger__inner::before {
-      top: 0;
-      opacity: 0; 
+        top: 0;
+        opacity: 0;
       }
 
 .hamburger--boring.is-active .hamburger__inner::after {
-      -webkit-transform: rotate(-90deg);
-      bottom: 0;
-              transform: rotate(-90deg); 
+        -webkit-transform: rotate(-90deg);
+        bottom: 0;
+                transform: rotate(-90deg);
       }
 
 /*
@@ -1409,10 +1610,11 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 @media (min-width: 400px) {
   .navbar_menu-container {
     flex-direction: row;
-    flex-wrap: wrap; 
-  } 
+    flex-wrap: wrap;
+  }
+
     .navbar_menu-container .col {
-    flex: 0 0 50%;
+      flex: 0 0 50%;
     }
   }
 
@@ -1424,14 +1626,16 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 
 @media (min-width: 1000px) {
   .navbar_menu-container {
-    flex-wrap: nowrap;  
+    flex-wrap: nowrap;
   }
+
     .navbar_menu-container .col {
-    flex: 0 0 16.7%;
+      flex: 0 0 16.7%;
     }
+
     .navbar_menu-container .col:last-child {
-    display: flex;
-    justify-content: flex-end;
+      display: flex;
+      justify-content: flex-end;
     }
   }
 
@@ -1446,46 +1650,46 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 */
 
 @-webkit-keyframes fade-in-stagger {
-    to {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
-      opacity: 1; 
-    }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 @keyframes fade-in-stagger {
-    to {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
-      opacity: 1; 
-    }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
 }
 
-@-webkit-keyframes  box-shadow {
+@-webkit-keyframes box-shadow {
   to {
     opacity: 0;
-    opacity: 1; 
+    opacity: 1;
   }
 }
 
-@keyframes  box-shadow {
+@keyframes box-shadow {
   to {
     opacity: 0;
-    opacity: 1; 
+    opacity: 1;
   }
 }
 
-@-webkit-keyframes  opacity {
+@-webkit-keyframes opacity {
   to {
-  opacity:0;
-  opacity:0.7;
+    opacity: 0;
+    opacity: 0.7;
   }
 }
 
-@keyframes  opacity {
+@keyframes opacity {
   to {
-  opacity:0;
-  opacity:0.7;
+    opacity: 0;
+    opacity: 0.7;
   }
 }
 
@@ -1501,7 +1705,7 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 
 .slider__container {
     position: relative;
-    width:100%;
+    width: 100%;
     height: 700px;
     height: 43.75rem;
     background-blend-mode: soft-light;
@@ -1509,18 +1713,18 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
     background-image: url(../../assets/images/pattern.svg);
     background-size: 800px;
     background-size: 50rem;
-    }
+  }
 
 .slider:after {
-      display: block;
-      z-index: -999;
-      position: relative;
-      width: 100%;
-      height: 56px;
-      height: 3.5rem;
-      background: #4f4a4f;
-      content: '';
-    }
+    display: block;
+    z-index: -999;
+    position: relative;
+    width: 100%;
+    height: 56px;
+    height: 3.5rem;
+    background: #4f4a4f;
+    content: '';
+  }
 
 /* Hide the images by default */
 
@@ -1537,8 +1741,8 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
     height: 43.75rem;
     padding-top: 61px;
     padding-top: 3.8125rem;
-    padding-bottom:90px;
-    padding-bottom:5.625rem;
+    padding-bottom: 90px;
+    padding-bottom: 5.625rem;
   }
 
 .slider__image:hover {
@@ -1558,35 +1762,35 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
   }
 
 .slider__text-container p {
-        position: relative;
-        padding: 5px 5px 5px 5px;
-        padding: 0.3125rem 0.3125rem 0.3125rem 0.3125rem;
-        color: #000000;
-        font-family: 'Lato', sans-serif;
-        font-weight: 300;
-        text-align: center;
-      }
+      position: relative;
+      padding: 5px 5px 5px 5px;
+      padding: 0.3125rem 0.3125rem 0.3125rem 0.3125rem;
+      color: #000000;
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      text-align: center;
+    }
 
 .slider__text-container span {
-        position: relative;
-      }
+      position: relative;
+    }
 
 .slider__text-container button {
-        position: relative;
-        margin-right: auto;
-        margin-left: auto;
-        float: unset;
-      }
+      position: relative;
+      margin-right: auto;
+      margin-left: auto;
+      float: unset;
+    }
 
 .slider__text-container button span {
-          color: #1b246b;
-        }
+        color: #1b246b;
+      }
 
 .slider__text-container .button--antiman::after {
-        border: 2px solid #1b246b;
-        border: 0.125rem solid #1b246b;
-        background: unset;
-      }
+      border: 2px solid #1b246b;
+      border: 0.125rem solid #1b246b;
+      background: unset;
+    }
 
 .slider__text {
     position: relative;
@@ -1603,7 +1807,8 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 
 /* Next & previous buttons */
 
-.slider__prev, .slider__next {
+.slider__prev,
+.slider__next {
   -webkit-transform: translate3d(0, -50%, 0);
   position: absolute;
   top: 50%;
@@ -1638,21 +1843,21 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 /* On hover, add a black background color with a little bit see-through */
 
 .slider__prev:hover, .slider__next:hover {
-  background-color: rgba(0, 0, 0, 0.281);
+    background-color: rgba(0, 0, 0, 0.281);
   }
 
 .indicator__container {
-  display: block;
-  position: absolute;
-  top: 580px;
-  top: 36.25rem;
-  right: 0;
-  left: 0;
-  max-width: -webkit-max-content;
-  max-width: -moz-max-content;
-  max-width: max-content;
-  margin-right: auto;
-  margin-left: auto; 
+    display: block;
+    position: absolute;
+    top: 580px;
+    top: 36.25rem;
+    right: 0;
+    left: 0;
+    max-width: -webkit-max-content;
+    max-width: -moz-max-content;
+    max-width: max-content;
+    margin-right: auto;
+    margin-left: auto;
   }
 
 .indicator__element {
@@ -1666,74 +1871,72 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
   }
 
 .indicator__element:hover {
-        background-color:#e0e0e0;
-      }
+      background-color: #e0e0e0;
+    }
 
 .indicator__element img {
-        width: auto;
-        height: 100px;
-        height: 6.25rem;
-        opacity: 0.4;
-      }
+      width: auto;
+      height: 100px;
+      height: 6.25rem;
+      opacity: 0.4;
+    }
 
-.indicator__element .opacity-off{
-        opacity: 1;
-      }
+.indicator__element .opacity-off {
+      opacity: 1;
+    }
 
 .corousel {
-  margin:100px 0px;
-  margin:6.25rem 0;
-
+  margin: 100px 0px;
+  margin: 6.25rem 0;
 }
 
-.corousel__inner{
-    
-    display:block;
+.corousel__inner {
+
+    display: block;
     position: relative;
-    width:1200px;
-    width:75rem;
+    width: 1200px;
+    width: 75rem;
     height: 300px;
     height: 18.75rem;
     margin: 0 auto;
     overflow: hidden;
     box-shadow: 0 1px 8px #888888;
     box-shadow: 0 0.0625rem 0.5rem #888888;
-    
-    
   }
 
-.corousel__container{
-    width:150vw;
+.corousel__container {
+    width: 150vw;
     height: inherit;
   }
 
 .corousel__element {
     position: relative;
-    width: 250px!important;
-    width: 15.625rem!important;
+    width: 250px !important;
+    width: 15.625rem !important;
     height: inherit;
-    margin-left:4px!important;
-    margin-left:0.25rem!important;
-    padding:5px;
-    padding:0.3125rem;
+    margin-left: 4px !important;
+    margin-left: 0.25rem !important;
+    padding: 5px;
+    padding: 0.3125rem;
     border: 1.4px #4f4a4f solid;
     border: 0.0875rem #4f4a4f solid;
     font-size: 80px;
     font-size: 5rem;
-    text-align: center; 
-   }
+    text-align: center;
+  }
 
 .corousel__element-inner {
-    -webkit-transform: translate3d(-50%, -50%, 0);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-            transform: translate3d(-50%, -50%, 0);
+      -webkit-transform: translate3d(-50%, -50%, 0);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+              transform: translate3d(-50%, -50%, 0);
     }
 
 /* Next & previous buttons */
 
-.corousel__prev, .corousel__next {
+.corousel__prev,
+.corousel__next {
   -webkit-transform: translate3d(0, -50%, 0);
   position: absolute;
   top: 50%;
@@ -1768,115 +1971,205 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 /* On hover, add a black background color with a little bit see-through */
 
 .corousel__prev:hover, .corousel__next:hover {
-  background-color: rgba(0, 0, 0, 0.281);
- }
+    background-color: rgba(0, 0, 0, 0.281);
+  }
+
+.infiniteCarousel {
+  position: relative;
+  width: 395px;
+  width: 24.6875rem;
+}
+
+.infiniteCarousel .wrapper {
+  position: absolute;
+  top: 0;
+  width: 315px;
+  width: 19.6875rem; /* .infiniteCarousel width - (.wrapper margin-left + .wrapper margin-right) */
+  min-height: 10em;
+  margin: 0 40px;
+  margin: 0 2.5rem;
+  overflow: auto;
+}
+
+.infiniteCarousel ul a img {
+  -moz-border-radius: 5px;
+  -moz-border-radius: 0.3125rem;
+  -webkit-border-radius: 5px;
+  -webkit-border-radius: 0.3125rem;
+  border: 5px solid #000;
+  border: 0.3125rem solid #000;
+}
+
+.infiniteCarousel .wrapper ul {
+  position: absolute;
+  top: 0;
+  width: 9999px;
+  width: 624.9375rem;
+  margin:0;
+  padding:0;
+  list-style-image:none;
+  list-style-position:outside;
+  list-style-type:none;
+}
+
+.infiniteCarousel ul li {
+  display:block;
+  width: 105px;
+  width: 6.5625rem;
+  height: 105px;
+  height: 6.5625rem;
+  padding: 10px;
+  padding: 0.625rem;
+  float:left;
+
+}
+
+.infiniteCarousel ul li a img {
+  display:block;
+}
+
+.infiniteCarousel .arrow {
+  display: block;
+  position: absolute;
+  top: 37px;
+  top: 2.3125rem;
+  width: 37px;
+  width: 2.3125rem;
+  height: 36px;
+  height: 2.25rem;
+  background: url(http://jqueryfordesigners.com/demo/images/arrow.png) no-repeat 0 0;
+  text-indent: -999px;
+  text-indent: -62.4375rem;
+  cursor: pointer;
+}
+
+.infiniteCarousel .forward {
+  right: 0;
+  background-position: 0 0;
+}
+
+.infiniteCarousel .back {
+  left: 0;
+  background-position: 0 -72px;
+  background-position: 0 -4.5rem;
+}
+
+.infiniteCarousel .forward:hover {
+  background-position: 0 -36px;
+  background-position: 0 -2.25rem;
+}
+
+.infiniteCarousel .back:hover {
+  background-position: 0 -108px;
+  background-position: 0 -6.75rem;
+}
 
 /* Do not edit modules/_sprite directly as it is generated automatically by Gulp.
 Instead edit gulp/templates/sprite */
 
 .icon {
-      background-image: url('../../assets/images/sprites/sprite-e79e95cc.svg');
-    }
+  background-image: url('../../assets/images/sprites/sprite-e79e95cc.svg');
+}
 
 .no-svg .icon {
-      background-image: url('../../assets/images/sprites/sprite-e79e95cc.png');
-    }
+  background-image: url('../../assets/images/sprites/sprite-e79e95cc.png');
+}
 
 .icon--clear-view-escapes {
-    width: 144.4px;
-    width: 9.025rem;
-    height: 61.53px;
-    height: 3.84563rem;
-    background-position: 0 0;
-  }
+  width: 144.4px;
+  width: 9.025rem;
+  height: 61.53px;
+  height: 3.84563rem;
+  background-position: 0 0;
+}
 
 .icon--comment {
-    width: 66px;
-    width: 4.125rem;
-    height: 66px;
-    height: 4.125rem;
-    background-position: 99.71014492753623% 0;
-  }
+  width: 66px;
+  width: 4.125rem;
+  height: 66px;
+  height: 4.125rem;
+  background-position: 99.71014492753623% 0;
+}
 
 .icon--facebook {
-    width: 23.23px;
-    width: 1.45188rem;
-    height: 44.01px;
-    height: 2.75063rem;
-    background-position: 26.424310365536293% 45.92133741323979%;
-  }
+  width: 23.23px;
+  width: 1.45188rem;
+  height: 44.01px;
+  height: 2.75063rem;
+  background-position: 26.424310365536293% 45.92133741323979%;
+}
 
 .icon--fire {
-    width: 58px;
-    width: 3.625rem;
-    height: 66px;
-    height: 4.125rem;
-    background-position: 0 99.58035714285714%;
-  }
+  width: 58px;
+  width: 3.625rem;
+  height: 66px;
+  height: 4.125rem;
+  background-position: 0 99.58035714285714%;
+}
 
 .icon--globe {
-    width: 66px;
-    width: 4.125rem;
-    height: 66px;
-    height: 4.125rem;
-    background-position: 28.019323671497585% 99.58035714285714%;
-  }
+  width: 66px;
+  width: 4.125rem;
+  height: 66px;
+  height: 4.125rem;
+  background-position: 28.019323671497585% 99.58035714285714%;
+}
 
 .icon--instagram {
-    width: 44.01px;
-    width: 2.75063rem;
-    height: 44.01px;
-    height: 2.75063rem;
-    background-position: 63.059522249879905% 49.25740726919919%;
-  }
+  width: 44.01px;
+  width: 2.75063rem;
+  height: 44.01px;
+  height: 2.75063rem;
+  background-position: 63.059522249879905% 49.25740726919919%;
+}
 
 .icon--mail {
-    width: 66px;
-    width: 4.125rem;
-    height: 50px;
-    height: 3.125rem;
-    background-position: 0 48.0703125%;
-  }
+  width: 66px;
+  width: 4.125rem;
+  height: 50px;
+  height: 3.125rem;
+  background-position: 0 48.0703125%;
+}
 
 .icon--rain {
-    width: 66px;
-    width: 4.125rem;
-    height: 66px;
-    height: 4.125rem;
-    background-position: 99.71014492753623% 58.92857142857143%;
-  }
+  width: 66px;
+  width: 4.125rem;
+  height: 66px;
+  height: 4.125rem;
+  background-position: 99.71014492753623% 58.92857142857143%;
+}
 
 .icon--star {
-    width: 66px;
-    width: 4.125rem;
-    height: 66px;
-    height: 4.125rem;
-    background-position: 59.90338164251208% 99.58035714285714%;
-  }
+  width: 66px;
+  width: 4.125rem;
+  height: 66px;
+  height: 4.125rem;
+  background-position: 59.90338164251208% 99.58035714285714%;
+}
 
 .icon--twitter {
-    width: 53.78px;
-    width: 3.36125rem;
-    height: 44.06px;
-    height: 2.75375rem;
-    background-position: 94.15199343125627% 98.55159026429745%;
-  }
+  width: 53.78px;
+  width: 3.36125rem;
+  height: 44.06px;
+  height: 2.75375rem;
+  background-position: 94.15199343125627% 98.55159026429745%;
+}
 
 .icon--wifi {
-    width: 62px;
-    width: 3.875rem;
-    height: 66px;
-    height: 4.125rem;
-    background-position: 68.43601895734596% 0;
-  }
+  width: 62px;
+  width: 3.875rem;
+  height: 66px;
+  height: 4.125rem;
+  background-position: 68.43601895734596% 0;
+}
 
 .icon--youtube {
-    width: 36.75px;
-    width: 2.29688rem;
-    height: 44px;
-    height: 2.75rem;
-    background-position: 37.76931216931217% 45.917910447761194%;
-  }
+  width: 36.75px;
+  width: 2.29688rem;
+  height: 44px;
+  height: 2.75rem;
+  background-position: 37.76931216931217% 45.917910447761194%;
+}
 
 /* Custom Animate Css Codes */
 
