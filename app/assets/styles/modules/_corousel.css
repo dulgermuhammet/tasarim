@@ -1,150 +1,96 @@
+
 .corousel {
-  margin: 100px 0px;
-
-  &__inner {
-
-    display: block;
-    position: relative;
-    height: 300px;
-    width: 1200px;
-    margin: 0 auto;
-    overflow: hidden;
-    box-shadow: 0 1px 8px #888888;
-  }
-
-  &__container {
-    width: 150vw;
-    height: inherit;
-  }
-
-  &__element {
-    margin-left: 4px !important;
-    position: relative;
-    border: 1.4px $primaryColor solid;
-    height: inherit;
-    font-size: 80px;
-    text-align: center;
-    padding: 5px;
-    width: 250px !important;
-
-    &-inner {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate3d(-50%, -50%, 0);
-    }
-  }
-}
-
-
-/* Next & previous buttons */
-
-.corousel__prev,
-.corousel__next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 12px;
-  color: $primaryColor;
-  font-weight: bold;
-  font-size: 22px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  transform: translate3d(0, -50%, 0);
-}
-
-/* Position the "next button" to the right */
-
-.corousel__next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-.corousel__prev {
-  left: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-
-.corousel__prev,
-.corousel__next {
-  &:hover {
-    background-color: rgba(0, 0, 0, 0.281);
-  }
-}
-
-
-.infiniteCarousel {
-  width: 395px;
+  width: 1200px;
   position: relative;
+  margin: 100px auto;
+  box-shadow: 0 1px 8px $primaryColor;
 }
 
-.infiniteCarousel .wrapper {
-  width: 315px; /* .infiniteCarousel width - (.wrapper margin-left + .wrapper margin-right) */
-  overflow: auto;
+.corousel .corousel__container  {
+  overflow: hidden;
+  width: 1198px; /* .corousel width - (.wrapper margin-left + .wrapper margin-right) */
   min-height: 10em;
-  margin: 0 40px;
-  position: absolute;
+  position: relative;
   top: 0;
+      background-color: $white
 }
 
-.infiniteCarousel ul a img {
-  border: 5px solid #000;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
+.corousel .corousel__title {
+    background-color: #e0c582;
+    display: block;
+    position: absolute;
+    top: -56px;
+    left: -37px;
+    width: max-content;
+    height: 332px;
+    padding: 19px;
+    z-index: -1;
 }
 
-.infiniteCarousel .wrapper ul {
+
+.corousel__title h6 {
+    letter-spacing: 7px;
+    font-weight: 500;
+    font-family: Lato;
+    color: #4f4a4f;
+}
+.corousel .corousel__container  ul {
   width: 9999px;
   list-style-image:none;
   list-style-position:outside;
   list-style-type:none;
   margin:0;
   padding:0;
-  position: absolute;
+  position: relative;
   top: 0;
 }
 
-.infiniteCarousel ul li {
-  display:block;
+.corousel .corousel__element {
+  display:inline-block;
   float:left;
-  padding: 10px;
-  width: 105px;
-  height: 105px;
+  padding: 1px 1px;
+  width: 300px;
+  height: 350px;
+  margin-bottom:0px;
 
 }
 
-.infiniteCarousel ul li a img {
+.corousel .corousel__element img {
   display:block;
+  height: 100%;
+  width: 100%;
 }
 
-.infiniteCarousel .arrow {
-  display: block;
-  height: 36px;
-  width: 37px;
-  background: url(http://jqueryfordesigners.com/demo/images/arrow.png) no-repeat 0 0;
-  text-indent: -999px;
-  position: absolute;
-  top: 37px;
+.corousel__next,
+.corousel__prev{
+  border: 1px solid $white;
+  box-shadow: 0 1px 8px $primaryColor;
+  background-color: $secondaryColor;
   cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 12px 12px;
+  color: $primaryColor;
+  font-weight: bold;
+  font-size: 22px;
+  transition: 0.6s ease;
+  transform: translate3d(0, -50%, 0);
 }
 
-.infiniteCarousel .forward {
-  background-position: 0 0;
-  right: 0;
+.corousel__next{
+  right: -20px;
+  border: 1px solid bisque;
 }
 
-.infiniteCarousel .back {
-  background-position: 0 -72px;
-  left: 0;
+.corousel__prev {
+  left: -20px;
+  border: 1px solid bisque;
 }
 
-.infiniteCarousel .forward:hover {
-  background-position: 0 -36px;
-}
-
-.infiniteCarousel .back:hover {
-  background-position: 0 -108px;
+.corousel__prev,
+.corousel__next {
+  &:hover {
+    background-color: $primaryColor;
+  }
 }

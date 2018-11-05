@@ -1886,122 +1886,53 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
     }
 
 .corousel {
-  margin: 100px 0px;
-  margin: 6.25rem 0;
-}
-
-.corousel__inner {
-
-    display: block;
-    position: relative;
-    width: 1200px;
-    width: 75rem;
-    height: 300px;
-    height: 18.75rem;
-    margin: 0 auto;
-    overflow: hidden;
-    box-shadow: 0 1px 8px #888888;
-    box-shadow: 0 0.0625rem 0.5rem #888888;
-  }
-
-.corousel__container {
-    width: 150vw;
-    height: inherit;
-  }
-
-.corousel__element {
-    position: relative;
-    width: 250px !important;
-    width: 15.625rem !important;
-    height: inherit;
-    margin-left: 4px !important;
-    margin-left: 0.25rem !important;
-    padding: 5px;
-    padding: 0.3125rem;
-    border: 1.4px #4f4a4f solid;
-    border: 0.0875rem #4f4a4f solid;
-    font-size: 80px;
-    font-size: 5rem;
-    text-align: center;
-  }
-
-.corousel__element-inner {
-      -webkit-transform: translate3d(-50%, -50%, 0);
-      position: absolute;
-      top: 50%;
-      left: 50%;
-              transform: translate3d(-50%, -50%, 0);
-    }
-
-/* Next & previous buttons */
-
-.corousel__prev,
-.corousel__next {
-  -webkit-transform: translate3d(0, -50%, 0);
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 12px;
-  padding: 0.75rem;
-          transform: translate3d(0, -50%, 0);
-  border-radius: 0 3px 3px 0;
-  border-radius: 0 0.1875rem 0.1875rem 0;
-  color: #4f4a4f;
-  font-size: 22px;
-  font-size: 1.375rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.6s ease;
-}
-
-/* Position the "next button" to the right */
-
-.corousel__next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-  border-radius: 0.1875rem 0 0 0.1875rem;
-}
-
-.corousel__prev {
-  left: 0;
-  border-radius: 3px 0 0 3px;
-  border-radius: 0.1875rem 0 0 0.1875rem;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-
-.corousel__prev:hover, .corousel__next:hover {
-    background-color: rgba(0, 0, 0, 0.281);
-  }
-
-.infiniteCarousel {
   position: relative;
-  width: 395px;
-  width: 24.6875rem;
+  width: 1200px;
+  width: 75rem;
+  margin: 100px auto;
+  margin: 6.25rem auto;
+  box-shadow: 0 1px 8px #4f4a4f;
+  box-shadow: 0 0.0625rem 0.5rem #4f4a4f;
 }
 
-.infiniteCarousel .wrapper {
-  position: absolute;
+.corousel .corousel__container  {
+  position: relative;
   top: 0;
-  width: 315px;
-  width: 19.6875rem; /* .infiniteCarousel width - (.wrapper margin-left + .wrapper margin-right) */
+  width: 1198px;
+  width: 74.875rem; /* .corousel width - (.wrapper margin-left + .wrapper margin-right) */
   min-height: 10em;
-  margin: 0 40px;
-  margin: 0 2.5rem;
-  overflow: auto;
+  overflow: hidden;
+      background-color: #fff
 }
 
-.infiniteCarousel ul a img {
-  -moz-border-radius: 5px;
-  -moz-border-radius: 0.3125rem;
-  -webkit-border-radius: 5px;
-  -webkit-border-radius: 0.3125rem;
-  border: 5px solid #000;
-  border: 0.3125rem solid #000;
+.corousel .corousel__title {
+    display: block;
+    z-index: -1;
+    position: absolute;
+    top: -56px;
+    top: -3.5rem;
+    left: -37px;
+    left: -2.3125rem;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    height: 332px;
+    height: 20.75rem;
+    padding: 19px;
+    padding: 1.1875rem;
+    background-color: #e0c582;
 }
 
-.infiniteCarousel .wrapper ul {
-  position: absolute;
+.corousel__title h6 {
+    color: #4f4a4f;
+    font-family: Lato;
+    font-weight: 500;
+    letter-spacing: 7px;
+    letter-spacing: 0.4375rem;
+}
+
+.corousel .corousel__container  ul {
+  position: relative;
   top: 0;
   width: 9999px;
   width: 624.9375rem;
@@ -2012,57 +1943,65 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
   list-style-type:none;
 }
 
-.infiniteCarousel ul li {
-  display:block;
-  width: 105px;
-  width: 6.5625rem;
-  height: 105px;
-  height: 6.5625rem;
-  padding: 10px;
-  padding: 0.625rem;
+.corousel .corousel__element {
+  display:inline-block;
+  width: 300px;
+  width: 18.75rem;
+  height: 350px;
+  height: 21.875rem;
+  margin-bottom:0px;
+  margin-bottom:0;
+  padding: 1px 1px;
+  padding: 0.0625rem 0.0625rem;
   float:left;
 
 }
 
-.infiniteCarousel ul li a img {
+.corousel .corousel__element img {
   display:block;
+  width: 100%;
+  height: 100%;
 }
 
-.infiniteCarousel .arrow {
-  display: block;
+.corousel__next,
+.corousel__prev{
+  -webkit-transform: translate3d(0, -50%, 0);
   position: absolute;
-  top: 37px;
-  top: 2.3125rem;
-  width: 37px;
-  width: 2.3125rem;
-  height: 36px;
-  height: 2.25rem;
-  background: url(http://jqueryfordesigners.com/demo/images/arrow.png) no-repeat 0 0;
-  text-indent: -999px;
-  text-indent: -62.4375rem;
+  top: 50%;
+  width: auto;
+  padding: 12px 12px;
+  padding: 0.75rem 0.75rem;
+          transform: translate3d(0, -50%, 0);
+  border: 1px solid #fff;
+  border: 0.0625rem solid #fff;
+  background-color: #ffe4c4;
+  box-shadow: 0 1px 8px #4f4a4f;
+  box-shadow: 0 0.0625rem 0.5rem #4f4a4f;
+  color: #4f4a4f;
+  font-size: 22px;
+  font-size: 1.375rem;
+  font-weight: bold;
   cursor: pointer;
+  transition: 0.6s ease;
 }
 
-.infiniteCarousel .forward {
-  right: 0;
-  background-position: 0 0;
+.corousel__next{
+  right: -20px;
+  right: -1.25rem;
+  border: 1px solid bisque;
+  border: 0.0625rem solid bisque;
 }
 
-.infiniteCarousel .back {
-  left: 0;
-  background-position: 0 -72px;
-  background-position: 0 -4.5rem;
+.corousel__prev {
+  left: -20px;
+  left: -1.25rem;
+  border: 1px solid bisque;
+  border: 0.0625rem solid bisque;
 }
 
-.infiniteCarousel .forward:hover {
-  background-position: 0 -36px;
-  background-position: 0 -2.25rem;
-}
-
-.infiniteCarousel .back:hover {
-  background-position: 0 -108px;
-  background-position: 0 -6.75rem;
-}
+.corousel__prev:hover, .corousel__next:hover {
+    background-color: #4f4a4f;
+  }
 
 /* Do not edit modules/_sprite directly as it is generated automatically by Gulp.
 Instead edit gulp/templates/sprite */

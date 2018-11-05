@@ -38,6 +38,6 @@
     "postcss-nested": "^4.1.0",
     "postcss-pxtorem": "^4.0.1",
     "postcss-simple-vars": "^5.0.1",
-    "webpack": "^4.23.1"
+    "webpack": "^4.24.0"
   }
 }
