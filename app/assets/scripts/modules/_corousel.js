@@ -1,163 +1,169 @@
 class Corousel {
 
     constructor() {
+        this.corousel = document.querySelectorAll('.corousel');
         this.init();
 
     }
 
     init() {
 
+        var self = this;
 
-        var wrapper = document.getElementsByClassName("corousel__container")[0],
-            slider = wrapper.querySelectorAll('ul')[0],
-            items = document.getElementsByClassName("corousel__element"),
-            single = items[0],
-            singleWidth = single.offsetWidth,
-            visible = Math.ceil(((wrapper.offsetWidth) / singleWidth)), // note: doesn't include padding or border
-            currentPage = 1,
-            prev = "",
-            next = "",
-            pages = Math.ceil(items.length / visible),
-            sduration = 700,
-            auto = true;
 
-        wrapper.insertAdjacentHTML('afterend', '<a class="corousel__prev">&#10094;</a><a class="corousel__next">&#10095;</a>');
-        prev = document.getElementsByClassName("corousel__prev")[0],
-        next = document.getElementsByClassName("corousel__next")[0];
-        //console.log(items);
+        [].forEach.call(this.corousel, function(el) {
 
-        function repeat(str, num) {
-            return new Array(num + 1).join(str);
-        }
 
-        // 1. Pad so that 'visible' number will always be seen, otherwise create empty items
-
-        if ((items.length % visible) != 0) {
-            var x = repeat('<div class="corousel__element blank"></div>', (visible - (items.length % visible)));
-            slider.insertAdjacentHTML('beforeend', x);
-            items = slider.querySelectorAll('div.corousel__element');
-        }
-
-        // 2. Top and tail the list with 'visible' number of items, top has the last section, and tail has the first
-
-        let z = [].slice.call(items).slice(-visible);
-
-        for (var i = 0; i < z.length; i++) {
-            var zz = `<div class="corousel__element">${z[i].innerHTML}</div>`;
-            //console.log(z);
-            items[0].insertAdjacentHTML('beforebegin', zz);
-
-        }
-
-        let z1 = [].slice.call(items).slice(0, visible).reverse();
-
-        for (var i = 0; i < z1.length; i++) {
-            var zz1 = `<div class="corousel__element">${z1[i].innerHTML}</div>`;
-            //console.log(zz1);
-            items[items.length - 1].insertAdjacentHTML('afterend', zz1);
-        }
-
-        items = document.getElementsByClassName("corousel__element"); // reselect
-
-        // 3. Set the left position to the first 'real' item
-        wrapper.scrollLeft += singleWidth * visible;
-
-        //console.log(wrapper.scrollLeft);
+            this.corousel = el;
+            this.wrapper = el.querySelectorAll('.corousel__container')[0];
+            this.slider = el.querySelectorAll('ul')[0];
+            this.items = el.querySelectorAll('.corousel__element');
+            this.single = this.items[0];
+            this.singleWidth = this.single.offsetWidth;
+            this.visible = Math.ceil(((this.wrapper.offsetWidth) / this.singleWidth)); // note: doesn't include padding or border
+            this.currentPage = 1;
+            this.pages = Math.ceil(this.items.length / this.visible);
+            this.sduration = 1200;
+            this.auto = true;
 
 
 
-        function runCorousel(page) {
+            this.wrapper.insertAdjacentHTML('afterend', '<a class="corousel__prev">&#10094;</a><a class="corousel__next">&#10095;</a>');
+            this.prev = el.querySelectorAll('.corousel__prev')[0];
+            this.next = el.querySelectorAll('.corousel__next')[0];
 
-            var direction = page < currentPage ? -1 : 1,
-                n = Math.abs(currentPage - page),
-                left = singleWidth * direction * visible * n;
+            // 1. Pad so that 'visible' number will always be seen, otherwise create empty items
 
-            move(sduration);
-
-            function move(dr) {
-                if (page == 0) {
-                    function x1() {
-                        wrapper.scrollLeft = singleWidth * visible * pages;
-                        page = pages;
-                        currentPage = page;
-                    }
-
-                    scrollTo(wrapper, (wrapper.scrollLeft + left), dr, x1);
-
-                } else if (page > pages) {
-                    function x2() {
-                        wrapper.scrollLeft = singleWidth * visible;
-                        // reset prev to start position
-                        page = 1;
-                        currentPage = page;
-                    }
-                    scrollTo(wrapper, (wrapper.scrollLeft + left), dr, x2);
-
-                } else {
-                    scrollTo(wrapper, (wrapper.scrollLeft + left), dr);
-                    currentPage = page;
-                }
-
+            if ((this.items.length % this.visible) != 0) {
+                var x = this.repeat('<div class="corousel__element blank"></div>', (this.visible - (this.items.length % this.visible)));
+                this.slider.insertAdjacentHTML('beforeend', x);
+                this.items = el.querySelectorAll('.corousel__element');
             }
 
-            return false;
-        }
+            // 2. Top and tail the list with 'visible' number of items, top has the last section, and tail has the first
 
+            (function() {
 
+                let a = [].slice.call(self.items).slice(-self.visible);
 
-        function scrollTo(element, to, duration, done) {
-            var start = element.scrollLeft,
-                change = to - start,
-                currentTime = 0,
-                increment = 20;
+                for (var i = 0; i < a.length; i++) {
+                    var aa = `<div class="corousel__element">${a[i].innerHTML}</div>`;
+                    self.items[0].insertAdjacentHTML('beforebegin', aa);
 
-            function animateScroll() {
-                currentTime += increment;
-                var val = Math.easeInOutQuad(currentTime, start, change, duration);
-                element.scrollLeft = val;
-                if (currentTime < duration) {
-                    setTimeout(animateScroll, increment);
-                } else if (currentTime == duration) {
-                    if (typeof done == 'function') {
-                        done();
-                    }
-                    prev.style.pointerEvents = "auto";
-                    next.style.pointerEvents = "auto";
                 }
-            };
-            animateScroll();
-        }
+            })();
 
-        //t = ct = current time
-        //b = st = start value
-        //c = cv =change in value
-        //d = duration
-        Math.easeInOutQuad = function(ct, st, cv, d) {
-            ct /= d / 2;
-            if (ct < 1) return cv / 2 * ct * ct + st;
-            ct--;
-            return -cv / 2 * (ct * (ct - 2) - 1) + st;
-        };
+            (function() {
 
+                let a = [].slice.call(self.items).slice(0, self.visible).reverse();
 
+                for (var i = 0; i < a.length; i++) {
+                    var aa = `<div class="corousel__element">${a[i].innerHTML}</div>`;
+                    self.items[self.items.length - 1].insertAdjacentHTML('afterend', aa);
+                }
+            })();
 
+            this.items = el.querySelectorAll('.corousel__element'); // reselect
 
-        // Event Listeners for Buttons
-
-        prev.addEventListener("click", function() {
-            runCorousel(currentPage - 1);
-            prev.style.pointerEvents = "none";
-
-        });
-
-        next.addEventListener("click", function() {
-            runCorousel(currentPage + 1);
-            next.style.pointerEvents = "none";
-        });
+            // 3. Set the left position to the first 'real' item
+            this.wrapper.scrollLeft += this.singleWidth * this.visible;
 
 
+
+            // Event Listeners for Buttons
+
+            self.prev.addEventListener("click", function() {
+                self.switch(self.currentPage - 1);
+                self.prev.style.pointerEvents = "none";
+
+            });
+
+            self.next.addEventListener("click", function() {
+                self.switch(self.currentPage + 1);
+                self.next.style.pointerEvents = "none";
+            });
+        }.bind(this));
 
     }
+
+    repeat(str, num) {
+        return new Array(num + 1).join(str);
+    }
+
+    switch (page) {
+
+        var self = this;
+        var direction = page < this.currentPage ? -1 : 1,
+            n = Math.abs(this.currentPage - page),
+            left = this.singleWidth * direction * this.visible * n;
+
+        move(self.sduration);
+
+        function move(dr) {
+            if (page == 0) {
+                function a() {
+                    self.wrapper.scrollLeft = self.singleWidth * self.visible * self.pages;
+                    page = self.pages;
+                    self.currentPage = page;
+                }
+
+                self.scrollTo(self.wrapper, (self.wrapper.scrollLeft + left), dr, a);
+
+            } else if (page > self.pages) {
+                function b() {
+                    self.wrapper.scrollLeft = self.singleWidth * self.visible;
+                    page = 1;
+                    self.currentPage = page;
+                }
+                self.scrollTo(self.wrapper, (self.wrapper.scrollLeft + left), dr, b);
+
+            } else {
+                self.scrollTo(self.wrapper, (self.wrapper.scrollLeft + left), dr);
+                self.currentPage = page;
+            }
+
+        }
+
+        return false;
+    }
+
+
+    scrollTo(element, to, duration, done) {
+
+        var self = this;
+        var start = element.scrollLeft,
+            change = to - start,
+            currentTime = 0,
+            increment = 20;
+
+        function animateScroll() {
+            currentTime += increment;
+            var val = self.easeInOutQuad(currentTime, start, change, duration);
+            element.scrollLeft = val;
+            if (currentTime < duration) {
+                setTimeout(animateScroll, increment);
+            } else if (currentTime == duration) {
+                if (typeof done == 'function') {
+                    done();
+                }
+                self.prev.style.pointerEvents = "auto";
+                self.next.style.pointerEvents = "auto";
+            }
+        };
+        animateScroll();
+
+    }
+
+    //t = ct = current time
+    //b = st = start value
+    //c = cv =change in value
+    //d = duration
+    easeInOutQuad(ct, st, cv, d) {
+        ct /= d / 2;
+        if (ct < 1) return cv / 2 * ct * ct + st;
+        ct--;
+        return -cv / 2 * (ct * (ct - 2) - 1) + st;
+    };
 
 
     //console.log(`singlewidth:${singleWidth}`);
