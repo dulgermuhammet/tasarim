@@ -1,0 +1,108 @@
+.discover {
+    position: relative;
+    display:block;
+    width:100%;
+    margin-bottom:50px;
+    box-shadow: 0 1px 8px $primaryColor;
+    background-color:$white;
+    &__title {
+        display: block;
+        z-index: -1;
+        position: absolute;
+        top: -56px;
+        left: -37px;
+        width: 430px;
+        min-width: max-content;
+        height: 332px;
+        padding: 19px;
+        background-color: #e0c582;
+        h6 {
+            letter-spacing: 7px;
+            padding-left: 65px;
+            font-weight: 500;
+            font-family: Lato;
+            color: #4f4a4f;
+        }
+    }
+    &__container{
+        display: block;
+        width:100% ;
+        height: 100%;
+    }
+    &__left {
+    background-color:#e0c582;
+    height: 100%;
+    min-height: 724px;
+    padding-top: 82px;
+     .wrapper {
+
+       }
+    }
+
+    &__right{
+        .item-container {
+            width:100%;
+            height: 348px;
+            box-shadow: 0 0.5px 3.4px $primaryColor;
+            margin: 7px 0px;
+            background-color: #E8E8E8;
+            &:hover {
+                box-shadow: 0 0.5px 4px $primaryColor;
+                transition: box-shadow 0.3s ease-in-out;
+            }
+        }
+        .one-three {
+            width: 32.26666%
+        }
+    }
+    &__menu-item {
+        min-height: 30px;
+        text-align: right;
+        line-height:70px;
+        letter-spacing: 3px;
+        font-family:Lato;
+        color:$primaryColor;
+        div {
+            display: inline-block;
+            margin: 0 auto;
+    width: 125px;
+        }
+        &:nth-child(even) {
+            background-color:#e4ca8b;
+        }
+
+
+        &:after {
+            visibility:hidden;
+            display: inline-block;
+            position: relative;
+            top: 13px;
+            right: 66px;
+            left: 0;
+            width: 0;
+            height: 0;
+            margin-left: 28px;
+            border-top: solid 20px transparent;
+            border-right: solid 27px $white;
+            border-bottom: solid 20px transparent;
+            content: '';
+            box-shadow: inset 2px 0px 0px 2px #e0c482;
+
+        }
+        &.active,
+        &:hover {
+            box-shadow: inset 2px 0px 0px 2px #e0c482;
+            background-color:$primaryColor;
+            color:$white;
+            animation: opacity 1s ease forwards;
+            &:after {
+            visibility:visible;
+            }
+        }
+
+    }
+}
+
+.one-three.column:nth-of-type(4) {
+    margin-left:0px;
+}

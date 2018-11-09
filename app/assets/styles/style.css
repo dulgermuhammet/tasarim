@@ -9,6 +9,10 @@
 @import "./modules/_btn";
 @import "./modules/_navbar";
 @import "./modules/_slider";
+@import "./modules/_mail";
 @import "./modules/_corousel";
+@import "./modules/_discover";
+@import "./modules/_subscription";
 @import "./modules/_sprite";
 @import "./modules/_custom";
+@import "./modules/_footer";

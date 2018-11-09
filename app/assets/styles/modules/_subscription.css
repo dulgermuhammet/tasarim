@@ -1,0 +1,64 @@
+.subscription {
+background-color:#693b42;
+
+    &__container {
+        display:block;
+        position: relative;
+        min-height: 125px;
+        text-align: center;
+
+    }
+    &__title {
+        margin-top:30px;
+        color:$white;
+        opacity: .8;
+        h5 {
+            letter-spacing:3px;
+             font-weight:300;
+        }
+
+    }
+
+    &__sub-title{
+        color:$white;
+        font-weight:300;
+        opacity: .6;
+        letter-spacing: 3px;
+        font-size:14px;
+        font-family:Lato;
+
+    }
+    &__form {
+        display: inline-block;
+        position: relative;
+        width: 300px;
+        height: 50px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        input {
+            width: 100%;
+            height: inherit;
+            margin-bottom: unset;
+            padding: 0.64em 1.425em;
+            border: none;
+            border-width: 1px;
+            border-style: solid;
+            border-color: #ffe4c4;
+            outline: none;
+            background: #ffe4c429;
+            transition: box-shadow 0.5s ease;
+            font-family: Lato;
+            letter-spacing: 3px;
+            &::placeholder {
+                color:$white;
+                opacity:.5;
+            }
+            &:focus {
+                border-color:$white;
+            }
+       }
+    :hover {
+      box-shadow: 0px 0px 13px -2px rgba(253, 253, 253, 0.75);
+    }
+    }
+}

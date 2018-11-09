@@ -829,25 +829,36 @@ hr {
     margin-left: 0;
   }
 
-  .one-third.column {
-    width: 30.6666666667%;
-  }
-
-  .two-third.column {
-    width: 65.3333333333%;
-  }
+  /*  1/2 - 2/2  */
 
   .one-half.column {
     width: 48%;
   }
 
-  .one-four.column {
-    width: 24%;
+
+  /*  1/3 - 2/3  */
+  .one-three.column {
+    width: 30.6666666667%;
   }
 
-  .one-eight.column {
-    width: 12%;
+  .two-three.column {
+    width: 65.3333333333%;
   }
+
+
+    /*  1/4 - 3/4  */
+  .one-four.column {
+    width: 24.75%;
+  }
+
+  .three-four.column {
+    width: 74.25%;
+  }
+
+
+
+
+
 
   /* Offsets */
   .offset-by-one.column,
@@ -1193,11 +1204,12 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 
 .navbar {
   z-index: 1;
-  position: absolute;
+  position: fixed;
   width: 100%;
   padding: 0 0 0 0;
-  background-color: rgba(14, 19, 58, 0.7098039215686275);
-  box-shadow: 0 0.25rem 0.25rem rgb(27, 36, 107);
+  background-color: #4f4a4f;
+  box-shadow:0 0.5px 3.4px #4f4a4f;
+  box-shadow:0 0.03125rem 0.2125rem #4f4a4f;
   text-align: center;
 }
 
@@ -1294,6 +1306,30 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
       background: #ffe4c429;
       transition: box-shadow 0.5s ease;
     }
+
+.navbar__search input::-webkit-input-placeholder {
+            color: #fff;
+            opacity: .5;
+        }
+
+.navbar__search input:-ms-input-placeholder {
+            color: #fff;
+            opacity: .5;
+        }
+
+.navbar__search input::-ms-input-placeholder {
+            color: #fff;
+            opacity: .5;
+        }
+
+.navbar__search input::placeholder {
+            color: #fff;
+            opacity: .5;
+        }
+
+.navbar__search input:focus {
+            border-color:#fff;
+        }
 
 .navbar__search :hover {
       box-shadow: 0px 0px 13px -2px rgba(253, 253, 253, 0.75);
@@ -1392,8 +1428,9 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
       }
 
 .navbar.is-active {
-    box-shadow: 0 4px 4px rgb(27, 36, 107);
-    box-shadow: 0 0.25rem 0.25rem rgb(27, 36, 107);
+    box-shadow:0 0.5px 3.4px #4f4a4f;
+    box-shadow:0 0.03125rem 0.2125rem #4f4a4f;
+    opacity: .97;
   }
 
 .navbar.is-active:after {
@@ -1862,13 +1899,25 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 
 .indicator__element {
     display: inline-block;
-    padding: 22px;
-    padding: 1.375rem;
     border: 1.4px solid #4f4a4f;
     border: 0.0875rem solid #4f4a4f;
     background-color: rgb(224, 198, 130);
     box-shadow: 0 0.05rem 0.05rem rgb(27, 36, 107);
   }
+
+.indicator__element:after {
+           display: inline-block;
+           position: relative;
+           bottom: -5px;
+           bottom: -0.3125rem;
+           width: 100%;
+           height: 6px;
+           height: 0.375rem;
+           margin: unset;
+           padding: unset;
+           background-color: #693b42;
+           content: "";
+      }
 
 .indicator__element:hover {
       background-color: #e0e0e0;
@@ -1878,12 +1927,23 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
       width: auto;
       height: 100px;
       height: 6.25rem;
+      margin: 14px;
+      margin: 0.875rem;
       opacity: 0.4;
+
     }
 
 .indicator__element .opacity-off {
       opacity: 1;
     }
+
+.mail {
+    height:125px;
+    height:7.8125rem;
+    border-bottom: 1px solid #d6d6d6;
+    border-bottom: 0.0625rem solid #d6d6d6;
+    background-color: #693b42;
+}
 
 .corousel {
   position: relative;
@@ -1902,7 +1962,7 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
   width: 74.875rem; /* .corousel width - (.wrapper margin-left + .wrapper margin-right) */
   min-height: 10em;
   overflow: hidden;
-      background-color: #fff
+  background-color: #fff;
 }
 
 .corousel .corousel__title {
@@ -1913,9 +1973,11 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
     top: -3.5rem;
     left: -37px;
     left: -2.3125rem;
-    width: -webkit-max-content;
-    width: -moz-max-content;
-    width: max-content;
+    width: 430px;
+    width: 26.875rem;
+    min-width: -webkit-max-content;
+    min-width: -moz-max-content;
+    min-width: max-content;
     height: 332px;
     height: 20.75rem;
     padding: 19px;
@@ -1924,6 +1986,8 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 }
 
 .corousel__title h6 {
+    padding-left: 65px;
+    padding-left: 4.0625rem;
     color: #4f4a4f;
     font-family: Lato;
     font-weight: 500;
@@ -1954,13 +2018,18 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
   padding: 1px 1px;
   padding: 0.0625rem 0.0625rem;
   float:left;
+  background-color: #E8E8E8;
 
 }
 
 .corousel .corousel__element img {
-  display:block;
-  width: 100%;
-  height: 100%;
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 10px 0;
+    padding: 0.625rem 0;
+
 }
 
 .corousel__next,
@@ -1974,6 +2043,7 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
           transform: translate3d(0, -50%, 0);
   border: 1px solid #fff;
   border: 0.0625rem solid #fff;
+  border-radius: 50%;
   background-color: #ffe4c4;
   box-shadow: 0 1px 8px #4f4a4f;
   box-shadow: 0 0.0625rem 0.5rem #4f4a4f;
@@ -1986,15 +2056,15 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 }
 
 .corousel__next{
-  right: -20px;
-  right: -1.25rem;
+  right: -22px;
+  right: -1.375rem;
   border: 1px solid bisque;
   border: 0.0625rem solid bisque;
 }
 
 .corousel__prev {
-  left: -20px;
-  left: -1.25rem;
+  left: -22px;
+  left: -1.375rem;
   border: 1px solid bisque;
   border: 0.0625rem solid bisque;
 }
@@ -2002,6 +2072,254 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 .corousel__prev:hover, .corousel__next:hover {
     background-color: #4f4a4f;
   }
+
+.discover {
+    display:block;
+    position: relative;
+    width:100%;
+    margin-bottom:50px;
+    margin-bottom:3.125rem;
+    background-color:#fff;
+    box-shadow: 0 1px 8px #4f4a4f;
+    box-shadow: 0 0.0625rem 0.5rem #4f4a4f;
+}
+
+.discover__title {
+        display: block;
+        z-index: -1;
+        position: absolute;
+        top: -56px;
+        top: -3.5rem;
+        left: -37px;
+        left: -2.3125rem;
+        width: 430px;
+        width: 26.875rem;
+        min-width: -webkit-max-content;
+        min-width: -moz-max-content;
+        min-width: max-content;
+        height: 332px;
+        height: 20.75rem;
+        padding: 19px;
+        padding: 1.1875rem;
+        background-color: #e0c582;
+    }
+
+.discover__title h6 {
+            padding-left: 65px;
+            padding-left: 4.0625rem;
+            color: #4f4a4f;
+            font-family: Lato;
+            font-weight: 500;
+            letter-spacing: 7px;
+            letter-spacing: 0.4375rem;
+        }
+
+.discover__container{
+        display: block;
+        width:100% ;
+        height: 100%;
+    }
+
+.discover__left {
+    height: 100%;
+    min-height: 724px;
+    min-height: 45.25rem;
+    padding-top: 82px;
+    padding-top: 5.125rem;
+    background-color:#e0c582;
+    }
+
+.discover__left .wrapper {
+
+       }
+
+.discover__right .item-container {
+            width:100%;
+            height: 348px;
+            height: 21.75rem;
+            margin: 7px 0px;
+            margin: 0.4375rem 0;
+            background-color: #E8E8E8;
+            box-shadow: 0 0.5px 3.4px #4f4a4f;
+            box-shadow: 0 0.03125rem 0.2125rem #4f4a4f;
+        }
+
+.discover__right .item-container:hover {
+                box-shadow: 0 0.5px 4px #4f4a4f;
+                box-shadow: 0 0.03125rem 0.25rem #4f4a4f;
+                transition: box-shadow 0.3s ease-in-out;
+            }
+
+.discover__right .one-three {
+            width: 32.26666%
+        }
+
+.discover__menu-item {
+        min-height: 30px;
+        min-height: 1.875rem;
+        color:#4f4a4f;
+        font-family:Lato;
+        letter-spacing: 3px;
+        letter-spacing: 0.1875rem;
+        line-height:70px;
+        line-height:4.375rem;
+        text-align: right;
+
+    }
+
+.discover__menu-item div {
+            display: inline-block;
+    width: 125px;
+    width: 7.8125rem;
+            margin: 0 auto;
+        }
+
+.discover__menu-item:nth-child(even) {
+            background-color:#e4ca8b;
+        }
+
+.discover__menu-item:after {
+            display: inline-block;
+            visibility:hidden;
+            position: relative;
+            top: 13px;
+            top: 0.8125rem;
+            right: 66px;
+            right: 4.125rem;
+            left: 0;
+            width: 0;
+            height: 0;
+            margin-left: 28px;
+            margin-left: 1.75rem;
+            border-top: solid 20px transparent;
+            border-top: solid 1.25rem transparent;
+            border-right: solid 27px #fff;
+            border-right: solid 1.6875rem #fff;
+            border-bottom: solid 20px transparent;
+            border-bottom: solid 1.25rem transparent;
+            box-shadow: inset 2px 0px 0px 2px #e0c482;
+            box-shadow: inset 0.125rem 0 0 0.125rem #e0c482;
+            content: '';
+
+        }
+
+.discover__menu-item.active,
+        .discover__menu-item:hover {
+            -webkit-animation: opacity 1s ease forwards;
+            background-color:#4f4a4f;
+            box-shadow: inset 2px 0px 0px 2px #e0c482;
+            box-shadow: inset 0.125rem 0 0 0.125rem #e0c482;
+            color:#fff;
+                    animation: opacity 1s ease forwards;
+        }
+
+.discover__menu-item.active:after, .discover__menu-item:hover:after {
+            visibility:visible;
+            }
+
+.one-three.column:nth-of-type(4) {
+    margin-left:0px;
+    margin-left:0;
+}
+
+.subscription {
+background-color:#693b42;
+}
+
+.subscription__container {
+        display:block;
+        position: relative;
+        min-height: 125px;
+        min-height: 7.8125rem;
+        text-align: center;
+
+    }
+
+.subscription__title {
+        margin-top:30px;
+        margin-top:1.875rem;
+        color:#fff;
+        opacity: .8;
+
+    }
+
+.subscription__title h5 {
+             font-weight:300;
+            letter-spacing:3px;
+            letter-spacing:0.1875rem;
+        }
+
+.subscription__sub-title{
+        color:#fff;
+        font-family:Lato;
+        font-size:14px;
+        font-size:0.875rem;
+        font-weight:300;
+        letter-spacing: 3px;
+        letter-spacing: 0.1875rem;
+        opacity: .6;
+
+    }
+
+.subscription__form {
+        display: inline-block;
+        position: relative;
+        width: 300px;
+        width: 18.75rem;
+        height: 50px;
+        height: 3.125rem;
+        margin-top: 30px;
+        margin-top: 1.875rem;
+        margin-bottom: 30px;
+        margin-bottom: 1.875rem;
+    }
+
+.subscription__form input {
+            width: 100%;
+            height: inherit;
+            margin-bottom: unset;
+            padding: 0.64em 1.425em;
+            border: none;
+            border-width: 1px;
+            border-width: 0.0625rem;
+            border-style: solid;
+            border-color: #ffe4c4;
+            outline: none;
+            background: #ffe4c429;
+            font-family: Lato;
+            letter-spacing: 3px;
+            letter-spacing: 0.1875rem;
+            transition: box-shadow 0.5s ease;
+       }
+
+.subscription__form input::-webkit-input-placeholder {
+                color:#fff;
+                opacity:.5;
+            }
+
+.subscription__form input:-ms-input-placeholder {
+                color:#fff;
+                opacity:.5;
+            }
+
+.subscription__form input::-ms-input-placeholder {
+                color:#fff;
+                opacity:.5;
+            }
+
+.subscription__form input::placeholder {
+                color:#fff;
+                opacity:.5;
+            }
+
+.subscription__form input:focus {
+                border-color:#fff;
+            }
+
+.subscription__form :hover {
+      box-shadow: 0px 0px 13px -2px rgba(253, 253, 253, 0.75);
+      box-shadow: 0 0 0.8125rem -0.125rem rgba(253, 253, 253, 0.75);
+    }
 
 /* Do not edit modules/_sprite directly as it is generated automatically by Gulp.
 Instead edit gulp/templates/sprite */
@@ -2122,4 +2440,11 @@ Instead edit gulp/templates/sprite */
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+}
+
+.footer{
+   height:500px;
+   height:31.25rem;
+   background-color:#232323;
+
 }

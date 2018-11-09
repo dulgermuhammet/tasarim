@@ -8,9 +8,9 @@
     "waypoints": "^4.0.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.1.2",
-    "@babel/preset-env": "^7.1.0",
-    "ajv": "^6.5.4",
+    "@babel/core": "^7.1.5",
+    "@babel/preset-env": "^7.1.5",
+    "ajv": "^6.5.5",
     "autoprefixer": "^9.3.1",
     "babel-core": "^6.25.0",
     "babel-loader": "^8.0.4",
@@ -21,7 +21,7 @@
     "gulp": "^3.9.1",
     "gulp-babel": "^8.0.0",
     "gulp-cssnano": "^2.1.2",
-    "gulp-imagemin": "^4.1.0",
+    "gulp-imagemin": "^5.0.3",
     "gulp-modernizr": "^3.0.0",
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.4.0",
@@ -38,6 +38,6 @@
     "postcss-nested": "^4.1.0",
     "postcss-pxtorem": "^4.0.1",
     "postcss-simple-vars": "^5.0.1",
-    "webpack": "^4.24.0"
+    "webpack": "^4.25.1"
   }
 }

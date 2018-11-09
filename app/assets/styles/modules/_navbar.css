@@ -21,12 +21,12 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 
 .navbar {
   z-index: 1;
-  position: absolute;
+  position: fixed;
   width: 100%;
   text-align: center;
-  box-shadow: 0 0.25rem 0.25rem rgb(27, 36, 107);
+  box-shadow:0 0.5px 3.4px $primaryColor;
   padding: 0 0 0 0;
-  background-color: rgba(14, 19, 58, 0.7098039215686275);
+  background-color: $primaryColor;
 
   &:after {
     content: "";
@@ -34,7 +34,7 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
   }
 
   &::placeholder {
-    color: #fff;
+    color: $white;
     opacity: 1;
   }
 
@@ -97,6 +97,13 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
       padding: 0.64em 1.425em;
       transition: box-shadow 0.5s ease;
       margin-bottom: unset;
+        &::placeholder {
+            color: $white;
+            opacity: .5;
+        }
+        &:focus {
+            border-color:$white;
+        }
     }
 
     :hover {
@@ -193,7 +200,8 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
   }
 
   &.is-active {
-    box-shadow: 0 4px 4px rgb(27, 36, 107);
+    box-shadow:0 0.5px 3.4px $primaryColor;
+    opacity: .97;
 
     &:after {
       opacity: 1;
