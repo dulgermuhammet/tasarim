@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "dependencies": {
     "lazysizes": "^4.0.0-rc3",
-    "normalize.css": "^8.0.0",
+    "normalize.css": "^8.0.1",
     "picturefill": "^3.0.3",
     "waypoints": "^4.0.1"
   },
