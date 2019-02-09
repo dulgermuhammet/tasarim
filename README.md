@@ -1,4 +1,2 @@
-osmanliyuzukleri.com
-
-link : localhost/websiteler/osm
+Genel Tasarım Pratiği
 
